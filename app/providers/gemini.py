@@ -51,7 +51,12 @@ def _unfence(text: str) -> str:
     """Gemma models have no strict JSON mode and may wrap the answer in a ``` fence. Only a fence around the
     WHOLE reply is removed; prose around the JSON is not guessed at (validation then fails loudly)."""
     m = _FENCE.match(text)
-    return m[1] if m else text
+    if m:
+        return m[1]
+    stripped = text.strip()
+    if stripped.startswith("{") and stripped.endswith("```"):      # seen in real replies: lone closing fence
+        return stripped[:-3].rstrip()
+    return text
 
 
 def _retryable(err: Exception) -> bool:
