@@ -1,0 +1,1411 @@
+[
+ {
+  "name": "base design is compliant",
+  "mutations": [],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-width-width",
+    "element_id": "C-1",
+    "status": "pass"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-width-width",
+    "element_id": "C-2",
+    "status": "pass"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-headroom-headroom",
+    "element_id": "C-1",
+    "status": "pass"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Non-gangway-walking-surface-maximum-slope-slope",
+    "element_id": "W-1",
+    "status": "pass"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Edge-protection-maximum-height-height",
+    "element_id": "E-1",
+    "status": "pass"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Edge-protection-maximum-width-width",
+    "element_id": "E-1",
+    "status": "pass"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Handrails-along-route-handrail",
+    "element_id": null,
+    "status": "pass"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-minimum-deck-count-count",
+    "element_id": null,
+    "status": "pass"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-101-to-150-passengers-count",
+    "element_id": null,
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "width 1524 mm = 60 in exactly",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "C-1",
+    "property": "width",
+    "value": 1524
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-width-width",
+    "element_id": "C-1",
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "width 1523 mm is under 60 in",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "C-1",
+    "property": "width",
+    "value": 1523
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-width-width",
+    "element_id": "C-1",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "width 1000 mm clearly narrow",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "C-1",
+    "property": "width",
+    "value": 1000
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-width-width",
+    "element_id": "C-1",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "width 1524.1 mm passes",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "C-1",
+    "property": "width",
+    "value": 1524.1
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-width-width",
+    "element_id": "C-1",
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "width low confidence 0.59",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "C-1",
+    "property": "width",
+    "value": 1000
+   },
+   {
+    "op": "set_confidence",
+    "element_id": "C-1",
+    "value": 0.59
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-width-width",
+    "element_id": "C-1",
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "width narrow at confidence 0.6 is still a fail",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "C-1",
+    "property": "width",
+    "value": 1000
+   },
+   {
+    "op": "set_confidence",
+    "element_id": "C-1",
+    "value": 0.6
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-width-width",
+    "element_id": "C-1",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "width low confidence but compliant value",
+  "mutations": [
+   {
+    "op": "set_confidence",
+    "element_id": "C-1",
+    "value": 0.3
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-width-width",
+    "element_id": "C-1",
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "width missing",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "C-1",
+    "property": "width",
+    "value": null
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-width-width",
+    "element_id": "C-1",
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "width read as text",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "C-1",
+    "property": "width",
+    "value": "approx 60 in"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-width-width",
+    "element_id": "C-1",
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "one narrow corridor does not hide behind a good one",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "C-2",
+    "property": "width",
+    "value": 1200
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-width-width",
+    "element_id": "C-1",
+    "status": "pass"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-width-width",
+    "element_id": "C-2",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "all corridors removed",
+  "mutations": [
+   {
+    "op": "remove_element",
+    "element_id": "C-1"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "C-2"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-width-width",
+    "element_id": null,
+    "status": "needs_review"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-headroom-headroom",
+    "element_id": null,
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "headroom 2032 mm = 80 in exactly",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "C-1",
+    "property": "headroom",
+    "value": 2032
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-headroom-headroom",
+    "element_id": "C-1",
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "headroom 2031 mm is under 80 in",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "C-1",
+    "property": "headroom",
+    "value": 2031
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-headroom-headroom",
+    "element_id": "C-1",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "headroom 1900 mm low overhang",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "C-2",
+    "property": "headroom",
+    "value": 1900
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-headroom-headroom",
+    "element_id": "C-2",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "headroom low confidence",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "C-1",
+    "property": "headroom",
+    "value": 1900
+   },
+   {
+    "op": "set_confidence",
+    "element_id": "C-1",
+    "value": 0.4
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-headroom-headroom",
+    "element_id": "C-1",
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "headroom missing",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "C-2",
+    "property": "headroom",
+    "value": null
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-headroom-headroom",
+    "element_id": "C-2",
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "slope 8.33 % exactly passes",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "W-1",
+    "property": "slope",
+    "value": 8.33
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Non-gangway-walking-surface-maximum-slope-slope",
+    "element_id": "W-1",
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "slope 8.34 % fails",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "W-1",
+    "property": "slope",
+    "value": 8.34
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Non-gangway-walking-surface-maximum-slope-slope",
+    "element_id": "W-1",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "slope 12.5 % ramp fails",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "W-1",
+    "property": "slope",
+    "value": 12.5
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Non-gangway-walking-surface-maximum-slope-slope",
+    "element_id": "W-1",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "slope 0 passes",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "W-1",
+    "property": "slope",
+    "value": 0
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Non-gangway-walking-surface-maximum-slope-slope",
+    "element_id": "W-1",
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "slope low confidence",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "W-1",
+    "property": "slope",
+    "value": 12.5
+   },
+   {
+    "op": "set_confidence",
+    "element_id": "W-1",
+    "value": 0.2
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Non-gangway-walking-surface-maximum-slope-slope",
+    "element_id": "W-1",
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "slope missing",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "W-1",
+    "property": "slope",
+    "value": null
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Non-gangway-walking-surface-maximum-slope-slope",
+    "element_id": "W-1",
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "no walking surface extracted",
+  "mutations": [
+   {
+    "op": "remove_element",
+    "element_id": "W-1"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Non-gangway-walking-surface-maximum-slope-slope",
+    "element_id": null,
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "edge height 101.6 mm = 4 in passes",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "E-1",
+    "property": "height",
+    "value": 101.6
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Edge-protection-maximum-height-height",
+    "element_id": "E-1",
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "edge height 101.7 mm fails",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "E-1",
+    "property": "height",
+    "value": 101.7
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Edge-protection-maximum-height-height",
+    "element_id": "E-1",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "edge height 150 mm fails",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "E-1",
+    "property": "height",
+    "value": 150
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Edge-protection-maximum-height-height",
+    "element_id": "E-1",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "edge width 50.8 mm = 2 in passes",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "E-1",
+    "property": "width",
+    "value": 50.8
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Edge-protection-maximum-width-width",
+    "element_id": "E-1",
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "edge width 50.9 mm fails",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "E-1",
+    "property": "width",
+    "value": 50.9
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Edge-protection-maximum-width-width",
+    "element_id": "E-1",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "edge width missing",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "E-1",
+    "property": "width",
+    "value": null
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Edge-protection-maximum-width-width",
+    "element_id": "E-1",
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "edge height low confidence",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "E-1",
+    "property": "height",
+    "value": 150
+   },
+   {
+    "op": "set_confidence",
+    "element_id": "E-1",
+    "value": 0.5
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Edge-protection-maximum-height-height",
+    "element_id": "E-1",
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "no edge protection is allowed",
+  "mutations": [
+   {
+    "op": "remove_element",
+    "element_id": "E-1"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Edge-protection-maximum-height-height",
+    "element_id": null,
+    "status": "not_applicable",
+    "known_disagreement": "Regulation says edge protection is not required (if provided); evaluator reports needs_review when none is found"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Edge-protection-maximum-width-width",
+    "element_id": null,
+    "status": "not_applicable",
+    "known_disagreement": "Regulation says edge protection is not required (if provided); evaluator reports needs_review when none is found"
+   }
+  ]
+ },
+ {
+  "name": "handrail removed is not silently a fail or pass",
+  "mutations": [
+   {
+    "op": "remove_element",
+    "element_id": "H-1"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Handrails-along-route-handrail",
+    "element_id": null,
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "handrail present",
+  "mutations": [],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Handrails-along-route-handrail",
+    "element_id": null,
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "handrail read at low confidence",
+  "mutations": [
+   {
+    "op": "set_confidence",
+    "element_id": "H-1",
+    "value": 0.3
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Handrails-along-route-handrail",
+    "element_id": null,
+    "status": "needs_review",
+    "known_disagreement": "Evaluator ignores extraction confidence for presence/count rules and returns pass"
+   }
+  ]
+ },
+ {
+  "name": "no deck elements",
+  "mutations": [
+   {
+    "op": "remove_element",
+    "element_id": "DK-1"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "DK-2"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-minimum-deck-count-count",
+    "element_id": null,
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "one deck is enough",
+  "mutations": [
+   {
+    "op": "remove_element",
+    "element_id": "DK-2"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-minimum-deck-count-count",
+    "element_id": null,
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "120 persons: 5 cabins meets 101-150 tier",
+  "mutations": [],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-101-to-150-passengers-count",
+    "element_id": null,
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "120 persons: 4 cabins fails 101-150 tier",
+  "mutations": [
+   {
+    "op": "remove_element",
+    "element_id": "A-5"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-101-to-150-passengers-count",
+    "element_id": null,
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "120 persons: 1 cabin fails 101-150 tier",
+  "mutations": [
+   {
+    "op": "remove_element",
+    "element_id": "A-2"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-3"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-4"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-5"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-101-to-150-passengers-count",
+    "element_id": null,
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "120 persons: no cabins extracted",
+  "mutations": [
+   {
+    "op": "remove_element",
+    "element_id": "A-1"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-2"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-3"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-4"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-5"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-101-to-150-passengers-count",
+    "element_id": null,
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "120 persons: tiers for smaller ships do not bind",
+  "mutations": [],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-1-to-25-passengers-count",
+    "element_id": null,
+    "status": "not_applicable",
+    "known_disagreement": "Tier rules have no max_persons_on_board, so lower tiers also apply to larger ships (pass instead of not_applicable); harmless for violations"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-26-to-50-passengers-count",
+    "element_id": null,
+    "status": "not_applicable",
+    "known_disagreement": "Tier rules have no max_persons_on_board, so lower tiers also apply to larger ships (pass instead of not_applicable); harmless for violations"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-76-to-100-passengers-count",
+    "element_id": null,
+    "status": "not_applicable",
+    "known_disagreement": "Tier rules have no max_persons_on_board, so lower tiers also apply to larger ships (pass instead of not_applicable); harmless for violations"
+   }
+  ]
+ },
+ {
+  "name": "120 persons: tiers for larger ships do not apply",
+  "mutations": [],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-151-to-200-passengers-count",
+    "element_id": null,
+    "status": "not_applicable"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-301-to-400-passengers-count",
+    "element_id": null,
+    "status": "not_applicable"
+   }
+  ]
+ },
+ {
+  "name": "persons 25 / 1 cabin ok",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "persons_on_board",
+    "value": 25
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-2"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-3"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-4"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-5"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-1-to-25-passengers-count",
+    "element_id": null,
+    "status": "pass"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-26-to-50-passengers-count",
+    "element_id": null,
+    "status": "not_applicable"
+   }
+  ]
+ },
+ {
+  "name": "persons 25 / 0 cabins",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "persons_on_board",
+    "value": 25
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-1"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-2"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-3"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-4"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-5"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-1-to-25-passengers-count",
+    "element_id": null,
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "persons 26 / 1 cabin fails 26-50 tier",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "persons_on_board",
+    "value": 26
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-2"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-3"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-4"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-5"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-26-to-50-passengers-count",
+    "element_id": null,
+    "status": "fail"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-1-to-25-passengers-count",
+    "element_id": null,
+    "status": "not_applicable",
+    "known_disagreement": "Tier rules have no max_persons_on_board, so lower tiers also apply to larger ships (pass instead of not_applicable); harmless for violations"
+   }
+  ]
+ },
+ {
+  "name": "persons 26 / 2 cabins ok",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "persons_on_board",
+    "value": 26
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-3"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-4"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-5"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-26-to-50-passengers-count",
+    "element_id": null,
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "persons 50 / 1 cabin fails",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "persons_on_board",
+    "value": 50
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-2"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-3"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-4"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-5"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-26-to-50-passengers-count",
+    "element_id": null,
+    "status": "fail"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-51-to-75-passengers-count",
+    "element_id": null,
+    "status": "not_applicable"
+   }
+  ]
+ },
+ {
+  "name": "persons 51 / 2 cabins fails 51-75 tier",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "persons_on_board",
+    "value": 51
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-3"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-4"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-5"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-51-to-75-passengers-count",
+    "element_id": null,
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "persons 100 / 3 cabins fails 76-100 tier",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "persons_on_board",
+    "value": 100
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-4"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-5"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-76-to-100-passengers-count",
+    "element_id": null,
+    "status": "fail"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-101-to-150-passengers-count",
+    "element_id": null,
+    "status": "not_applicable"
+   }
+  ]
+ },
+ {
+  "name": "persons 100 / 4 cabins ok",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "persons_on_board",
+    "value": 100
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-5"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-76-to-100-passengers-count",
+    "element_id": null,
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "persons 101 / 4 cabins fails",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "persons_on_board",
+    "value": 101
+   },
+   {
+    "op": "remove_element",
+    "element_id": "A-5"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-101-to-150-passengers-count",
+    "element_id": null,
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "persons 150 / 5 cabins ok",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "persons_on_board",
+    "value": 150
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-101-to-150-passengers-count",
+    "element_id": null,
+    "status": "pass"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-151-to-200-passengers-count",
+    "element_id": null,
+    "status": "not_applicable"
+   }
+  ]
+ },
+ {
+  "name": "persons 151 / 5 cabins fails 151-200 tier",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "persons_on_board",
+    "value": 151
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-151-to-200-passengers-count",
+    "element_id": null,
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "persons 200 / 5 cabins fails",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "persons_on_board",
+    "value": 200
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-151-to-200-passengers-count",
+    "element_id": null,
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "persons 201 / 5 cabins fails 201-300 tier",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "persons_on_board",
+    "value": 201
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-201-to-300-passengers-count",
+    "element_id": null,
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "persons 400 / 5 cabins fails 301-400 tier",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "persons_on_board",
+    "value": 400
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-301-to-400-passengers-count",
+    "element_id": null,
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "persons unknown: tiers need review",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "persons_on_board",
+    "value": null
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-1-to-25-passengers-count",
+    "element_id": null,
+    "status": "needs_review"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-101-to-150-passengers-count",
+    "element_id": null,
+    "status": "needs_review"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-301-to-400-passengers-count",
+    "element_id": null,
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "accessible cabins at low confidence",
+  "mutations": [
+   {
+    "op": "set_confidence",
+    "element_id": "A-1",
+    "value": 0.3
+   },
+   {
+    "op": "set_confidence",
+    "element_id": "A-2",
+    "value": 0.3
+   },
+   {
+    "op": "set_confidence",
+    "element_id": "A-3",
+    "value": 0.3
+   },
+   {
+    "op": "set_confidence",
+    "element_id": "A-4",
+    "value": 0.3
+   },
+   {
+    "op": "set_confidence",
+    "element_id": "A-5",
+    "value": 0.3
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-101-to-150-passengers-count",
+    "element_id": null,
+    "status": "needs_review",
+    "known_disagreement": "Evaluator ignores extraction confidence for count rules and returns pass"
+   }
+  ]
+ },
+ {
+  "name": "cargo ship: passenger-only rules do not apply",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "ship_type",
+    "value": "cargo"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-101-to-150-passengers-count",
+    "element_id": null,
+    "status": "not_applicable"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-minimum-deck-count-count",
+    "element_id": null,
+    "status": "not_applicable"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Entry-deck-accessibility-entry-deck",
+    "element_id": null,
+    "status": "not_applicable"
+   }
+  ]
+ },
+ {
+  "name": "cargo ship: untyped rules still checked",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "ship_type",
+    "value": "cargo"
+   },
+   {
+    "op": "set_property",
+    "element_id": "C-1",
+    "property": "width",
+    "value": 1000
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-minimum-width-width",
+    "element_id": "C-1",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "ship type unknown: passenger-only rules need review",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "ship_type",
+    "value": null
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-101-to-150-passengers-count",
+    "element_id": null,
+    "status": "needs_review"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-minimum-deck-count-count",
+    "element_id": null,
+    "status": "needs_review"
+   },
+   {
+    "rule_id": "NPS-Accessible-Vessels-Entry-deck-accessibility-entry-deck",
+    "element_id": null,
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "ship type matching is case-insensitive",
+  "mutations": [
+   {
+    "op": "set_particular",
+    "property": "ship_type",
+    "value": "Passenger"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-101-to-150-passengers-count",
+    "element_id": null,
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "entry deck judged offline is never a pass",
+  "mutations": [],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Entry-deck-accessibility-entry-deck",
+    "element_id": null,
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "route-to-boarding rule targets a space, not an element",
+  "mutations": [],
+  "expect": [
+   {
+    "rule_id": "NPS-Accessible-Vessels-Accessible-route-to-vessel-boarding-area-accessible-route",
+    "element_id": null,
+    "status": "needs_review"
+   }
+  ]
+ }
+]

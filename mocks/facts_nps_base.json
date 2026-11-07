@@ -1,0 +1,253 @@
+{
+ "project": "nps-base-compliant",
+ "particulars": {
+  "name": "Eval Ferry",
+  "ship_type": "passenger",
+  "length_overall_m": 60.0,
+  "persons_on_board": 120,
+  "provenance": [
+   {
+    "file": "spec.pdf",
+    "page": 1,
+    "method": "spec_text"
+   }
+  ]
+ },
+ "elements": [
+  {
+   "id": "C-1",
+   "type": "corridor",
+   "name": "Main deck corridor",
+   "deck": "1",
+   "space_type": "accessible_route",
+   "properties": {
+    "width": 1600,
+    "headroom": 2100
+   },
+   "provenance": {
+    "file": "ga.pdf",
+    "page": 1,
+    "method": "vision",
+    "confidence": 0.9,
+    "bbox": [
+     50,
+     220,
+     500,
+     240
+    ]
+   }
+  },
+  {
+   "id": "C-2",
+   "type": "corridor",
+   "name": "Upper deck corridor",
+   "deck": "2",
+   "space_type": "accessible_route",
+   "properties": {
+    "width": 1700,
+    "headroom": 2050
+   },
+   "provenance": {
+    "file": "ga.pdf",
+    "page": 1,
+    "method": "pdf_text",
+    "confidence": 0.95,
+    "bbox": [
+     50,
+     260,
+     500,
+     280
+    ]
+   }
+  },
+  {
+   "id": "H-1",
+   "type": "handrail",
+   "name": "Corridor handrail",
+   "deck": "1",
+   "space_type": "accessible_route",
+   "properties": {},
+   "provenance": {
+    "file": "ga.pdf",
+    "page": 1,
+    "method": "vision",
+    "confidence": 0.9,
+    "bbox": [
+     60,
+     215,
+     490,
+     219
+    ]
+   }
+  },
+  {
+   "id": "W-1",
+   "type": "walking_surface",
+   "name": "Ramp to deck 2",
+   "deck": "1",
+   "properties": {
+    "slope": 6.0
+   },
+   "provenance": {
+    "file": "ga.pdf",
+    "page": 1,
+    "method": "vision",
+    "confidence": 0.9,
+    "bbox": [
+     510,
+     220,
+     560,
+     240
+    ]
+   }
+  },
+  {
+   "id": "E-1",
+   "type": "edge_protection",
+   "name": "Route edge curb",
+   "deck": "1",
+   "space_type": "accessible_route",
+   "properties": {
+    "height": 90,
+    "width": 40
+   },
+   "provenance": {
+    "file": "ga.pdf",
+    "page": 1,
+    "method": "vision",
+    "confidence": 0.9,
+    "bbox": [
+     60,
+     241,
+     490,
+     245
+    ]
+   }
+  },
+  {
+   "id": "A-1",
+   "type": "accessible_accommodation",
+   "name": "Cabin 1",
+   "deck": "2",
+   "properties": {},
+   "provenance": {
+    "file": "ga.pdf",
+    "page": 1,
+    "method": "vision",
+    "confidence": 0.9,
+    "bbox": [
+     140,
+     100,
+     170,
+     140
+    ]
+   }
+  },
+  {
+   "id": "A-2",
+   "type": "accessible_accommodation",
+   "name": "Cabin 2",
+   "deck": "1",
+   "properties": {},
+   "provenance": {
+    "file": "ga.pdf",
+    "page": 1,
+    "method": "vision",
+    "confidence": 0.9,
+    "bbox": [
+     180,
+     100,
+     210,
+     140
+    ]
+   }
+  },
+  {
+   "id": "A-3",
+   "type": "accessible_accommodation",
+   "name": "Cabin 3",
+   "deck": "2",
+   "properties": {},
+   "provenance": {
+    "file": "ga.pdf",
+    "page": 1,
+    "method": "vision",
+    "confidence": 0.9,
+    "bbox": [
+     220,
+     100,
+     250,
+     140
+    ]
+   }
+  },
+  {
+   "id": "A-4",
+   "type": "accessible_accommodation",
+   "name": "Cabin 4",
+   "deck": "1",
+   "properties": {},
+   "provenance": {
+    "file": "ga.pdf",
+    "page": 1,
+    "method": "vision",
+    "confidence": 0.9,
+    "bbox": [
+     260,
+     100,
+     290,
+     140
+    ]
+   }
+  },
+  {
+   "id": "A-5",
+   "type": "accessible_accommodation",
+   "name": "Cabin 5",
+   "deck": "2",
+   "properties": {},
+   "provenance": {
+    "file": "ga.pdf",
+    "page": 1,
+    "method": "vision",
+    "confidence": 0.9,
+    "bbox": [
+     300,
+     100,
+     330,
+     140
+    ]
+   }
+  },
+  {
+   "id": "DK-1",
+   "type": "deck",
+   "name": "Deck 1",
+   "deck": "1",
+   "properties": {},
+   "provenance": {
+    "file": "ga.pdf",
+    "page": 1,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "DK-2",
+   "type": "deck",
+   "name": "Deck 2",
+   "deck": "2",
+   "properties": {},
+   "provenance": {
+    "file": "ga.pdf",
+    "page": 1,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  }
+ ],
+ "source_files": [
+  "spec.pdf",
+  "ga.pdf"
+ ]
+}
