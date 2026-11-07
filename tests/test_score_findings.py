@@ -132,3 +132,11 @@ def test_exactly_60_inches_is_1524_mm_pass_and_1523_fails():
 
 def set_width_p(element, mm):
     return {"op": "set_property", "element_id": element, "property": "width", "value": mm}
+
+
+def test_unols_cases_on_the_research_vessel_rules_have_no_missed_violations():
+    facts = DesignFacts.model_validate_json((ROOT / "mocks/facts_unols_base.json").read_text())
+    rules = [Rule.model_validate(x) for x in json.loads((ROOT / "mocks/rules_unols_g38.json").read_text())]
+    r = run_cases(load_cases(ROOT / "eval/gold/findings/cases_unols.json"), facts, rules)
+    assert len(r.results) >= 20 and r.missed_violations == 0 and r.false_alarms == 0
+    assert all(x.ok for x in r.results)

@@ -26,3 +26,7 @@ Suites:
 - The NPS rules are `reviewed=false` Gemini compilations. Expected statuses come from the regulation text, not
   from evaluator output. Where the evaluator disagrees, the expectation stays and the case carries
   `known_disagreement`; it counts as wrong and is listed separately. Fix the evaluator or the rule, then drop the flag.
+
+## UNOLS research-vessel rules (cases_unols.json)
+`python -m eval.score_findings --rules mocks/rules_unols_g38.json --facts mocks/facts_unols_base.json --cases eval/gold/findings/cases_unols.json`
+23 planted cases on the rules a general arrangement can decide: door clear width >= 32 in, passageway clear width >= 36 in and width >= 4 ft, toilet compartment 60 x 56 in. They cover exact boundaries in mm against inch rules (812.8 / 914.4 / 1524 / 1422.4 mm pass, one mm less fails), low-confidence reads (needs_review), missing values and removed elements (needs_review, never pass). Result: 23/23 correct, 0 missed violations, 0 false alarms. Written by us from the regulation values, not held out; the rules are reviewed=false and 11 of 170 had their target corrected by hand.

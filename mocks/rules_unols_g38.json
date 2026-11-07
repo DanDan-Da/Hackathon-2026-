@@ -1473,7 +1473,7 @@
   "id": "ADA-UNOLS-RV604-8-1-1-width",
   "title": "Wheelchair Accessible Toilet Compartment Width",
   "check_type": "numeric",
-  "target": "compartment",
+  "target": "toilet",
   "parameter": "width",
   "operator": ">=",
   "value": 60.0,
@@ -1485,9 +1485,7 @@
    "min_gross_tonnage": null,
    "min_persons_on_board": null,
    "max_persons_on_board": null,
-   "space_types": [
-    "toilet_compartment"
-   ],
+   "space_types": [],
    "condition_text": null
   },
   "source": {
@@ -1503,7 +1501,7 @@
   "id": "ADA-UNOLS-RV604-8-1-1-depth",
   "title": "Wheelchair Accessible Toilet Compartment Depth - Wall Hung Water Closet",
   "check_type": "numeric",
-  "target": "compartment",
+  "target": "toilet",
   "parameter": "depth",
   "operator": ">=",
   "value": 56.0,
