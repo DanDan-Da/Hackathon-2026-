@@ -13,19 +13,19 @@ something material changes. Last updated: 2026-11-07.
 | L4 review endpoints | merged (#24) | `POST /ingest/rules`, `GET /rules`, `PATCH /rules/{id}` |
 | L5 LLM judge | merged (#25) | `app/check/llm_judge.py`; no elements -> no LLM call; unverifiable verdict -> `needs_review` |
 | L6 local GPU | optional / unavailable | D's #31: Meyer's GPU machine is unavailable. Mention in slides instead |
-| L7 `/ask` | **done, not pushed** | branch `l/ask-chat`; `app/check/ask.py`, route in `app/api/main.py`; tests with fake embedder + fake LLM |
+| L7 `/ask` | **done, PR #40 open (not merged)** | branch `l/ask-chat`; `app/check/ask.py`, route in `app/api/main.py`; tests with fake embedder + fake LLM |
 | L8 Docker + `docs/DEPLOY.md` | **not started, on purpose** | deliberately waits until L and D are connected so it can be done once, on one computer |
 
-## Unpushed local branches (nothing below is on GitHub or `main` yet)
-Stack order: `main` -> `l/poc-mocks` -> `l/ask-chat` -> `l/offline-check`; `l/max-persons` is separate, off `main`.
-| Branch | Content |
-|---|---|
-| `l/max-persons` | **`app/models.py` change** (`Applicability.max_persons_on_board`, optional, inclusive) + `applicability.py` + tests. Own PR by the contract rule; **tell D** |
-| `l/poc-mocks` | `mocks/rules_nps_poc.json`, `mocks/facts_nps_poc.json`, `tests/test_poc_pipeline.py`; compiler prompt now says `target` must be a physical element; warning when `target == space_type` |
-| `l/ask-chat` | L7 |
-| `l/offline-check` | `python -m app.check.run` CLI, `mocks/*_synthetic.json`, clearer evaluator messages, and a copy of the `max-persons` commit |
-When opening PRs: open `l/max-persons` first; `l/offline-check` already contains that commit, so rebase or expect a
-duplicate-commit conflict-free merge. Run `git pull --rebase origin main` and `pytest -q` first (CLAUDE.md section 3).
+## Open PRs (pushed 2026-11-07, **not merged yet**: none of this is on `main` until they are)
+Stack: `main` <- #39 `l/poc-mocks` <- #40 `l/ask-chat` <- #41 `l/offline-check`; #38 `l/max-persons` is separate, off `main`.
+Merge in this order: #38, #39, then retarget #40 to `main` and merge, then #41. After each squash-merge, retarget the next PR
+to `main` and merge `main` into its branch (no force-push), as done for #22-#25.
+| PR | Branch | Content |
+|---|---|---|
+| #38 | `l/max-persons` | **`app/models.py` change** (`Applicability.max_persons_on_board`, optional, inclusive) + `applicability.py` + tests. Own PR by the contract rule; **tell D** |
+| #39 | `l/poc-mocks` | `mocks/rules_nps_poc.json`, `mocks/facts_nps_poc.json`, `tests/test_poc_pipeline.py`; compiler prompt now says `target` must be a physical element; warning when `target == space_type` |
+| #40 | `l/ask-chat` | L7 |
+| #41 | `l/offline-check` | `python -m app.check.run` CLI, `mocks/*_synthetic.json`, clearer evaluator messages, this log, and a copy of the `max-persons` commit (identical to #38, merges cleanly in either order) |
 
 ## Gemini / API history and decision
 - Provider: `LLM_PROVIDER=gemini`, model `gemini-3.8-flash` (the old `gemini-flash-latest` alias returns 404).
@@ -73,7 +73,7 @@ Add `--llm` to let the judge use the configured provider (needs a key). Exit cod
 3. Compile the remaining pages / the 37-page UNOLS guide **only if a key and quota exist again** (about 40 calls; cache protects partial runs).
 4. Build the real index (`pip install -e ".[rag]"`, downloads ~2 GB `bge-m3`) and try `/ask` retrieval on the real PDFs.
 5. L8 Docker + `docs/DEPLOY.md` once connected with D.
-6. Push/PR the unpushed branches above and tell D about the `models.py` field.
+6. Merge PRs #38-#41 (order above) and tell D about the `models.py` field.
 
 ## Rules of the road (from CLAUDE.md, learned the hard way here)
 - Never push to `main`; one short branch per task; squash-merge PRs; contract (`app/models.py`) changes in their own PR.
