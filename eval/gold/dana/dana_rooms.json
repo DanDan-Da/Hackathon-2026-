@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "source_file": "Files/23007-01-101-0110-01-R2-14-General-arrangement.pdf",
+  "source_sha256": "764dfabfedfb37e6bf6bc3623a3e8434ad624d3d3601d2f982bb914f9d489c9d",
+  "source_page_size_pdf_points": [
+    2384.0,
+    3370.0
+  ],
+  "scope": "partial room extraction gold set; 20 visually checked printed room labels and areas, not an exhaustive room inventory or regulation findings gold set",
+  "verification": "Locally rendered PDF inspected visually; embedded text layer used to locate labels. No Gemini calls.",
+  "bbox_convention": "label text bounds only, not room boundaries; PDF points, top-left origin, [x0,y0,x1,y1]; page is 1-based",
+  "rooms": [
+    {
+      "id": "dana-room-01",
+      "deck": "forecastle",
+      "room_name_printed": "1 PERS. (MACHINE CHIEF)",
+      "area_printed": "25 m²",
+      "area_m2": 25,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        1484.91,
+        1241.81,
+        1541.37,
+        1264.28
+      ]
+    },
+    {
+      "id": "dana-room-02",
+      "deck": "forecastle",
+      "room_name_printed": "1 PERS. (LEAD SCIENTIST)",
+      "area_printed": "20 m²",
+      "area_m2": 20,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        1416.12,
+        1213.61,
+        1474.06,
+        1236.11
+      ]
+    },
+    {
+      "id": "dana-room-03",
+      "deck": "forecastle",
+      "room_name_printed": "1 PERS. (CAPTAIN)",
+      "area_printed": "25 m²",
+      "area_m2": 25,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        1496.64,
+        1409.45,
+        1529.64,
+        1431.92
+      ]
+    },
+    {
+      "id": "dana-room-04",
+      "deck": "forecastle",
+      "room_name_printed": "1 PERS. (CHEIF MANAGER)",
+      "area_printed": "20 m²",
+      "area_m2": 20,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        1416.6,
+        1436.18,
+        1476.0,
+        1458.65
+      ]
+    },
+    {
+      "id": "dana-room-05",
+      "deck": "shelter",
+      "room_name_printed": "LAUNDRY",
+      "area_printed": "16 m²",
+      "area_m2": 16,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        1334.88,
+        1705.82,
+        1385.36,
+        1713.8
+      ]
+    },
+    {
+      "id": "dana-room-06",
+      "deck": "trawl",
+      "room_name_printed": "MESS",
+      "area_printed": "83 m²",
+      "area_m2": 83,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        1369.29,
+        1961.42,
+        1387.99,
+        1975.94
+      ]
+    },
+    {
+      "id": "dana-room-07",
+      "deck": "trawl",
+      "room_name_printed": "GALLEY",
+      "area_printed": "30 m²",
+      "area_m2": 30,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        1409.25,
+        2149.28,
+        1434.93,
+        2163.8
+      ]
+    },
+    {
+      "id": "dana-room-08",
+      "deck": "trawl",
+      "room_name_printed": "DAY ROOM",
+      "area_printed": "39 m²",
+      "area_m2": 39,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        1519.23,
+        2006.27,
+        1555.17,
+        2020.79
+      ]
+    },
+    {
+      "id": "dana-room-09",
+      "deck": "main",
+      "room_name_printed": "CONFERENCE ROOM",
+      "area_printed": "40 m²",
+      "area_m2": 40,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        1345.8,
+        2392.25,
+        1414.37,
+        2406.8
+      ]
+    },
+    {
+      "id": "dana-room-10",
+      "deck": "main",
+      "room_name_printed": "LIBRARY",
+      "area_printed": "48 m²",
+      "area_m2": 48,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        1379.7,
+        2455.94,
+        1407.94,
+        2470.43
+      ]
+    },
+    {
+      "id": "dana-room-11",
+      "deck": "main",
+      "room_name_printed": "DRY LAB",
+      "area_printed": "26 m²",
+      "area_m2": 26,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        743.46,
+        2511.17,
+        771.7,
+        2525.66
+      ]
+    },
+    {
+      "id": "dana-room-12",
+      "deck": "main",
+      "room_name_printed": "WET FISH LAB",
+      "area_printed": "110 m²",
+      "area_m2": 110,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        744.99,
+        2334.2,
+        790.83,
+        2348.72
+      ]
+    },
+    {
+      "id": "dana-room-13",
+      "deck": "trawl",
+      "room_name_printed": "PLANKTON LABORATORY",
+      "area_printed": "17 m²",
+      "area_m2": 17,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        888.03,
+        2137.1,
+        933.14,
+        2159.57
+      ]
+    },
+    {
+      "id": "dana-room-14",
+      "deck": "main",
+      "room_name_printed": "EDUCATIONAL LAB",
+      "area_printed": "25 m²",
+      "area_m2": 25,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        897.93,
+        2512.16,
+        959.18,
+        2526.68
+      ]
+    },
+    {
+      "id": "dana-room-15",
+      "deck": "main",
+      "room_name_printed": "ENGINE CONTROL ROOM",
+      "area_printed": "16 m²",
+      "area_m2": 16,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        1246.35,
+        2504.36,
+        1300.98,
+        2526.83
+      ]
+    },
+    {
+      "id": "dana-room-16",
+      "deck": "trawl",
+      "room_name_printed": "OPERATIONS ROOM",
+      "area_printed": "23 m²",
+      "area_m2": 23,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        1122.63,
+        2119.88,
+        1188.27,
+        2134.4
+      ]
+    },
+    {
+      "id": "dana-room-17",
+      "deck": "main",
+      "room_name_printed": "GENERAL STORES",
+      "area_printed": "16 m²",
+      "area_m2": 16,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        997.47,
+        2509.19,
+        1029.01,
+        2531.66
+      ]
+    },
+    {
+      "id": "dana-room-18",
+      "deck": "trawl",
+      "room_name_printed": "WASTE ROOM",
+      "area_printed": "40 m²",
+      "area_m2": 40,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        1722.03,
+        2037.05,
+        1767.87,
+        2051.57
+      ]
+    },
+    {
+      "id": "dana-room-19",
+      "deck": "trawl",
+      "room_name_printed": "DECK OFFICE",
+      "area_printed": "8 m²",
+      "area_m2": 8,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        1258.77,
+        2147.03,
+        1303.14,
+        2161.58
+      ]
+    },
+    {
+      "id": "dana-room-20",
+      "deck": "trawl",
+      "room_name_printed": "CREW CHANGE ROOM",
+      "area_printed": "35 m²",
+      "area_m2": 35,
+      "page": 1,
+      "label_bbox_pdf_points": [
+        1077.0,
+        2006.51,
+        1149.6,
+        2021.03
+      ]
+    }
+  ]
+}
