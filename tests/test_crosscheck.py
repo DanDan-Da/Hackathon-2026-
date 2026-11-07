@@ -152,3 +152,22 @@ def test_extract_drawing_without_text_layer_unchanged(tmp_path):
     facts = extract_drawing(pdf, "p", llm=llm, dpi=72, tile_px=1568)
     el = facts.elements[0]
     assert el.provenance.confidence == 1.0 and el.properties == {"area": 38.0}
+
+
+# ---------- review fixes: behaviour seen in real vision output ----------
+
+def test_vision_name_that_embeds_the_area_still_matches_the_label(tmp_path):
+    # real vision output names rooms like "MESS 83 m²"; the PDF holds "MESS" and "82 m²" on separate lines
+    labels = [("MESS", 120, 150), ("82 m²", 120, 170)]
+    facts, rep = run(tmp_path, labels, [room("a", "MESS 83 m²", (100, 120, 220, 200), conf=0.9, area=83.0)])
+    assert [c.element_id for c in rep.corrections] == ["a"]       # name matched, so the printed 82 wins
+    assert facts.elements[0].properties["area"] == 82.0
+    assert facts.elements[0].properties["area_vision_value"] == 83.0
+
+
+def test_bare_number_without_unit_never_overwrites_a_dimension(tmp_path):
+    # "70" is a frame-ruler number on a GA, not a door width: replacing 800 with it would be a guess
+    labels = [("DOOR 1", 120, 150), ("70", 160, 170)]
+    facts, rep = run(tmp_path, labels, [room("d", "DOOR 1", (100, 120, 220, 200), conf=0.9, clear_width=800.0)])
+    assert facts.elements[0].properties["clear_width"] == 800.0
+    assert rep.corrections == []

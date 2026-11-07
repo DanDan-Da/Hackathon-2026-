@@ -42,6 +42,8 @@ AREA_TOL_M2 = 0.05
 DIM_TOL_MM = 0.5
 MAX_LABEL_CHARS = 40
 
+_UNIT = re.compile(r"\d\s*(?:mm|cm|m|ft|in)\b|['\"]", re.I)
+MAX_BARE_RATIO = 2.0   # a bare number may only fix a near miss (760 -> 800), never a wildly different value
 _AREA_TOKEN = re.compile(r"(\d[\d ]*(?:[.,]\d+)?)\s*(?:m2|m²|m\^2|sq\.?\s*m)\b", re.I)
 
 
@@ -109,8 +111,8 @@ def crosscheck(facts: DesignFacts, lines: list[TextLine]) -> tuple[DesignFacts, 
 
         # name
         name_line = None
-        if el.name and _norm(el.name):
-            want = _norm(el.name)
+        if el.name and _name_part(el.name):
+            want = _name_part(el.name)       # vision names may embed the area, e.g. "MESS 83 m²"
             cands = [(i, l) for i, l in near if _name_part(l.text) == want and len(l.text) <= MAX_LABEL_CHARS]
             if cands:
                 name_line = min(cands, key=lambda c: _dist(c[1].bbox, prov.bbox))
@@ -156,7 +158,7 @@ def crosscheck(facts: DesignFacts, lines: list[TextLine]) -> tuple[DesignFacts, 
             hit = next(((i, l) for i, l, mm in dim_lines if abs(mm - val) <= DIM_TOL_MM), None)
             if hit:
                 confirmed_by.append(hit)
-            elif len(dim_lines) == 1 and name_line is not None:
+            elif len(dim_lines) == 1 and name_line is not None and _plausible_fix(val, dim_lines[0]):
                 i, l, mm = dim_lines[0]
                 report.corrections.append(Correction(element_id=el.id, property=key, vision_value=val,
                                                      text_value=mm, text=l.text))
@@ -175,6 +177,15 @@ def crosscheck(facts: DesignFacts, lines: list[TextLine]) -> tuple[DesignFacts, 
 
     report.unmatched_labels = [l for i, l in enumerate(lines) if i not in used and len(l.text) <= MAX_LABEL_CHARS]
     return facts, report
+
+
+def _plausible_fix(vision_value: float, dim_line: tuple) -> bool:
+    """A printed unit makes the number a dimension. A bare number (frame ruler, deck number...) may only
+    correct the vision value when it is a near miss; otherwise replacing it would be a guess."""
+    _, line, mm = dim_line
+    if _UNIT.search(line.text):
+        return True
+    return vision_value > 0 and 1 / MAX_BARE_RATIO <= mm / vision_value <= MAX_BARE_RATIO
 
 
 def _cap(el, report: CrossCheckReport) -> None:
