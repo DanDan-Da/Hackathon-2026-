@@ -13,3 +13,7 @@ designs/**/*.pdf
 .pytest_cache/
 designs/**/.cache/
 knowledge/index/
+
+# Regulation source files stay local (keep the folder via .gitkeep)
+knowledge/rules/*
+!knowledge/rules/.gitkeep
