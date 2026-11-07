@@ -5,11 +5,7 @@ import base64
 import anthropic
 
 from app.config import settings
-from app.providers.llm import LLMProvider, T
-
-
-class LLMRefusal(RuntimeError):
-    pass
+from app.providers.llm import LLMProvider, LLMRefusal, T
 
 
 def _content(prompt: str, images_png: list[bytes] | None) -> list[dict]:

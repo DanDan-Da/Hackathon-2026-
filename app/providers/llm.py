@@ -1,6 +1,6 @@
 """Provider-neutral LLM interface. The rest of the app only talks to `get_llm()`.
 
-Switch with LLM_PROVIDER=claude | local — same pipeline, so designs can stay on-prem.
+Switch with LLM_PROVIDER=gemini | claude | local — same pipeline, so designs can stay on-prem.
 """
 from __future__ import annotations
 
@@ -10,6 +10,10 @@ from typing import TypeVar
 from pydantic import BaseModel
 
 T = TypeVar("T", bound=BaseModel)
+
+
+class LLMRefusal(RuntimeError):
+    """The model declined or returned nothing usable. Callers turn this into needs_review."""
 
 
 class LLMProvider(ABC):
@@ -24,6 +28,9 @@ class LLMProvider(ABC):
 
 def get_llm() -> LLMProvider:
     from app.config import settings
+    if settings.llm_provider == "gemini":
+        from app.providers.gemini import GeminiProvider
+        return GeminiProvider()
     if settings.llm_provider == "local":
         from app.providers.local import LocalProvider
         return LocalProvider()
