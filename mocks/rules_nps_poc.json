@@ -1,0 +1,549 @@
+[
+  {
+    "id": "NPS-Accessible-Vessels-Accessible-route-to-vessel-boarding-area-accessible-route",
+    "title": "Accessible route to vessel boarding area",
+    "check_type": "presence",
+    "target": "accessible_route",
+    "parameter": null,
+    "operator": "exists",
+    "value": null,
+    "unit": null,
+    "applies_to": {
+      "ship_types": [],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": null,
+      "space_types": [],
+      "condition_text": null
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "There is an accessible route to vessel boarding area and other accessible dock facilities."
+    },
+    "reviewed": false
+  },
+  {
+    "id": "NPS-Accessible-Vessels-Accessible-route-minimum-width-width",
+    "title": "Accessible route minimum width",
+    "check_type": "numeric",
+    "target": "corridor",
+    "parameter": "width",
+    "operator": ">=",
+    "value": 60.0,
+    "unit": "in",
+    "applies_to": {
+      "ship_types": [],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": null,
+      "space_types": [
+        "accessible_route"
+      ],
+      "condition_text": null
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "Routes are a minimum of 60” wide."
+    },
+    "reviewed": false
+  },
+  {
+    "id": "NPS-Accessible-Vessels-Accessible-route-minimum-headroom-headroom",
+    "title": "Accessible route minimum headroom",
+    "check_type": "numeric",
+    "target": "corridor",
+    "parameter": "headroom",
+    "operator": ">=",
+    "value": 80.0,
+    "unit": "in",
+    "applies_to": {
+      "ship_types": [],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": null,
+      "space_types": [
+        "accessible_route"
+      ],
+      "condition_text": "from dock to any overhang"
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "At least 80” headroom (from dock to any overhang)."
+    },
+    "reviewed": false
+  },
+  {
+    "id": "NPS-Accessible-Vessels-Accessible-route-non-slip-surface-accessible-route",
+    "title": "Accessible route non-slip surface",
+    "check_type": "qualitative",
+    "target": "corridor",
+    "parameter": null,
+    "operator": null,
+    "value": null,
+    "unit": null,
+    "applies_to": {
+      "ship_types": [],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": null,
+      "space_types": [
+        "accessible_route"
+      ],
+      "condition_text": null
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "Non-slip surface."
+    },
+    "reviewed": false
+  },
+  {
+    "id": "NPS-Accessible-Vessels-Non-gangway-walking-surface-maximum-slope-slope",
+    "title": "Non-gangway walking surface maximum slope",
+    "check_type": "numeric",
+    "target": "walking_surface",
+    "parameter": "slope",
+    "operator": "<=",
+    "value": 8.33,
+    "unit": "%",
+    "applies_to": {
+      "ship_types": [],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": null,
+      "space_types": [],
+      "condition_text": "Non-gangway walking surface"
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "Non-gangway walking surface slopes do not exceed 1:12 (8.33% grade)."
+    },
+    "reviewed": false
+  },
+  {
+    "id": "NPS-Accessible-Vessels-Handrails-along-route-handrail",
+    "title": "Handrails along route",
+    "check_type": "presence",
+    "target": "handrail",
+    "parameter": null,
+    "operator": "exists",
+    "value": null,
+    "unit": null,
+    "applies_to": {
+      "ship_types": [],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": null,
+      "space_types": [
+        "accessible_route"
+      ],
+      "condition_text": "along entire length of route"
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "Handrails are provided along entire length of route."
+    },
+    "reviewed": false
+  },
+  {
+    "id": "NPS-Accessible-Vessels-Edge-protection-maximum-height-height",
+    "title": "Edge protection maximum height",
+    "check_type": "numeric",
+    "target": "edge_protection",
+    "parameter": "height",
+    "operator": "<=",
+    "value": 4.0,
+    "unit": "in",
+    "applies_to": {
+      "ship_types": [],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": null,
+      "space_types": [
+        "accessible_route"
+      ],
+      "condition_text": "if provided"
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "Edge protection is not required; if provided, maximum dimensions are 4” high and 2” wide."
+    },
+    "reviewed": false
+  },
+  {
+    "id": "NPS-Accessible-Vessels-Edge-protection-maximum-width-width",
+    "title": "Edge protection maximum width",
+    "check_type": "numeric",
+    "target": "edge_protection",
+    "parameter": "width",
+    "operator": "<=",
+    "value": 2.0,
+    "unit": "in",
+    "applies_to": {
+      "ship_types": [],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": null,
+      "space_types": [
+        "accessible_route"
+      ],
+      "condition_text": "if provided"
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "Edge protection is not required; if provided, maximum dimensions are 4” high and 2” wide."
+    },
+    "reviewed": false
+  },
+  {
+    "id": "NPS-Accessible-Vessels-Crew-boarding-assistance-training-crew",
+    "title": "Crew boarding assistance training",
+    "check_type": "qualitative",
+    "target": "crew",
+    "parameter": null,
+    "operator": null,
+    "value": null,
+    "unit": null,
+    "applies_to": {
+      "ship_types": [],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": null,
+      "space_types": [],
+      "condition_text": null
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "Crew is trained in providing boarding assistance to passengers, including emergency evacuations."
+    },
+    "reviewed": false
+  },
+  {
+    "id": "NPS-Accessible-Vessels-Accessible-accommodations-for-1-to-25-passengers-count",
+    "title": "Accessible accommodations for 1 to 25 passengers",
+    "check_type": "count",
+    "target": "accessible_accommodation",
+    "parameter": "count",
+    "operator": ">=",
+    "value": 1.0,
+    "unit": "count",
+    "applies_to": {
+      "ship_types": [
+        "passenger"
+      ],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": 1,
+      "space_types": [],
+      "condition_text": "Total Passengers 1 ‐ 25"
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "Total Passengers Accessible Accommodations Required 1 ‐ 25 1"
+    },
+    "reviewed": false
+  },
+  {
+    "id": "NPS-Accessible-Vessels-Accessible-accommodations-for-26-to-50-passengers-count",
+    "title": "Accessible accommodations for 26 to 50 passengers",
+    "check_type": "count",
+    "target": "accessible_accommodation",
+    "parameter": "count",
+    "operator": ">=",
+    "value": 2.0,
+    "unit": "count",
+    "applies_to": {
+      "ship_types": [
+        "passenger"
+      ],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": 26,
+      "space_types": [],
+      "condition_text": "Total Passengers 26-50"
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "26-50 2"
+    },
+    "reviewed": false
+  },
+  {
+    "id": "NPS-Accessible-Vessels-Accessible-accommodations-for-51-to-75-passengers-count",
+    "title": "Accessible accommodations for 51 to 75 passengers",
+    "check_type": "count",
+    "target": "accessible_accommodation",
+    "parameter": "count",
+    "operator": ">=",
+    "value": 3.0,
+    "unit": "count",
+    "applies_to": {
+      "ship_types": [
+        "passenger"
+      ],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": 51,
+      "space_types": [],
+      "condition_text": "Total Passengers 51-75"
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "51-75 3"
+    },
+    "reviewed": false
+  },
+  {
+    "id": "NPS-Accessible-Vessels-Accessible-accommodations-for-76-to-100-passengers-count",
+    "title": "Accessible accommodations for 76 to 100 passengers",
+    "check_type": "count",
+    "target": "accessible_accommodation",
+    "parameter": "count",
+    "operator": ">=",
+    "value": 4.0,
+    "unit": "count",
+    "applies_to": {
+      "ship_types": [
+        "passenger"
+      ],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": 76,
+      "space_types": [],
+      "condition_text": "Total Passengers 76-100"
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "76-100 4"
+    },
+    "reviewed": false
+  },
+  {
+    "id": "NPS-Accessible-Vessels-Accessible-accommodations-for-101-to-150-passengers-count",
+    "title": "Accessible accommodations for 101 to 150 passengers",
+    "check_type": "count",
+    "target": "accessible_accommodation",
+    "parameter": "count",
+    "operator": ">=",
+    "value": 5.0,
+    "unit": "count",
+    "applies_to": {
+      "ship_types": [
+        "passenger"
+      ],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": 101,
+      "space_types": [],
+      "condition_text": "Total Passengers 101-150"
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "101-150 5"
+    },
+    "reviewed": false
+  },
+  {
+    "id": "NPS-Accessible-Vessels-Accessible-accommodations-for-151-to-200-passengers-count",
+    "title": "Accessible accommodations for 151 to 200 passengers",
+    "check_type": "count",
+    "target": "accessible_accommodation",
+    "parameter": "count",
+    "operator": ">=",
+    "value": 6.0,
+    "unit": "count",
+    "applies_to": {
+      "ship_types": [
+        "passenger"
+      ],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": 151,
+      "space_types": [],
+      "condition_text": "Total Passengers 151-200"
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "151-200 6"
+    },
+    "reviewed": false
+  },
+  {
+    "id": "NPS-Accessible-Vessels-Accessible-accommodations-for-201-to-300-passengers-count",
+    "title": "Accessible accommodations for 201 to 300 passengers",
+    "check_type": "count",
+    "target": "accessible_accommodation",
+    "parameter": "count",
+    "operator": ">=",
+    "value": 7.0,
+    "unit": "count",
+    "applies_to": {
+      "ship_types": [
+        "passenger"
+      ],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": 201,
+      "space_types": [],
+      "condition_text": "Total Passengers 201-300"
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "201-300 7"
+    },
+    "reviewed": false
+  },
+  {
+    "id": "NPS-Accessible-Vessels-Accessible-accommodations-for-301-to-400-passengers-count",
+    "title": "Accessible accommodations for 301 to 400 passengers",
+    "check_type": "count",
+    "target": "accessible_accommodation",
+    "parameter": "count",
+    "operator": ">=",
+    "value": 8.0,
+    "unit": "count",
+    "applies_to": {
+      "ship_types": [
+        "passenger"
+      ],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": 301,
+      "space_types": [],
+      "condition_text": "Total Passengers 301-400"
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "301-400 8"
+    },
+    "reviewed": false
+  },
+  {
+    "id": "NPS-Accessible-Vessels-Entry-deck-accessibility-entry-deck",
+    "title": "Entry deck accessibility",
+    "check_type": "qualitative",
+    "target": "deck",
+    "parameter": null,
+    "operator": null,
+    "value": null,
+    "unit": null,
+    "applies_to": {
+      "ship_types": [
+        "passenger"
+      ],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": null,
+      "space_types": [
+        "entry_deck"
+      ],
+      "condition_text": null
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "Entry deck is accessible."
+    },
+    "reviewed": false
+  },
+  {
+    "id": "NPS-Accessible-Vessels-Accessible-accommodations-minimum-deck-count-count",
+    "title": "Accessible accommodations minimum deck count",
+    "check_type": "count",
+    "target": "deck",
+    "parameter": "count",
+    "operator": ">=",
+    "value": 1.0,
+    "unit": "deck",
+    "applies_to": {
+      "ship_types": [
+        "passenger"
+      ],
+      "min_length_m": null,
+      "max_length_m": null,
+      "min_gross_tonnage": null,
+      "min_persons_on_board": null,
+      "space_types": [],
+      "condition_text": null
+    },
+    "source": {
+      "document": "ACC-Vessel-Standards.pdf",
+      "regime": "NPS-Accessible-Vessels",
+      "page": 1,
+      "clause": null,
+      "quote": "Accessible accommodations are provided on at least one deck."
+    },
+    "reviewed": false
+  }
+]

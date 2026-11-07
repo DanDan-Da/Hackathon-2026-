@@ -127,3 +127,16 @@ def test_cache_saved_per_chunk_survives_partial_run(tmp_path):
     resume = FakeLLM([er()])
     rc.compile_rules([chunk(page=1), chunk(page=2)], resume, max_parallel=1, cache_path=cache)
     assert len(resume.calls) == 1          # page 1 came from the cache, only page 2 is re-asked
+
+
+def test_target_equal_to_space_type_is_flagged(caplog):
+    from app.models import Applicability
+    bad = er(target="accessible_route", applies_to=Applicability(space_types=["accessible_route"]))
+    with caplog.at_level("WARNING"):
+        out = rc.extract_chunk(chunk(), FakeLLM([bad]))
+    assert len(out) == 1                                  # kept (a human decides), but flagged
+    assert "SUSPICIOUS target == space_type" in caplog.text
+
+
+def test_prompt_tells_model_target_is_a_physical_element():
+    assert "PHYSICAL design element" in rc.SYSTEM and "applies_to.space_types" in rc.SYSTEM
