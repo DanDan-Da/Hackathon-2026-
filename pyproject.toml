@@ -1,0 +1,30 @@
+[project]
+name = "rulecheck"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.30",
+  "pydantic>=2.8",
+  "pydantic-settings>=2.4",
+  "anthropic>=0.70",
+  "openai>=1.50",
+  "pymupdf>=1.24",
+  "python-multipart>=0.0.9",
+]
+
+[project.optional-dependencies]
+rag = ["qdrant-client>=1.11", "sentence-transformers>=3.0"]
+3d = ["ifcopenshell>=0.8", "trimesh>=4.4"]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]

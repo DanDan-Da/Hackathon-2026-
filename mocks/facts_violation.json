@@ -1,0 +1,21 @@
+{
+  "project": "demo-violation",
+  "particulars": {"name": "Demo Vessel", "ship_type": "passenger", "length_overall_m": 75.0,
+                  "persons_on_board": 120,
+                  "provenance": [{"file": "spec.pdf", "page": 1, "method": "spec_text"}]},
+  "elements": [
+    {"id": "D-101", "type": "door", "name": "Cabin 101 door", "deck": "4", "space_type": "accessible_route",
+     "properties": {"clear_width": 760},
+     "provenance": {"file": "ga.pdf", "page": 2, "bbox": [100, 200, 130, 210], "method": "vision", "confidence": 0.9}},
+    {"id": "D-102", "type": "door", "name": "Cabin 102 door", "deck": "4", "space_type": "accessible_route",
+     "properties": {"clear_width": 850},
+     "provenance": {"file": "ga.pdf", "page": 2, "bbox": [140, 200, 170, 210], "method": "pdf_text", "confidence": 0.95}},
+    {"id": "C-4A", "type": "corridor", "name": "Deck 4 main corridor", "deck": "4", "space_type": "accessible_route",
+     "properties": {"clear_width": 1100},
+     "provenance": {"file": "ga.pdf", "page": 2, "bbox": [50, 220, 500, 240], "method": "vision", "confidence": 0.8}},
+    {"id": "S-1", "type": "stairway", "name": "Fwd stair", "deck": "4", "space_type": "escape",
+     "properties": {},
+     "provenance": {"file": "ga.pdf", "page": 2, "bbox": [40, 100, 70, 140], "method": "vision", "confidence": 0.85}}
+  ],
+  "source_files": ["spec.pdf", "ga.pdf"]
+}

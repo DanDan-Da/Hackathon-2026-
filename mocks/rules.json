@@ -1,0 +1,40 @@
+[
+  {
+    "id": "PVAG-door-clear-width",
+    "title": "Accessible door clear opening width",
+    "check_type": "numeric",
+    "target": "door",
+    "parameter": "clear_width",
+    "operator": ">=",
+    "value": 32,
+    "unit": "in",
+    "applies_to": {"ship_types": ["passenger"], "space_types": ["accessible_route"]},
+    "source": {"document": "MOCK_pvag.pdf", "regime": "PVAG", "page": 1, "clause": "V404.2.3",
+               "quote": "[MOCK - replace with verbatim text from the compiled source] Door openings shall provide a clear width of 32 inches minimum."}
+  },
+  {
+    "id": "PVAG-route-width",
+    "title": "Accessible route clear width",
+    "check_type": "numeric",
+    "target": "corridor",
+    "parameter": "clear_width",
+    "operator": ">=",
+    "value": 36,
+    "unit": "in",
+    "applies_to": {"ship_types": ["passenger"], "space_types": ["accessible_route"]},
+    "source": {"document": "MOCK_pvag.pdf", "regime": "PVAG", "page": 1, "clause": "V403.5.1",
+               "quote": "[MOCK] The clear width of walking surfaces shall be 36 inches minimum."}
+  },
+  {
+    "id": "SOLAS-escape-count",
+    "title": "Two means of escape from accommodation deck",
+    "check_type": "count",
+    "target": "stairway",
+    "operator": ">=",
+    "value": 2,
+    "unit": "count",
+    "applies_to": {"space_types": ["escape"]},
+    "source": {"document": "MOCK_solas.pdf", "regime": "SOLAS", "clause": "II-2/13.3.1",
+               "quote": "[MOCK] At least two widely separated means of escape shall be provided."}
+  }
+]

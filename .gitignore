@@ -1,0 +1,13 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+knowledge/compiled/*.json
+.DS_Store
+Files/
+*.nwd
+designs/**/*.pdf
+.claude/whoami
+.claude/settings.local.json
+*.egg-info/
+.pytest_cache/
