@@ -50,6 +50,7 @@ async function run() {
       for (const r of rules) state.rules[r.id] = r;
     } catch (_) { /* titles are optional */ }
     show(res);
+    loadTrust();
     say(`${res.length} findings.`);
   } catch (e) { say(e.message, true); }
 }
@@ -76,6 +77,43 @@ function show(findings) {
   const sel = $("regime");
   sel.replaceChildren(el("option", { value: "" }, "All"), ...regimes.map((r) => el("option", { value: r }, r)));
   render();
+}
+
+const LOW_CONF_DEFAULT = 0.6;
+const trustInfo = { threshold: LOW_CONF_DEFAULT, eval: undefined, statement: "" };
+
+async function loadTrust() {
+  try {
+    const t = await (await api("/ui/trust")).json();
+    trustInfo.threshold = t.low_confidence_threshold; trustInfo.eval = t.eval; trustInfo.statement = t.statement;
+  } catch (_) { trustInfo.eval = undefined; }
+  renderTrust();
+}
+
+// Counts for the scoreboard, from the findings on screen (all computed, none stored).
+function trustStats(findings) {
+  const decided = findings.filter((f) => f.status !== "not_applicable");
+  const low = decided.filter((f) => f.evidence.some((p) => p.confidence < trustInfo.threshold));
+  const cited = decided.filter((f) => f.rule_source && f.rule_source.quote && f.evidence.length > 0);
+  return { n: findings.length, decided: decided.length, low: low.length, cited: cited.length };
+}
+
+function renderTrust() {
+  const all = state.findings, s = trustStats(all);
+  const cnt = (k) => all.filter((f) => f.status === k).length;
+  const row = (label, value, note) => [el("dt", {}, label), el("dd", {}, el("b", {}, value), note ? el("span", { class: "note" }, " " + note) : null)];
+  const e = trustInfo.eval;
+  const rows = [
+    ...row("By status", `${cnt("fail")} fail, ${cnt("needs_review")} needs review, ${cnt("pass")} pass, ${cnt("not_applicable")} not applicable`),
+    ...row("On low-confidence evidence", s.decided ? `${s.low} of ${s.decided} (${Math.round(100 * s.low / s.decided)}%)` : "none",
+      `evidence read with confidence below ${Math.round(trustInfo.threshold * 100)}%; the checker returns needs review for these`),
+    ...row("Cite rule quote and design location", `${s.cited} of ${s.decided}`,
+      s.cited === s.decided ? "every decided finding has both" : "some findings are missing a side; treat them as unverified"),
+    ...row("Planted-violation test", e === undefined ? "loading" : e === null ? "not available" : `${e.correct} of ${e.total} correct`,
+      e ? `${e.missed_violations} missed violations, ${e.false_alarms} false alarms (run live on the mock design)` : ""),
+  ];
+  $("trust").replaceChildren(...rows);
+  $("trust-line").textContent = trustInfo.statement || "Anything not provable is marked needs review, never guessed.";
 }
 
 function visible() {
@@ -113,6 +151,7 @@ function render() {
     b.addEventListener("click", () => { state.selected = f._i; render(); });
     return el("li", {}, b);
   }));
+  renderTrust();
   detail(state.findings.find((f) => f._i === state.selected));
 }
 
@@ -165,6 +204,11 @@ function detail(f) {
   kids.push(el("h4", {}, "Why this status"), el("p", {}, f.message));
   if (f.reasoning) kids.push(el("p", {}, f.reasoning));
   kids.push(el("p", { class: "note" }, f.method === "llm_judge" ? "Judged by the language model, output structured and cited." : "Checked deterministically."));
+
+  if (f.remedy) {
+    kids.push(el("h4", {}, "What would make it pass"), el("p", { class: "remedy" }, f.remedy.text),
+      el("p", { class: "note" }, "Computed from the rule and the measured value; it is the smallest change that satisfies this rule alone."));
+  }
 
   if (f.measured != null || f.required) {
     kids.push(el("h4", {}, "Measured and required"), el("dl", { class: "cmp" },
