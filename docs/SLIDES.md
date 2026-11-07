@@ -21,7 +21,7 @@ Caveats that must go on the slide next to the numbers:
 Compliance review is manual: regulations (SOLAS, MARPOL, DNV, PVAG/ADA ...) run to thousands of clauses and designs are GA drawings, specs and 3D models. An AI that is fluent but wrong is worse than useless here: a missed violation or an invented clause is the failure that matters. Source for the framing: challenge brief via `README.md`.
 
 ## Slide 3: Approach, "Rules are files, AI learns them, Python decides"
-1. **Rules are files** in `knowledge/rules/<REGIME>/`; regime names come from folder names; no rule value in code (`CLAUDE.md` hard rules).
+1. **Rules are files** in `knowledge/rules/<REGIME>/`; regime names come from folder names; no rule value in code.
 2. **AI learns them**: compiler turns text into atomic rules; a rule is kept only if its quote is a verbatim substring of the source (`app/ingest/rule_compiler.py`). A person reviews (`PATCH /rules/{id}`).
 3. **Python decides**: numeric, presence and count rules are evaluated deterministically (`app/check/evaluator.py`). The LLM judges only qualitative rules, with structured output, and an unverifiable verdict becomes `needs_review`.
 4. **Never guess**: missing evidence, confidence below 0.6, or unknown applicability gives `needs_review`.

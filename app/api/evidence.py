@@ -1,4 +1,4 @@
-"""Owner: D. Read-only evidence crops: render a bbox region of a design PDF page as PNG.
+"""Read-only evidence crops: render a bbox region of a design PDF page as PNG.
 
 The file path (as stored in provenance.file) must resolve to a file inside settings.designs_dir.
 """

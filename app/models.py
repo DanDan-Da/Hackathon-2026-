@@ -1,4 +1,4 @@
-"""Shared data contract between the rules track (Person 1) and the design track (Person 2).
+"""Shared data contract between the rules side and the design side.
 
 Rules  --(rule_compiler)-->  Rule[]         \
                                               >--(checker)--> Finding[]

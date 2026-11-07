@@ -7,7 +7,6 @@ knowledge/compiled/*.json
 Files/
 *.nwd
 designs/**/*.pdf
-.claude/whoami
 .claude/settings.local.json
 *.egg-info/
 .pytest_cache/

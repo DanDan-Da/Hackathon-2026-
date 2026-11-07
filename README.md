@@ -40,11 +40,5 @@ vllm serve Qwen/Qwen2.5-VL-32B-Instruct --port 8001 --max-model-len 32768
 ## 3D models
 IFC is read with `ifcopenshell`. Navisworks `.nwd` is proprietary, so export it to IFC/FBX from Navisworks first.
 
-## Team split: L and D
-- **L** works on rules, checking and AI: `app/ingest/`, `app/check/`, `app/providers/` and deployment. See [docs/tasks/L.md](docs/tasks/L.md).
-- **D** works on design interpretation, the UI and the eval: `app/design/`, `web/` and `eval/`. See [docs/tasks/D.md](docs/tasks/D.md).
-
-[docs/ASSIGNMENTS.md](docs/ASSIGNMENTS.md) has the overview and timeline. The GitHub issues are labelled `L` and `D`.
-If you use Claude Code, start it in the repo and run `/my-tasks`.
 
 Other docs: [3D models](docs/3D-MODELS.md) · [sample data](docs/DATA.md)

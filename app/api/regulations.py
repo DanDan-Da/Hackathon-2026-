@@ -1,4 +1,4 @@
-"""Owner: D. Upload a regulation file into knowledge/rules/<regime>/ (folder name = regime).
+"""Upload a regulation file into knowledge/rules/<regime>/ (folder name = regime).
 
 Compiling it into rules is a separate step (POST /ingest/rules, uses AI quota). The body is the raw
 file; regime and filename come in the query string, so no multipart dependency is needed.

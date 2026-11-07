@@ -1,4 +1,4 @@
-"""Owner: D. What would make a failed finding pass: plain arithmetic on the rule and the finding.
+"""What would make a failed finding pass: plain arithmetic on the rule and the finding.
 
 Deterministic, no AI. Only failed numeric, count and presence findings get a remedy; everything
 else (pass, needs_review, qualitative, anything not computable) returns None rather than a guess.

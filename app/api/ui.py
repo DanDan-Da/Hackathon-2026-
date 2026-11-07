@@ -1,4 +1,4 @@
-"""Owner: D. Endpoints backing the web UI (web/): demo data and a check that accepts inline rules.
+"""Endpoints backing the web UI (web/): demo data and a check that accepts inline rules.
 
 The existing POST /check (L) only reads the server's compiled rules; the UI also needs to check
 against a rules file the user pastes or the bundled mocks, so this adds POST /ui/check without
