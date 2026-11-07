@@ -18,3 +18,6 @@ Use publicly available text:
 - **COLREG**
 - **SOLAS / MARPOL / Load Line** summaries from IMO
 - **DNV rules**, via DNV Veracity if you have access
+
+## 3D model as IFC
+`~/Downloads/12100-RCRV-199_07-08-2021.ifc` (303 MB, IFC4, geometry only: 84,583 anonymous `IfcBuildingElementProxy` parts, no psets or spaces) is a conversion of the NWD above. Keep it outside the repo (or in `Files/`, which git ignores). Read it with `app/design/mesh_reader.py`; see `3D.md` for what it gives and its unit problem.
