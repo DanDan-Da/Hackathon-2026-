@@ -35,3 +35,6 @@ AGENTS.md
 docs/tasks/
 docs/ASSIGNMENTS.md
 docs/*-LOG.md
+
+# Generated design facts (drawing extraction output); stay local
+designs/**/facts*.json

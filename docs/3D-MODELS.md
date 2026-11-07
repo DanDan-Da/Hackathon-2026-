@@ -1,5 +1,7 @@
 # 3D models
 
+**Status (2026-11-07):** an IFC export of the RCRV model exists outside git (303 MB). We measure only its overall size, in [3D.md](3D.md). Its stated unit looks wrong, so every finding from it is `needs_review`. The semantic IFC reader ([IFC.md](IFC.md)) is proven only on a synthetic model. The `.nwd` itself is still unreadable with open tools. The conversion options below are kept for reference.
+
 ## The sample: `12100-RCRV-199_07-08-2021.nwd`
 - This is the Navisworks model of the Regional Class Research Vessel, 305 MB, in the proprietary `LcUStream` format. **It is not in git**, because GitHub's file limit is 100 MB. Share it outside git (USB or a cloud drive) and put it in `Files/`.
 - No open-source library reads `.nwd`, so it has to be converted first.
