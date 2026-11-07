@@ -1,5 +1,7 @@
 # Sample data (not in git)
 
+Exceptions: the two demo facts files `designs/demo/demo_*.json` (extracted from the public Dana GA) are in git, see `docs/DEMO.md`. The PDFs themselves are not.
+
 Put these files in `Files/` locally, which git ignores. Copy the ones you use into `designs/<project>/` or `knowledge/rules/<REGIME>/`. The challenge brief lists public sources; treat those links as examples only and never hardcode them.
 
 | File | What it is |

@@ -1,0 +1,8474 @@
+{
+ "project": "demo-planted",
+ "particulars": {
+  "name": null,
+  "ship_type": "Research Vessel",
+  "length_overall_m": 69.8,
+  "length_between_perpendiculars_m": 67.4,
+  "breadth_m": 16.0,
+  "gross_tonnage": null,
+  "persons_on_board": 38,
+  "provenance": [
+   {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1872.5399169921875,
+     2799.947265625,
+     2134.16845703125,
+     2812.074951171875
+    ],
+    "element_id": null,
+    "method": "pdf_text",
+    "confidence": 0.95
+   },
+   {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1872.5399169921875,
+     2815.787353515625,
+     2134.16845703125,
+     2827.9150390625
+    ],
+    "element_id": null,
+    "method": "pdf_text",
+    "confidence": 0.95
+   },
+   {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1872.5399169921875,
+     2831.597412109375,
+     2134.16845703125,
+     2843.72509765625
+    ],
+    "element_id": null,
+    "method": "pdf_text",
+    "confidence": 0.95
+   },
+   {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1872.3599853515625,
+     3004.817626953125,
+     2091.356201171875,
+     3016.945068359375
+    ],
+    "element_id": null,
+    "method": "pdf_text",
+    "confidence": 0.95
+   },
+   {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1972.469970703125,
+     2911.373046875,
+     2295.337158203125,
+     2924.094970703125
+    ],
+    "element_id": null,
+    "method": "pdf_text",
+    "confidence": 0.9
+   }
+  ]
+ },
+ "elements": [
+  {
+   "id": "space-p1-000",
+   "type": "space",
+   "name": "MONITORING STATION",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1222.0416,
+     301.9968,
+     1312.3584,
+     350.54207999999994
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "door-p1-001",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     2102.4,
+     316.67328000000003,
+     2116.476,
+     347.71968
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-002",
+   "type": "space",
+   "name": "OBSERVATION DECK",
+   "deck": "OBSERVATION DECK",
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1860.5,347.3,1914.8,352.6"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1856.2060800000002,
+     346.02624,
+     1923.94368,
+     361.83167999999995
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-003",
+   "type": "space",
+   "name": "BRIDGE",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1104.06528,
+     357.31584,
+     1401.5462400000001,
+     406.99008
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "stairway-p1-004",
+   "type": "stairway",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     2033.2620000000002,
+     364.65407999999996,
+     2059.344,
+     418.2796799999999
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "door-p1-005",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     2200.9320000000002,
+     367.47648,
+     2217.492,
+     398.52288
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "stairway-p1-006",
+   "type": "stairway",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     2194.722,
+     399.08736,
+     2219.562,
+     423.92447999999996
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-007",
+   "type": "space",
+   "name": "BRIDGE DECK",
+   "deck": "BRIDGE DECK",
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1868.4,417.1,1904.7,422.4"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1864.67328,
+     414.89279999999997,
+     1914.34752,
+     431.26272
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-008",
+   "type": "space",
+   "name": "FO'C'SLE DECK",
+   "deck": "FO'C'SLE DECK",
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1867.9,468.2,1907.2,473.5"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1862.41536,
+     466.2604799999999,
+     1913.21856,
+     482.63039999999995
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-009",
+   "type": "space",
+   "name": "CTD HANGAR",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "2184.4,562.7,2215.9,567.4"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     2155.3920000000003,
+     472.46975999999995,
+     2333.4120000000003,
+     564.48
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-010",
+   "type": "space",
+   "name": "WINCH DECK",
+   "deck": "WINCH DECK",
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "411.4,506.0,445.4,511.3"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     414.32832,
+     499.81824,
+     447.63264,
+     519.01056
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-011",
+   "type": "space",
+   "name": "SHELTER DECK",
+   "deck": "SHELTER DECK",
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1867.3,519.2,1907.8,524.5"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1862.97984,
+     517.62816,
+     1913.21856,
+     533.99808
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "stairway-p1-012",
+   "type": "stairway",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1549.69344,
+     524.65536,
+     1647.34848,
+     629.64864
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-013",
+   "type": "space",
+   "name": "CTD HANGAR",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "2184.4,562.7,2215.9,567.4"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     2182.716,
+     560.7820800000001,
+     2218.734,
+     569.24928
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-014",
+   "type": "space",
+   "name": "TRAWL DECK",
+   "deck": "TRAWL DECK",
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1870.3,572.1,1904.9,577.4"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1868.62464,
+     570.37824,
+     1905.3158400000002,
+     586.18368
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-015",
+   "type": "space",
+   "name": "MAIN DECK",
+   "deck": "MAIN DECK",
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1872.9,625.0,1902.3,630.3"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1869.7536,
+     624.5683200000001,
+     1903.6224,
+     640.3737600000001
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-016",
+   "type": "space",
+   "name": "TANK TOP",
+   "deck": "TANK TOP",
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1874.2,694.9,1900.6,700.2"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1871.44704,
+     693.43488,
+     1902.49344,
+     709.24032
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-017",
+   "type": "space",
+   "name": "TRANSOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "276.7,777.6,342.7,790.8"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     276.5952,
+     775.84896,
+     343.76832,
+     790.52544
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "stairway-p1-018",
+   "type": "stairway",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1937.4912,
+     814.79808,
+     1983.7785600000002,
+     845.84448
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "stairway-p1-019",
+   "type": "stairway",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1115.35488,
+     875.19744,
+     1164.4646400000001,
+     907.93728
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "stairway-p1-020",
+   "type": "stairway",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1325.9059200000002,
+     878.01984,
+     1354.12992,
+     911.8886399999999
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "stairway-p1-021",
+   "type": "stairway",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1236.71808,
+     940.11264,
+     1297.68192,
+     989.7868799999999
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-022",
+   "type": "space",
+   "name": "VISOR",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1521.7,967.1,1536.4,971.8"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1514.4422399999999,
+     964.38528,
+     1534.76352,
+     973.41696
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-023",
+   "type": "space",
+   "name": "OBSERVATION DECK",
+   "deck": "d2",
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     2170.2960000000003,
+     1032.37632,
+     2291.598,
+     1086.5664
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-024",
+   "type": "space",
+   "name": "BRIDGE DECK",
+   "deck": "BRIDGE DECK",
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1690.4,1110.1,1781.4,1123.3"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1689.6844800000001,
+     1109.71008,
+     1782.82368,
+     1132.85376
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-025",
+   "type": "cabin",
+   "name": "1 PERS. (MACHINE CHIEF)",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 25.0,
+    "text_label_bbox": "1504.7,1256.3,1521.8,1264.3",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1477.44,
+     1190.9952,
+     1575.0950400000002,
+     1273.97376
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-026",
+   "type": "space",
+   "name": "BRIDGE TECH. ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 8.0,
+    "text_label_bbox": "1205.5,1224.9,1220.8,1232.9"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1184.22144,
+     1197.20448,
+     1240.1049600000001,
+     1239.5404800000001
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-027",
+   "type": "cabin",
+   "name": "1 PERS.",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 15.0,
+    "text_label_bbox": "1258.9,1214.8,1284.4,1221.4",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1248.0076800000002,
+     1197.20448,
+     1292.03712,
+     1239.5404800000001
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-028",
+   "type": "cabin",
+   "name": "1 PERS.",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 15.0,
+    "text_label_bbox": "1330.8,1217.9,1356.3,1224.6",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1298.2464,
+     1197.20448,
+     1363.7260800000001,
+     1239.5404800000001
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-029",
+   "type": "cabin",
+   "name": "1 PERS. (LEAD SCIENTIST)",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 20.0,
+    "text_label_bbox": "1436.7,1228.1,1453.8,1236.1",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1371.6288,
+     1197.20448,
+     1476.62208,
+     1239.5404800000001
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-030",
+   "type": "space",
+   "name": "FIRE EQUIPMENT",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 10.0,
+    "text_label_bbox": "1134.7,1246.5,1190.8,1253.1"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1105.19424,
+     1239.5404800000001,
+     1201.15584,
+     1270.0224
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-031",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1388.2,1251.4,1399.2,1258.0",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1375.01568,
+     1239.5404800000001,
+     1412.8358400000002,
+     1278.4896
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-032",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1260.1,1260.6,1271.1,1267.2",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1241.7984000000001,
+     1248.0076800000002,
+     1280.1830400000001,
+     1278.4896
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-033",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1346.8,1260.6,1357.8,1267.2",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1336.63104,
+     1248.0076800000002,
+     1375.01568,
+     1278.4896
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-034",
+   "type": "cabin",
+   "name": "1 PERS.",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 12.0,
+    "text_label_bbox": "1149.7,1339.2,1175.2,1345.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1105.19424,
+     1270.0224,
+     1203.97824,
+     1371.6288
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-035",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1489.7,1280.4,1500.6,1287.0",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1478.88,
+     1270.0224,
+     1517.2646399999999,
+     1301.0688
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-036",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1183.5,1290.1,1194.5,1296.7",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1177.44768,
+     1278.4896,
+     1203.97824,
+     1309.536
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-037",
+   "type": "space",
+   "name": "AVAIL.",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1245.4,1355.6,1266.1,1362.2"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1228.25088,
+     1298.2464,
+     1316.87424,
+     1371.6288
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "stairway-p1-038",
+   "type": "stairway",
+   "name": "DN/UP",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1266.07104,
+     1298.2464,
+     1304.45568,
+     1340.5824
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-039",
+   "type": "space",
+   "name": "CL. LKR.",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1307.27808,
+     1298.2464,
+     1345.09824,
+     1340.5824
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-040",
+   "type": "space",
+   "name": "SICKBAY",
+   "deck": null,
+   "space_type": "hospital",
+   "properties": {
+    "area": 20.0,
+    "text_label_bbox": "1372.0,1342.7,1400.9,1349.4",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1345.09824,
+     1298.2464,
+     1403.23968,
+     1368.8064
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "stairway-p1-041",
+   "type": "stairway",
+   "name": null,
+   "deck": "WINCH DECK",
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     982.44864,
+     1303.32672,
+     1038.89664,
+     1324.2124800000001
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-042",
+   "type": "space",
+   "name": "A/C ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 14.0,
+    "text_label_bbox": "1507.9,1319.8,1541.3,1326.4"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1492.992,
+     1315.1808,
+     1548.31104,
+     1360.3392
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-043",
+   "type": "space",
+   "name": "RAISED HATCH",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1683.4752,
+     1324.2124800000001,
+     1713.39264,
+     1349.61408
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "toilet-p1-044",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1316.87424,
+     1326.4704000000002,
+     1343.4048,
+     1351.872
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-045",
+   "type": "space",
+   "name": "OUTDOOR AREA LEISURE AREA",
+   "deck": "WINCH DECK",
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     933.90336,
+     1328.16384,
+     1056.96,
+     1484.5248000000001
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "toilet-p1-046",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1182.3,1342.5,1193.3,1349.1",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1177.44768,
+     1332.1152,
+     1203.97824,
+     1360.3392
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-047",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1489.7,1387.6,1500.6,1394.2",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1478.88,
+     1371.6288,
+     1517.2646399999999,
+     1402.6752000000001
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-048",
+   "type": "cabin",
+   "name": "1 PERS.",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 12.0,
+    "text_label_bbox": "1121.2,1438.3,1146.7,1444.9",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1105.19424,
+     1391.3856,
+     1154.304,
+     1478.88
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-049",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1136.2,1404.2,1147.2,1410.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1130.59584,
+     1391.3856,
+     1157.1264,
+     1422.432
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-050",
+   "type": "cabin",
+   "name": "1 PERS.",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 12.0,
+    "text_label_bbox": "1185.2,1438.3,1210.7,1444.9",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1154.304,
+     1391.3856,
+     1203.97824,
+     1478.88
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-051",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1182.7,1405.4,1193.7,1412.0",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1177.44768,
+     1391.3856,
+     1203.97824,
+     1422.432
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-052",
+   "type": "cabin",
+   "name": "1 PERS.",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 12.0,
+    "text_label_bbox": "1236.0,1438.3,1261.5,1444.9",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1233.89568,
+     1391.3856,
+     1284.69888,
+     1478.88
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-053",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1251.6,1405.4,1262.6,1412.0",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1248.0076800000002,
+     1391.3856,
+     1274.53824,
+     1422.432
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-054",
+   "type": "cabin",
+   "name": "1 PERS. (WITH DAY RM.)",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 20.0,
+    "text_label_bbox": "1336.9,1452.0,1354.0,1459.9",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1284.69888,
+     1391.3856,
+     1371.6288,
+     1478.88
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-055",
+   "type": "cabin",
+   "name": "1 PERS. (CHIEF MANAGER)",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 20.0,
+    "text_label_bbox": "1437.8,1450.7,1455.0,1458.6",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1371.6288,
+     1391.3856,
+     1476.62208,
+     1478.88
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-056",
+   "type": "cabin",
+   "name": "1 PERS. (CAPTAIN)",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 25.0,
+    "text_label_bbox": "1504.7,1423.9,1521.8,1431.9",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1477.44,
+     1401.5462400000001,
+     1575.0950400000002,
+     1484.5248000000001
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-057",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1288.1,1413.8,1299.1,1420.4",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1280.1830400000001,
+     1402.6752000000001,
+     1307.27808,
+     1433.7216
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-058",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1388.2,1413.8,1399.2,1420.4",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1375.01568,
+     1402.6752000000001,
+     1401.5462400000001,
+     1433.7216
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "stairway-p1-059",
+   "type": "stairway",
+   "name": null,
+   "deck": "WINCH DECK",
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1033.25184,
+     1418.48064,
+     1056.96,
+     1437.67296
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-060",
+   "type": "space",
+   "name": "FORECASTLE DECK",
+   "deck": "FORECASTLE DECK",
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1690.4,1470.1,1818.8,1483.3"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1689.6844800000001,
+     1469.28384,
+     1822.33728,
+     1492.42752
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-061",
+   "type": "cabin",
+   "name": "2 PERS. 15 m\u00b2",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 15.0,
+    "text_label_bbox": "1207.8,1578.9,1233.3,1585.5",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1185.91488,
+     1551.38688,
+     1243.4918400000001,
+     1639.44576
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-062",
+   "type": "cabin",
+   "name": "1 PERS. 12 m\u00b2",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 12.0,
+    "text_label_bbox": "1266.4,1578.1,1291.9,1584.7",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1245.1852800000001,
+     1551.38688,
+     1301.63328,
+     1639.44576
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-063",
+   "type": "cabin",
+   "name": "1 PERS. 12 m\u00b2",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 12.0,
+    "text_label_bbox": "1323.8,1578.1,1349.3,1584.7",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1302.76224,
+     1551.38688,
+     1359.21024,
+     1639.44576
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-064",
+   "type": "cabin",
+   "name": "1 PERS. 12 m\u00b2",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 12.0,
+    "text_label_bbox": "1377.0,1578.1,1402.5,1584.7",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1360.3392,
+     1551.38688,
+     1416.7872,
+     1639.44576
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-065",
+   "type": "cabin",
+   "name": "1 PERS. 12 m\u00b2",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 12.0,
+    "text_label_bbox": "1444.2,1578.1,1469.7,1584.7",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1417.91616,
+     1551.38688,
+     1474.36416,
+     1639.44576
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-066",
+   "type": "cabin",
+   "name": "1 PERS. 12 m\u00b2",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 12.0,
+    "text_label_bbox": "1490.5,1578.1,1516.0,1584.7",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1475.49312,
+     1551.38688,
+     1531.94112,
+     1639.44576
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-067",
+   "type": "cabin",
+   "name": "1 PERS.",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 12.0,
+    "text_label_bbox": "1552.0,1578.1,1577.5,1584.7",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1528.8076800000001,
+     1552.51584,
+     1585.25568,
+     1639.44576
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-068",
+   "type": "space",
+   "name": "LIFESAVING EQUIPMENT",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1091.0,1608.8,1171.0,1615.4"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1048.18176,
+     1602.19008,
+     1180.27008,
+     1628.72064
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-069",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1553.2,1619.2,1564.2,1625.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1542.3552,
+     1607.83488,
+     1573.9660800000001,
+     1639.44576
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "toilet-p1-070",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1217.7,1617.7,1228.7,1624.3",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1209.62304,
+     1613.47968,
+     1243.4918400000001,
+     1639.44576
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-071",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1270.2,1619.2,1281.2,1625.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1260.42624,
+     1613.47968,
+     1294.29504,
+     1639.44576
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-072",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1336.1,1619.2,1347.1,1625.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1318.0032,
+     1613.47968,
+     1351.872,
+     1639.44576
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-073",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1391.3,1619.2,1402.3,1625.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1375.58016,
+     1613.47968,
+     1409.44896,
+     1639.44576
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-074",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1439.2,1619.2,1450.2,1625.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1433.15712,
+     1613.47968,
+     1467.02592,
+     1639.44576
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-075",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1503.9,1619.2,1514.9,1625.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1490.7340800000002,
+     1613.47968,
+     1524.60288,
+     1639.44576
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-076",
+   "type": "cabin",
+   "name": "2 PERS. 15 m\u00b2",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 15.0,
+    "text_label_bbox": "1072.7,1673.9,1098.2,1680.6",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1053.26208,
+     1658.6380800000002,
+     1110.83904,
+     1706.61888
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-077",
+   "type": "space",
+   "name": "TECH. & SERVER-ROOM 16 m\u00b2",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 16.0,
+    "text_label_bbox": "1160.6,1685.5,1201.9,1693.5"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1135.11168,
+     1658.6380800000002,
+     1229.94432,
+     1733.1494400000001
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-078",
+   "type": "space",
+   "name": "LAUNDRY 16 m\u00b2",
+   "deck": null,
+   "space_type": "laundry",
+   "properties": {
+    "area": 16.0,
+    "text_label_bbox": "1334.9,1705.8,1385.4,1713.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1292.03712,
+     1658.6380800000002,
+     1403.80416,
+     1733.1494400000001
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-079",
+   "type": "space",
+   "name": "LINEN 5 m\u00b2",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 5.0,
+    "text_label_bbox": "1411.7,1678.4,1433.0,1685.0"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1403.80416,
+     1658.6380800000002,
+     1439.93088,
+     1733.1494400000001
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-080",
+   "type": "space",
+   "name": "SUBMERSIBLE KEEL MECH. ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1439.93088,
+     1658.6380800000002,
+     1531.94112,
+     1733.1494400000001
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-081",
+   "type": "space",
+   "name": "CABLES",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1540.5,1672.3,1556.1,1676.3"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1532.7590400000001,
+     1665.97632,
+     1563.24096,
+     1681.21728
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-082",
+   "type": "space",
+   "name": "RSIBLE KEEL MECH. ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1477.44,
+     1673.87904,
+     1532.7590400000001,
+     1733.1494400000001
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-083",
+   "type": "space",
+   "name": "CTD HANGAR",
+   "deck": "WINCH DECK",
+   "space_type": null,
+   "properties": {
+    "area": 20.0,
+    "text_label_bbox": "975.9,1687.4,1019.5,1694.0"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     936.16128,
+     1683.4752,
+     1037.76768,
+     1750.64832
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.95
+   }
+  },
+  {
+   "id": "toilet-p1-084",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1075.3,1711.8,1086.3,1718.4",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1053.26208,
+     1706.61888,
+     1110.83904,
+     1733.1494400000001
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-085",
+   "type": "space",
+   "name": "CLEANING LKR",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1235.58912,
+     1710.57024,
+     1286.39232,
+     1733.1494400000001
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-086",
+   "type": "space",
+   "name": "LKR",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1064.7,1737.6,1077.5,1744.2"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1053.26208,
+     1733.1494400000001,
+     1110.83904,
+     1758.55104
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-087",
+   "type": "cabin",
+   "name": "2 PERS. 15 m\u00b2",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 15.0,
+    "text_label_bbox": "1071.8,1799.1,1097.3,1805.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1053.26208,
+     1751.77728,
+     1116.48384,
+     1839.27168
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-088",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1075.5,1766.9,1086.5,1773.5",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1053.26208,
+     1751.77728,
+     1116.48384,
+     1789.59744
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-089",
+   "type": "cabin",
+   "name": "2 PERS. 15 m\u00b2",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 15.0,
+    "text_label_bbox": "1139.8,1799.1,1165.3,1805.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1116.48384,
+     1751.77728,
+     1179.7056,
+     1839.27168
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-090",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1140.1,1767.9,1151.1,1774.5",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1116.48384,
+     1751.77728,
+     1179.7056,
+     1789.59744
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-091",
+   "type": "cabin",
+   "name": "2 PERS. 15 m\u00b2",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 15.0,
+    "text_label_bbox": "1207.8,1799.1,1233.3,1805.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1179.7056,
+     1751.77728,
+     1242.9273600000001,
+     1839.27168
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-092",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1216.1,1767.9,1227.1,1774.5",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1179.7056,
+     1751.77728,
+     1242.9273600000001,
+     1789.59744
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-093",
+   "type": "cabin",
+   "name": "2 PERS. 15 m\u00b2",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 15.0,
+    "text_label_bbox": "1264.5,1799.1,1290.0,1805.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1242.9273600000001,
+     1751.77728,
+     1306.14912,
+     1839.27168
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-094",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1272.4,1767.9,1283.4,1774.5",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1242.9273600000001,
+     1751.77728,
+     1306.14912,
+     1789.59744
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-095",
+   "type": "cabin",
+   "name": "2 PERS. 15 m\u00b2",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 15.0,
+    "text_label_bbox": "1332.5,1799.1,1358.1,1805.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1306.14912,
+     1751.77728,
+     1369.37088,
+     1839.27168
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-096",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1350.5,1767.9,1361.5,1774.5",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1306.14912,
+     1751.77728,
+     1369.37088,
+     1789.59744
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-097",
+   "type": "cabin",
+   "name": "2 PERS. 15 m\u00b2",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 15.0,
+    "text_label_bbox": "1400.6,1799.1,1426.1,1805.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1369.37088,
+     1751.77728,
+     1432.59264,
+     1839.27168
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-098",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1401.3,1767.9,1412.3,1774.5",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1369.37088,
+     1751.77728,
+     1432.59264,
+     1789.59744
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-099",
+   "type": "cabin",
+   "name": "2 PERS. 15 m\u00b2",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 15.0,
+    "text_label_bbox": "1468.6,1799.1,1494.1,1805.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1432.59264,
+     1751.77728,
+     1495.8144,
+     1839.27168
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-100",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1480.6,1767.9,1491.6,1774.5",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1432.59264,
+     1751.77728,
+     1495.8144,
+     1789.59744
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-101",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1480.6,1767.9,1491.6,1774.5",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1477.44,
+     1751.77728,
+     1507.35744,
+     1784.51712
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "cabin-p1-102",
+   "type": "cabin",
+   "name": "2 PERS. 15 m\u00b2",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 15.0,
+    "text_label_bbox": "1536.6,1799.1,1562.1,1805.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1495.8144,
+     1751.77728,
+     1549.44,
+     1839.27168
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-103",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1533.2,1767.9,1544.2,1774.5",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1495.8144,
+     1751.77728,
+     1549.44,
+     1789.59744
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "cabin-p1-104",
+   "type": "cabin",
+   "name": "PERS.",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 5.0,
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1477.44,
+     1784.51712,
+     1524.85632,
+     1841.5296
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "cabin-p1-105",
+   "type": "cabin",
+   "name": "2 PERS.",
+   "deck": null,
+   "space_type": "cabin",
+   "properties": {
+    "area": 15.0,
+    "text_label_bbox": "1536.6,1799.1,1562.1,1805.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1524.85632,
+     1784.51712,
+     1572.2726400000001,
+     1841.5296
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-106",
+   "type": "space",
+   "name": "MOORING",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     508.59648,
+     1903.05792,
+     564.48,
+     2040.79104
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-107",
+   "type": "space",
+   "name": "VOID",
+   "deck": "MOORING DECK",
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "583.4,1913.4,593.1,1917.4"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     572.07168,
+     1907.00928,
+     603.11808,
+     1925.63712
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-108",
+   "type": "space",
+   "name": "FISHING TACKLE",
+   "deck": "MOORING DECK",
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "611.7,1914.1,644.3,1918.0"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     603.11808,
+     1907.00928,
+     649.40544,
+     1925.63712
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-109",
+   "type": "space",
+   "name": "ACOUSTIC EQUIPMENT STORE",
+   "deck": "MOORING DECK",
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     649.40544,
+     1907.00928,
+     704.72448,
+     1925.63712
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-110",
+   "type": "space",
+   "name": "LIFTING EQUIP",
+   "deck": "MOORING DECK",
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "710.7,1912.9,740.4,1916.8"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     704.72448,
+     1907.00928,
+     743.6736,
+     1925.63712
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-111",
+   "type": "space",
+   "name": "OXY / GAS",
+   "deck": "MOORING DECK",
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "747.8,1912.8,767.8,1916.8"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     743.6736,
+     1907.00928,
+     772.46208,
+     1925.63712
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-112",
+   "type": "space",
+   "name": "MESS 83 m\u00b2",
+   "deck": null,
+   "space_type": "mess",
+   "properties": {
+    "area": 83.0,
+    "text_label_bbox": "1369.3,1961.4,1388.0,1968.0",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1308.97152,
+     1909.83168,
+     1459.68768,
+     2015.38944
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-113",
+   "type": "space",
+   "name": "DAY ROOM 39 m\u00b2",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 39.0,
+    "text_label_bbox": "1519.2,2006.3,1555.2,2012.9"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1474.36416,
+     1909.83168,
+     1549.44,
+     2024.42112
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-114",
+   "type": "space",
+   "name": "EGR",
+   "deck": "MOORING DECK",
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "914.1,1956.6,928.4,1963.2"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     876.8908799999999,
+     1912.65408,
+     990.9158400000001,
+     1958.94144
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-115",
+   "type": "space",
+   "name": "WELDING WORKSHOP 10 m\u00b2",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 10.0,
+    "text_label_bbox": "1011.8,1933.5,1024.1,1939.3"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     990.6048000000001,
+     1912.65408,
+     1040.2790400000001,
+     1952.16768
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-116",
+   "type": "space",
+   "name": "PAINT LOCKER",
+   "deck": "MOORING DECK",
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "675.4,1930.1,704.4,1934.1"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     666.33984,
+     1925.63712,
+     708.67584,
+     1944.26496
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-117",
+   "type": "space",
+   "name": "FITNESS ROOM 40 m\u00b2",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 40.0,
+    "text_label_bbox": "1200.8,1976.1,1251.0,1982.7"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1185.91488,
+     1952.16768,
+     1306.14912,
+     2024.42112
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "door-p1-118",
+   "type": "door",
+   "name": "FLUSH HATCH",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     536.82048,
+     1966.27968,
+     563.35104,
+     1993.9392
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-119",
+   "type": "space",
+   "name": "WORKSHOP",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 22.0,
+    "text_label_bbox": "939.8,1989.5,979.1,1996.1"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     878.58432,
+     1969.92,
+     1034.94528,
+     2038.22208
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-120",
+   "type": "space",
+   "name": "AVAIL.",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 20.0,
+    "text_label_bbox": "1639.3,2007.3,1659.9,2013.9"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1608.9638400000001,
+     1969.92,
+     1678.39488,
+     2032.0128
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-121",
+   "type": "space",
+   "name": "CREW CHANGE ROOM 35 m\u00b2",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 35.0,
+    "text_label_bbox": "1077.0,2006.5,1149.6,2013.1"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1047.0528,
+     1995.63264,
+     1154.304,
+     2040.79104
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "door-p1-122",
+   "type": "door",
+   "name": "FLUSH HATCH",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     536.82048,
+     1999.01952,
+     563.35104,
+     2026.67904
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "stairway-p1-123",
+   "type": "stairway",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1255.9104,
+     2026.3680000000002,
+     1303.8912,
+     2065.8816
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-124",
+   "type": "space",
+   "name": "WASTE ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 40.0,
+    "text_label_bbox": "1722.0,2037.0,1767.9,2043.6"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1680.6528,
+     2032.0128,
+     1824.5952,
+     2074.3488
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-125",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1061.3,2047.3,1072.3,2053.9",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1055.52,
+     2037.6576,
+     1080.9216000000001,
+     2063.0592
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-126",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1090.0,2045.8,1101.0,2052.4",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1086.5664,
+     2037.6576,
+     1109.1456,
+     2063.0592
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-127",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1111.7,2045.8,1122.7,2052.4",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1109.1456,
+     2037.6576,
+     1131.7248,
+     2063.0592
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "stairway-p1-128",
+   "type": "stairway",
+   "name": "DN",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1575.1,2043.0,1582.0,2047.8"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1556.4672,
+     2037.6576,
+     1610.0928000000001,
+     2074.3488
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-129",
+   "type": "space",
+   "name": "REFRIDGERATED ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 10.0,
+    "text_label_bbox": "1519.9,2123.4,1537.0,2131.4"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1477.44,
+     2091.2832,
+     1577.91744,
+     2144.9088
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-130",
+   "type": "space",
+   "name": "DRY PROVISIONS",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 18.0,
+    "text_label_bbox": "1607.3,2112.3,1664.2,2118.9"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1595.9808,
+     2091.2832,
+     1678.39488,
+     2167.4880000000003
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-131",
+   "type": "space",
+   "name": "TECHNICAL EL. WORKSHOP",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 9.0,
+    "text_label_bbox": "1070.1,2124.1,1083.6,2132.1"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1047.0528,
+     2094.1056,
+     1109.1456,
+     2156.1984
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-132",
+   "type": "space",
+   "name": "OPERATIONS ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 23.0,
+    "text_label_bbox": "1122.6,2119.9,1188.3,2126.5"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1109.1456,
+     2094.1056,
+     1188.1728,
+     2190.0672
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-133",
+   "type": "space",
+   "name": "ISPS-RECEPTION AREA",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1227.6864,
+     2094.1056,
+     1301.0688,
+     2190.0672
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-134",
+   "type": "space",
+   "name": "PLANKTON LABORATORY",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 17.0,
+    "text_label_bbox": "902.0,2151.6,919.1,2159.6"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     884.22912,
+     2096.36352,
+     939.54816,
+     2204.74368
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-135",
+   "type": "space",
+   "name": "CTD HANGAR",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 30.0,
+    "text_label_bbox": "975.6,2138.0,1019.3,2144.6"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     941.2416000000001,
+     2096.36352,
+     1044.54144,
+     2204.74368
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-136",
+   "type": "space",
+   "name": "SCULLERY",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 13.0,
+    "text_label_bbox": "1319.6,2146.5,1354.4,2153.1"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1306.7136,
+     2105.3952,
+     1360.3392,
+     2201.3568
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-137",
+   "type": "space",
+   "name": "GALLEY",
+   "deck": null,
+   "space_type": "galley",
+   "properties": {
+    "area": 30.0,
+    "text_label_bbox": "1409.2,2149.3,1434.9,2155.9",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1360.3392,
+     2105.3952,
+     1442.1888000000001,
+     2201.3568
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-138",
+   "type": "space",
+   "name": "REFRIGERATED ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 10.0,
+    "text_label_bbox": "1519.9,2123.4,1537.0,2131.4"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1481.7024000000001,
+     2105.3952,
+     1549.44,
+     2144.9088
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-139",
+   "type": "space",
+   "name": "DECK OFFICE",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 8.0,
+    "text_label_bbox": "1258.8,2147.0,1303.1,2153.6"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1255.9104,
+     2133.6192,
+     1303.8912,
+     2201.3568
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-140",
+   "type": "space",
+   "name": "FREEZER ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 10.0,
+    "text_label_bbox": "1499.7,2150.4,1552.9,2157.0"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1481.7024000000001,
+     2144.9088,
+     1549.44,
+     2201.3568
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-141",
+   "type": "space",
+   "name": "CTD OPERATOR ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 4.0,
+    "text_label_bbox": "1064.6,2168.2,1090.3,2173.9"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1047.0528,
+     2156.1984,
+     1109.1456,
+     2190.0672
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-142",
+   "type": "space",
+   "name": "MOORING DECK",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     510.85439999999994,
+     2162.4076800000003,
+     564.48,
+     2205.30816
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-143",
+   "type": "space",
+   "name": "TRAWL DECK",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1749.5,2177.1,1836.0,2190.3"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1748.3904,
+     2175.9552,
+     1835.8848,
+     2198.5344
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-144",
+   "type": "space",
+   "name": "ROPE STORE",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "582.5,2306.8,625.8,2313.4"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     511.10784,
+     2283.77088,
+     638.11584,
+     2445.77664
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-145",
+   "type": "space",
+   "name": "WB",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "530.6,2322.9,541.2,2329.5"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     510.85439999999994,
+     2288.8512,
+     564.48,
+     2423.19744
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-146",
+   "type": "space",
+   "name": "WET FISH LAB",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 110.0,
+    "text_label_bbox": "745.0,2334.2,790.8,2340.8"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     639.80928,
+     2299.01184,
+     855.44064,
+     2422.06848
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-147",
+   "type": "space",
+   "name": "RESEARCHERS CHANGE ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 15.0,
+    "text_label_bbox": "907.6,2359.8,924.7,2367.8"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     876.8908799999999,
+     2299.01184,
+     941.8060800000001,
+     2401.7472000000002
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-148",
+   "type": "space",
+   "name": "A/C ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 12.0,
+    "text_label_bbox": "958.3,2336.4,964.9,2369.8"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     944.0640000000001,
+     2299.01184,
+     985.2710400000001,
+     2401.7472000000002
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-149",
+   "type": "space",
+   "name": "CONVERTER-ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 13.0,
+    "text_label_bbox": "1008.8,2352.4,1025.9,2360.3"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     986.96448,
+     2299.01184,
+     1044.54144,
+     2401.7472000000002
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-150",
+   "type": "space",
+   "name": "UREA-DAYTANK",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1199.4624000000001,
+     2302.9632,
+     1236.1536,
+     2336.832
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-151",
+   "type": "space",
+   "name": "ELEC. WORKSHOP/ ELEC. STORE ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 16.0,
+    "text_label_bbox": "1264.8,2332.1,1281.9,2340.0"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1236.1536,
+     2302.9632,
+     1306.7136,
+     2353.7664
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-152",
+   "type": "space",
+   "name": "CONFERENCE ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 40.0,
+    "text_label_bbox": "1345.8,2392.2,1414.4,2398.8"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1306.7136,
+     2308.608,
+     1425.2544,
+     2410.2144
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-153",
+   "type": "space",
+   "name": "A/C ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 60.0,
+    "text_label_bbox": "1137.0,2379.8,1170.4,2386.4"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1047.0528,
+     2336.832,
+     1188.1728,
+     2398.9248000000002
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-154",
+   "type": "space",
+   "name": "AVAILABLE",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 22.0,
+    "text_label_bbox": "1470.4,2348.5,1506.0,2355.1"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1425.2544,
+     2336.832,
+     1526.8608,
+     2410.2144
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-155",
+   "type": "space",
+   "name": "ACOUSTIC EQUIPMENT ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 10.0,
+    "text_label_bbox": "1549.6,2387.3,1566.7,2395.3"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1528.2432000000001,
+     2336.832,
+     1584.6912,
+     2404.5696000000003
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "stairway-p1-156",
+   "type": "stairway",
+   "name": "DN",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1589.3,2348.1,1596.2,2352.8"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1581.8688,
+     2339.6544,
+     1610.0928000000001,
+     2398.9248000000002
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-157",
+   "type": "space",
+   "name": "FORWARD CHILLER ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1618.56,
+     2365.056,
+     1680.6528,
+     2410.2144
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "toilet-p1-158",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "886.1,2376.0,897.1,2382.6",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     883.10016,
+     2368.44288,
+     922.04928,
+     2401.1827200000002
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "stairway-p1-159",
+   "type": "stairway",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1255.9104,
+     2404.5696000000003,
+     1303.8912,
+     2444.0832
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "toilet-p1-160",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1328.4,2424.2,1339.4,2430.8",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1318.0032,
+     2415.8592,
+     1346.2272,
+     2444.0832
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-161",
+   "type": "space",
+   "name": "STEERING GEAR ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     511.10784,
+     2423.76192,
+     638.11584,
+     2470.04928
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-162",
+   "type": "space",
+   "name": "LIBRARY",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 48.0,
+    "text_label_bbox": "1379.7,2455.9,1407.9,2462.5"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1357.5168,
+     2444.0832,
+     1425.2544,
+     2489.2416000000003
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-163",
+   "type": "space",
+   "name": "A/C ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1618.7,2485.3,1652.1,2491.9"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1610.0928000000001,
+     2455.3728,
+     1680.6528,
+     2520.288
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-164",
+   "type": "space",
+   "name": "SCIENTIFIC REFRIGERATOR / FREEZER ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 16.0,
+    "text_label_bbox": "834.0,2537.1,851.1,2545.0"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     805.20192,
+     2462.4,
+     876.3264,
+     2576.9894400000003
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-165",
+   "type": "space",
+   "name": "MACH. CHANGE ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 5.0,
+    "text_label_bbox": "1193.3,2496.5,1206.7,2504.5"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1176.8832,
+     2466.6624,
+     1233.3312,
+     2511.8208
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "stairway-p1-166",
+   "type": "stairway",
+   "name": "ESC",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "878.8,2479.6,892.4,2486.2"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     874.06848,
+     2470.8672,
+     895.51872,
+     2491.1884800000003
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-167",
+   "type": "space",
+   "name": "AUX. MACHINE ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     511.10784,
+     2471.17824,
+     638.11584,
+     2534.4
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-168",
+   "type": "space",
+   "name": "SCIENTIFIC STORE ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 16.0,
+    "text_label_bbox": "663.8,2526.0,681.0,2534.0"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     638.11584,
+     2471.17824,
+     707.54688,
+     2534.4
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-169",
+   "type": "space",
+   "name": "DRY LAB",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 26.0,
+    "text_label_bbox": "743.5,2511.2,771.7,2517.8"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     707.54688,
+     2471.17824,
+     806.33088,
+     2534.4
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-170",
+   "type": "space",
+   "name": "EDUCATIONAL LAB",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 25.0,
+    "text_label_bbox": "897.9,2512.2,959.2,2518.8"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     876.8908799999999,
+     2471.17824,
+     968.33664,
+     2534.4
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-171",
+   "type": "space",
+   "name": "GENERAL STORES",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 16.0,
+    "text_label_bbox": "1004.5,2523.7,1021.6,2531.7"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     968.33664,
+     2471.17824,
+     1044.54144,
+     2534.4
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "toilet-p1-172",
+   "type": "toilet",
+   "name": "WC",
+   "deck": null,
+   "space_type": "toilet",
+   "properties": {
+    "text_label_bbox": "1221.5,2484.7,1232.5,2491.3",
+    "space_type_source": "name"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1222.0416,
+     2472.3072,
+     1244.6208000000001,
+     2494.8864000000003
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-173",
+   "type": "space",
+   "name": "WB",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "520.0,2513.3,530.6,2519.9"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     510.85439999999994,
+     2474.00064,
+     564.48,
+     2534.4
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-174",
+   "type": "space",
+   "name": "INVERTER-ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1425.2544,
+     2477.952,
+     1492.992,
+     2534.4
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-175",
+   "type": "space",
+   "name": "BATTERY ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1504.6,2497.3,1557.4,2503.9"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1492.992,
+     2477.952,
+     1549.44,
+     2534.4
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-176",
+   "type": "space",
+   "name": "MACH. STORES",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 16.0,
+    "text_label_bbox": "1059.2,2504.9,1109.4,2511.5"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1047.0528,
+     2489.2416000000003,
+     1114.7904,
+     2534.4
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-177",
+   "type": "space",
+   "name": "MACH. WORKSHOP",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 16.0,
+    "text_label_bbox": "1138.5,2519.1,1155.6,2527.1"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1114.7904,
+     2489.2416000000003,
+     1176.8832,
+     2534.4
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-178",
+   "type": "space",
+   "name": "ENGINE CONTROL ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 16.0,
+    "text_label_bbox": "1264.8,2518.9,1281.9,2526.8"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1238.976,
+     2489.2416000000003,
+     1301.0688,
+     2534.4
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-179",
+   "type": "space",
+   "name": "GENERATOR ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1099.4,2748.9,1163.6,2755.5"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1044.2304,
+     2657.1456,
+     1207.9296,
+     2815.2000000000003
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-180",
+   "type": "space",
+   "name": "AUX. MACH. ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1299.6,2811.9,1360.5,2818.5"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1242.3628800000001,
+     2657.1456,
+     1375.01568,
+     2822.53824
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-181",
+   "type": "space",
+   "name": "ANTI ROLL TANK",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1340.1,2682.5,1393.6,2689.1"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1242.3628800000001,
+     2657.1456,
+     1438.80192,
+     2713.5936
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-182",
+   "type": "space",
+   "name": "MGO",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1403.3,2758.7,1419.1,2765.3"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1375.01568,
+     2657.1456,
+     1438.80192,
+     2849.0688
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-183",
+   "type": "space",
+   "name": "VOID",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1502.1,2685.8,1518.2,2692.4"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1438.80192,
+     2657.1456,
+     1549.44,
+     2736.1728000000003
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-184",
+   "type": "space",
+   "name": "MDO",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "835.9,2692.9,851.3,2699.5"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     772.46208,
+     2669.56416,
+     912.45312,
+     2739.5596800000003
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-185",
+   "type": "space",
+   "name": "WB",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1754.0,2782.8,1764.6,2789.4"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1715.08608,
+     2711.33568,
+     1825.15968,
+     2884.63104
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-186",
+   "type": "space",
+   "name": "SWBD ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "987.2,2737.5,1029.4,2744.1"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     979.62624,
+     2725.44768,
+     1033.25184,
+     2768.91264
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-187",
+   "type": "space",
+   "name": "MGO",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1513.8,2743.2,1529.6,2749.8"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1477.44,
+     2731.0924800000003,
+     1579.61088,
+     2773.99296
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-188",
+   "type": "space",
+   "name": "PROPULSION ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "808.7,2826.6,874.4,2833.2"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     774.72,
+     2768.91264,
+     957.0470399999999,
+     2845.11744
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-189",
+   "type": "space",
+   "name": "BOW THRUSTER ROOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1579.61088,
+     2773.99296,
+     1638.3168,
+     2847.93984
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-190",
+   "type": "space",
+   "name": "VOID",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1639.1,2848.5,1655.2,2855.1"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1579.61088,
+     2773.99296,
+     1715.08608,
+     2847.93984
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-191",
+   "type": "space",
+   "name": "FW",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1669.8,2779.5,1680.1,2786.1"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1638.3168,
+     2773.99296,
+     1715.08608,
+     2804.47488
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-192",
+   "type": "space",
+   "name": "MGO",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1509.4,2824.7,1525.2,2831.3"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1477.44,
+     2804.47488,
+     1579.61088,
+     2847.93984
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-193",
+   "type": "space",
+   "name": "FW",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1671.7,2805.0,1682.0,2811.6"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1638.3168,
+     2804.47488,
+     1715.08608,
+     2847.93984
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-194",
+   "type": "space",
+   "name": "TESTPLATFORM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "area": 40.0,
+    "text_label_bbox": "1123.0,2879.9,1161.0,2884.6"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1044.2304,
+     2815.2000000000003,
+     1242.3628800000001,
+     2935.43424
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "stairway-p1-195",
+   "type": "stairway",
+   "name": "ESC",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "878.1,2839.0,891.7,2845.6"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     874.06848,
+     2836.08576,
+     895.51872,
+     2856.40704
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-196",
+   "type": "space",
+   "name": "ANTI ROLL TANK",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1347.3,2900.4,1400.9,2907.0"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1242.3628800000001,
+     2849.0688,
+     1438.80192,
+     2935.43424
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-197",
+   "type": "space",
+   "name": "VOID",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1501.3,2899.7,1517.4,2906.3"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1438.80192,
+     2849.0688,
+     1549.44,
+     2935.43424
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-198",
+   "type": "space",
+   "name": "MDO",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "835.8,2889.9,851.2,2896.5"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     772.46208,
+     2850.76224,
+     912.45312,
+     2920.75776
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-199",
+   "type": "space",
+   "name": "ANTI ROLL TANK (VOID BELOW)",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1305.58464,
+     3026.27376,
+     1446.70464,
+     3287.77416
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-200",
+   "type": "space",
+   "name": "LUBE OIL DRAIN",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1238.976,
+     3050.76348,
+     1298.81088,
+     3121.7421600000002
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-201",
+   "type": "space",
+   "name": "MGO O/F",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1135.9,3098.7,1164.5,3105.3"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1114.7904,
+     3068.19684,
+     1184.78592,
+     3126.72312
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-202",
+   "type": "space",
+   "name": "BILGE TANK",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1044.79488,
+     3097.66752,
+     1083.1795200000001,
+     3213.05976
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-203",
+   "type": "space",
+   "name": "WB",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1521.4,3107.8,1532.0,3114.4"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1518.64704,
+     3107.62944,
+     1531.0656000000001,
+     3117.17628
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-204",
+   "type": "space",
+   "name": "LOW SEA / ICE CHEST",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1215.26784,
+     3123.40248,
+     1243.4918400000001,
+     3156.60888
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "space-p1-205",
+   "type": "space",
+   "name": "SEA BAY",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1253.4,3203.3,1260.0,3231.5"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1238.976,
+     3123.40248,
+     1276.23168,
+     3273.24636
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-206",
+   "type": "space",
+   "name": "WB",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1676.6,3127.3,1687.2,3133.9"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1676.70144,
+     3126.30804,
+     1689.1200000000001,
+     3135.8548800000003
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-207",
+   "type": "space",
+   "name": "VOID",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1537.8,3140.9,1553.9,3147.5"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1530.24768,
+     3135.4398,
+     1549.44,
+     3171.5517600000003
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-208",
+   "type": "space",
+   "name": "VOID",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1537.8,3140.9,1553.9,3147.5"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1536.1459200000002,
+     3138.76044,
+     1555.33824,
+     3149.13744
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-209",
+   "type": "space",
+   "name": "VOID",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "852.0,3144.0,868.2,3150.6"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     673.67808,
+     3140.83584,
+     956.4825599999999,
+     3180.68352
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-210",
+   "type": "space",
+   "name": "VOID",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1180.3,3143.8,1196.5,3150.4"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1178.01216,
+     3140.83584,
+     1199.4624000000001,
+     3153.2882400000003
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-211",
+   "type": "space",
+   "name": "VOID",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "994.3,3144.0,1010.4,3150.6"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     956.4825599999999,
+     3141.666,
+     1045.6704,
+     3164.91048
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-212",
+   "type": "space",
+   "name": "VOID",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "633.4,3147.4,649.6,3154.0"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     618.35904,
+     3144.15648,
+     673.67808,
+     3164.91048
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-213",
+   "type": "space",
+   "name": "WB",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1754.2,3154.8,1764.9,3161.4"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1754.59968,
+     3154.9485600000003,
+     1767.01824,
+     3164.4954000000002
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-214",
+   "type": "space",
+   "name": "WASTE OIL",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1131.0,3214.8,1166.9,3221.4"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1114.7904,
+     3182.34384,
+     1184.78592,
+     3241.2852000000003
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "space-p1-215",
+   "type": "space",
+   "name": "WB",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1521.4,3196.4,1532.0,3203.0"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1518.64704,
+     3195.6264,
+     1531.0656000000001,
+     3205.17324
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-216",
+   "type": "space",
+   "name": "DOUBLE BOTTOM",
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "text_label_bbox": "1702.9,3255.1,1817.3,3268.3"
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1703.232,
+     3254.98284,
+     1818.3859200000002,
+     3268.68048
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 1.0
+   }
+  },
+  {
+   "id": "space-p1-217",
+   "type": "space",
+   "name": "HIGH SEA CHEST",
+   "deck": null,
+   "space_type": null,
+   "properties": {},
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1238.976,
+     3273.24636,
+     1276.23168,
+     3302.3019600000002
+    ],
+    "element_id": null,
+    "method": "vision",
+    "confidence": 0.59
+   }
+  },
+  {
+   "id": "door-vec-001",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 533.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     545.7000122070312,
+     499.39013671875,
+     555.7643487051338,
+     509.530029296875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-002",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 833.7
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     946.3766039829034,
+     2116.107304893169,
+     962.0700073242188,
+     2131.840087890625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-003",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 731.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1291.6500244140625,
+     1661.830078125,
+     1305.4852491613185,
+     1675.6900634765625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-004",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 731.1
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1291.6500244140625,
+     1716.2200927734375,
+     1305.47998046875,
+     1730.050048828125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-005",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.6
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1290.510009765625,
+     2052.070068359375,
+     1304.3699951171875,
+     2065.9216605404763
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-006",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.6
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1290.510009765625,
+     2430.969970703125,
+     1304.3699951171875,
+     2444.8217643027833
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-007",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 632.6
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1221.27001953125,
+     1255.06005859375,
+     1233.2252027638117,
+     1267.030029296875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-008",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 833.2
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1086.2099609375,
+     1373.1918184470198,
+     1101.8870854582833,
+     1388.9200439453125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-009",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 835.3
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1086.2099609375,
+     1248.444005310084,
+     1101.9209838523159,
+     1264.2099609375
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-010",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 731.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1026.8399658203125,
+     2407.840087890625,
+     1040.699951171875,
+     2421.669921875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-011",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 734.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1192.0258189686688,
+     2431.5400390625,
+     1205.909912109375,
+     2445.425471592295
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-012",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 835.3
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1591.9872930967658,
+     1644.446333552767,
+     1607.699951171875,
+     1660.2100830078125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-013",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.5
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1290.510009765625,
+     2387.5,
+     1304.3699951171875,
+     2401.3516135963105
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-014",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 831.3
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1029.510009765625,
+     2162.02001953125,
+     1045.1628948754735,
+     2177.709525693674
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-015",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 829.7
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1084.5,
+     2470.719970703125,
+     1100.219970703125,
+     2486.43994140625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-016",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 735.4
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     990.7703646723819,
+     2469.7268584646395,
+     1004.6699829101562,
+     2483.6201171875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-017",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 837.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     611.72998046875,
+     2452.090087890625,
+     627.5224030352656,
+     2467.8352078316148
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-018",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 729.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     919.8299560546875,
+     2470.719970703125,
+     933.6599731445312,
+     2484.550048828125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-019",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 731.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1026.8399658203125,
+     2387.050048828125,
+     1040.699951171875,
+     2400.8798828125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-020",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 671.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1576.587202737265,
+     2074.81005859375,
+     1589.2799072265625,
+     2087.530029296875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-021",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 669.4
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1575.8399658203125,
+     1714.81005859375,
+     1588.5299072265625,
+     1727.5
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-022",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 731.6
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1410.569091993154,
+     1692.070068359375,
+     1424.4000244140625,
+     1705.989990234375
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-023",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 974.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     992.5799560546875,
+     2047.7141386495425,
+     1010.9202758785842,
+     2066.10986328125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-024",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 831.5
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     859.4400024414062,
+     2096.85986328125,
+     875.085769945046,
+     2112.5521177523356
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-025",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 832.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1309.225246124585,
+     2449.75,
+     1324.8900146484375,
+     2465.473758203141
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-026",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 834.7
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1029.030029296875,
+     2450.89013671875,
+     1044.7251096823948,
+     2466.645761727268
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-027",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 835.1
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     859.4400024414062,
+     2117.02001953125,
+     875.1415885110782,
+     2132.783062525236
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-028",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 835.2
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     640.2014572716921,
+     2418.070068359375,
+     655.9199829101562,
+     2433.8330516478386
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-029",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 832.3
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     677.2628592540724,
+     2451.580078125,
+     692.969970703125,
+     2467.243886396856
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-030",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 835.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     935.0131828828397,
+     2023.8050806654228,
+     950.72998046875,
+     2039.56005859375
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-031",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 832.5
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1097.6400146484375,
+     1630.6600341796875,
+     1113.3119518664662,
+     1646.3777636941736
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-032",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 671.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1575.5699462890625,
+     2403.25,
+     1588.2899169921875,
+     2415.9430933503277
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-033",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 831.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1023.2099609375,
+     1667.320068359375,
+     1038.9075761559013,
+     1682.9756761918504
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-034",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 829.7
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1682.5799560546875,
+     2080.1201171875,
+     1698.2999267578125,
+     2095.840087890625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-035",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 670.4
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1575.8399658203125,
+     1664.4100341796875,
+     1588.5299072265625,
+     1677.10009765625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-036",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 671.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1575.5699462890625,
+     2453.765906031876,
+     1588.2899169921875,
+     2466.4599609375
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-037",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 836.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1231.22998046875,
+     2135.006355653836,
+     1247.004976180217,
+     2150.739990234375
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-038",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 730.6
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1201.5,
+     2470.719970703125,
+     1215.3299560546875,
+     2484.550048828125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-039",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 832.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     859.4400024414062,
+     2343.025912573713,
+     875.0943962418113,
+     2358.72998046875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-040",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 730.6
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1154.699951171875,
+     2053.510009765625,
+     1168.530029296875,
+     2067.340087890625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-041",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 735.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1189.7389084776307,
+     2052.010009765625,
+     1203.6300048828125,
+     2065.8794161144474
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-042",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 733.1
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1257.510009765625,
+     2131.48658983225,
+     1271.3708790478056,
+     2145.340087890625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-043",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 830.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1478.489990234375,
+     2080.6298828125,
+     1494.2099609375,
+     2096.35009765625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-044",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 672.1
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1613.7824169466846,
+     2038.330078125,
+     1626.47998046875,
+     2051.050048828125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-045",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 670.4
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1521.719970703125,
+     2386.030029296875,
+     1534.409912109375,
+     2398.719970703125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-046",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 831.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1152.5399169921875,
+     2470.719970703125,
+     1168.260009765625,
+     2486.43994140625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-047",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 733.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1199.8199462890625,
+     1924.239990234375,
+     1213.679931640625,
+     1938.0999755859375
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-048",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 671.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1575.5699462890625,
+     2024.3499755859375,
+     1588.2899169921875,
+     2037.042962125128
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-049",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 830.1
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1520.25,
+     2129.2900390625,
+     1535.969970703125,
+     2145.010009765625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-050",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 833.1
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1442.558298618553,
+     2080.6298828125,
+     1458.2999267578125,
+     2096.3798828125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-051",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 733.4
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1480.553649313777,
+     2017.1500244140625,
+     1494.419921875,
+     2031.0046223587347
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-052",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 735.4
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1480.5203954630863,
+     2003.2569440074094,
+     1494.419921875,
+     2017.1500244140625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-053",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 673.4
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1476.3599853515625,
+     2458.982535913374,
+     1489.0824410502646,
+     2471.7099609375
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-054",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 673.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1564.8599853515625,
+     2480.154877556021,
+     1577.586757589766,
+     2492.860107421875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-055",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1161.780029296875,
+     1615.06005859375,
+     1175.6267110907231,
+     1628.9200439453125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-056",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 1138.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     843.0899658203125,
+     2446.179931640625,
+     864.6055969374476,
+     2467.6732184685516
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-057",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 736.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1323.6108939478713,
+     1754.9661024591185,
+     1337.52001953125,
+     1768.8699951171875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-058",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 734.2
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1460.8199462890625,
+     1623.0400390625,
+     1474.6948443579706,
+     1636.914936403008
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-059",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 731.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1574.0699462890625,
+     1623.0400390625,
+     1587.9052239721268,
+     1636.9000244140625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-060",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 730.3
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1289.5499267578125,
+     1263.969970703125,
+     1303.3800048828125,
+     1277.800048828125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-061",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 730.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1195.919921875,
+     1623.580078125,
+     1209.75,
+     1637.4100341796875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-062",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.7
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1310.6001701799382,
+     1623.0400390625,
+     1324.43994140625,
+     1636.9000244140625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-063",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 731.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1290.75,
+     1623.0400390625,
+     1304.585171422096,
+     1636.9000244140625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-064",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 730.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1227.5699462890625,
+     1394.080078125,
+     1241.4000244140625,
+     1407.9100341796875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-065",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 730.4
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1205.4000244140625,
+     1394.080078125,
+     1219.22998046875,
+     1407.9100341796875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-066",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1420.8900146484375,
+     1417.030029296875,
+     1434.7390211344027,
+     1430.8900146484375
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-067",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 733.3
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1458.5999755859375,
+     1417.6886834996933,
+     1472.453677260437,
+     1431.550048828125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-068",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1420.8900146484375,
+     1240.989990234375,
+     1434.7390484724342,
+     1254.85009765625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-069",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 733.3
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1458.5999755859375,
+     1240.330078125,
+     1472.4536403400243,
+     1254.1913997147858
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-070",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 730.5
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1191.3900146484375,
+     1754.080078125,
+     1205.219970703125,
+     1767.9100341796875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-071",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 730.1
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1292.8199462890625,
+     1754.080078125,
+     1306.6500244140625,
+     1767.9100341796875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-072",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.3
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1160.52001953125,
+     1754.0738101694494,
+     1174.3800048828125,
+     1767.9100341796875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-073",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 730.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1455.9599609375,
+     1754.080078125,
+     1469.7899169921875,
+     1767.9100341796875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-074",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 733.3
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1113.3244186424172,
+     1394.057460777367,
+     1127.18994140625,
+     1407.9100341796875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-075",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 730.3
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1557.3900146484375,
+     1754.080078125,
+     1571.219970703125,
+     1767.9100341796875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-076",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 734.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1425.0899658203125,
+     1754.9845285519682,
+     1438.9741845760843,
+     1768.8699951171875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-077",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1319.7899169921875,
+     1417.030029296875,
+     1333.6367887460442,
+     1430.8900146484375
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-078",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 731.6
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1357.5,
+     1414.8699951171875,
+     1371.3299560546875,
+     1428.7000732421875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-079",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.3
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1367.3036471120724,
+     1623.0400390625,
+     1381.1400146484375,
+     1636.9000244140625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-080",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 734.2
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1480.6651590301235,
+     1623.0400390625,
+     1494.5399169921875,
+     1636.9148496239748
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-081",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 731.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1313.699951171875,
+     1263.969970703125,
+     1327.530029296875,
+     1277.800048828125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-082",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 734.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1098.449951171875,
+     1716.1600341796875,
+     1112.3171547426987,
+     1730.0364378732297
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-083",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 736.1
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1076.8499755859375,
+     1732.702252498543,
+     1090.7600518534912,
+     1746.6099853515625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-084",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 733.4
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1189.949951171875,
+     1354.239990234375,
+     1203.8123576034864,
+     1368.0905397424258
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-085",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 731.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1094.4000244140625,
+     1754.080078125,
+     1108.22998046875,
+     1767.9100341796875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-086",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 735.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1189.7389084776307,
+     2052.010009765625,
+     1203.6300048828125,
+     2065.8794161144474
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-087",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 830.4
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1519.169921875,
+     2085.64013671875,
+     1534.8900146484375,
+     2101.35986328125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-088",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1032.0599365234375,
+     2025.9508721934317,
+     1045.919921875,
+     2039.800048828125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-089",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 674.6
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1696.22998046875,
+     2453.6764424836038,
+     1708.983532554591,
+     2466.429931640625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-090",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 832.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1580.9155947258662,
+     1318.300048828125,
+     1596.5699462890625,
+     1334.0041168877297
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-091",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 731.2
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1477.6199951171875,
+     1319.02001953125,
+     1491.47998046875,
+     1332.85009765625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-092",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 673.2
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1295.7404612532998,
+     2764.330078125,
+     1308.449951171875,
+     2777.055749186022
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-093",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 832.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1031.1300048828125,
+     2070.669921875,
+     1046.8682774221068,
+     2086.419921875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-094",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 733.1
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1513.7999267578125,
+     1661.8905937969162,
+     1527.659912109375,
+     1675.75
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-095",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 836.1
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1445.2373876031745,
+     2383.75,
+     1460.969970703125,
+     2399.528073827928
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-096",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 731.7
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1257.5999755859375,
+     1716.2200927734375,
+     1271.4311770394409,
+     1730.0502509532657
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-097",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 831.1
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1014.5751172701221,
+     2005.27001953125,
+     1030.260009765625,
+     2020.920275053094
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-098",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 733.7
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1291.6500244140625,
+     1301.824536473871,
+     1305.5399169921875,
+     1315.68994140625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-099",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 730.5
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1345.3499755859375,
+     1352.6800537109375,
+     1359.179931640625,
+     1366.510009765625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-100",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 665.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1366.0672150751495,
+     1339.6713580586709,
+     1378.6500244140625,
+     1352.1700439453125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-101",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 631.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1275.3900146484375,
+     1357.1199951171875,
+     1287.3299560546875,
+     1369.06005859375
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-102",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 733.3
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1329.449951171875,
+     1301.8314863614671,
+     1343.3399658203125,
+     1315.68994140625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-103",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 612.6
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1308.4787180237056,
+     1333.60009765625,
+     1320.0599365234375,
+     1345.2100830078125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-104",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 632.2
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1291.469970703125,
+     1347.3049262711381,
+     1303.469970703125,
+     1359.25
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-105",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 835.6
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     755.1999598987788,
+     2451.580078125,
+     770.969970703125,
+     2467.2933846477767
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-106",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 848.4
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     926.0700073242188,
+     1831.0908203125,
+     942.1010874990831,
+     1847.125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-107",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 757.5
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1337.0999755859375,
+     874.239990234375,
+     1355.6099853515625,
+     888.553021717335
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-108",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 834.7
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1151.0399169921875,
+     888.969970703125,
+     1166.8005072827634,
+     906.340087890625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-109",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 833.6
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1184.4858120820052,
+     2510.7911278396878,
+     1200.179931640625,
+     2526.52001953125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-110",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.2
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1510.77001953125,
+     1383.52001953125,
+     1524.6059187479807,
+     1397.3800048828125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-111",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.7
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1478.5701467706879,
+     1399.06005859375,
+     1492.409912109375,
+     1412.9200439453125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-112",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 730.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1510.77001953125,
+     1274.530029296875,
+     1524.5999755859375,
+     1288.360107421875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-113",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.1
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1478.5799560546875,
+     1258.989990234375,
+     1492.409912109375,
+     1272.8258082932914
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-114",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1189.949951171875,
+     1269.8032163208954,
+     1203.8099365234375,
+     1283.650146484375
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-115",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     925.3800048828125,
+     2387.050048828125,
+     939.239990234375,
+     2400.896653562404
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-116",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 731.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     944.699951171875,
+     2359.300048828125,
+     958.5599975585938,
+     2373.1298828125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-117",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 834.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     859.4400024414062,
+     1955.2900390625,
+     875.1294422789614,
+     1971.0390081216442
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-118",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 833.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1364.280029296875,
+     2163.528214379687,
+     1380.030029296875,
+     2179.27001953125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-119",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 500.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1336.420166015625,
+     1684.4970585993697,
+     1345.8729365179368,
+     1693.9498291015625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-120",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 500.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1349.920166015625,
+     1685.2171319170097,
+     1359.3728586471175,
+     1694.6697998046875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-121",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 500.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1362.880126953125,
+     1685.2170997538296,
+     1372.33283546678,
+     1694.6697998046875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-122",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 500.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1322.2601318359375,
+     1684.4970264362585,
+     1331.7129182193335,
+     1693.9498291015625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-123",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 500.8
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1378.66015625,
+     1690.1370732478342,
+     1388.1129267522615,
+     1699.58984375
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-124",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 733.1
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1413.4804629253802,
+     1661.8599853515625,
+     1427.3399658203125,
+     1675.7200927734375
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-125",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1337.5799560546875,
+     1716.2200927734375,
+     1351.4160263809708,
+     1730.0564927116054
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-126",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 730.5
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1276.7999267578125,
+     1963.3900146484375,
+     1290.6300048828125,
+     1977.219970703125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-127",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 670.4
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1659.0599365234375,
+     2437.510009765625,
+     1671.75,
+     2450.199951171875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-128",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 833.5
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1151.0399169921875,
+     1045.570068359375,
+     1166.7783768239012,
+     1062.91015625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-129",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 833.5
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1029.510009765625,
+     2113.704216318886,
+     1045.1961004568084,
+     2129.43994140625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-130",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.1
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1140.5399169921875,
+     2090.85986328125,
+     1154.3742616246298,
+     2104.719970703125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-131",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.7
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1103.4463425748736,
+     2161.81005859375,
+     1117.2899169921875,
+     2175.669921875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-132",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1075.919921875,
+     2144.2001953125,
+     1089.7534896262464,
+     2158.06005859375
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-133",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 851.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1398.2837045264073,
+     2418.969970703125,
+     1414.3800048828125,
+     2435.97998046875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-134",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 849.6
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1414.3800048828125,
+     2419.89990234375,
+     1430.435297757574,
+     2435.97998046875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-135",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 734.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1348.0727229200886,
+     2451.9235570210303,
+     1361.93994140625,
+     2465.800048828125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-136",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 672.4
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1602.3592462367699,
+     2340.1298828125,
+     1615.0799560546875,
+     2352.85009765625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-137",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 833.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1029.0899658203125,
+     1574.7410704732206,
+     1044.7753387572811,
+     1590.4600830078125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-138",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 733.2
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1262.5795478378593,
+     2468.8079193389517,
+     1276.43994140625,
+     2482.66015625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-139",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 731.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1276.7999267578125,
+     2173.81005859375,
+     1290.6350641223437,
+     2187.669921875
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-140",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 537.4
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1265.2048241042833,
+     2162.2451171875,
+     1275.3546142578125,
+     2172.730224609375
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-141",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 732.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1137.4642295014644,
+     1698.4000244140625,
+     1151.3099365234375,
+     1712.260009765625
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-142",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 833.3
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     1083.9790426482891,
+     1612.1800537109375,
+     1099.7099609375,
+     1627.8632706859028
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "door-vec-143",
+   "type": "door",
+   "name": null,
+   "deck": null,
+   "space_type": null,
+   "properties": {
+    "clear_width": 831.9
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     2048.489990234375,
+     888.5669544504228,
+     2064.141869443392,
+     904.27001953125
+    ],
+    "element_id": null,
+    "method": "vector",
+    "confidence": 0.5
+   }
+  },
+  {
+   "id": "PLANTED-edge-1",
+   "type": "edge_protection",
+   "name": "PLANTED TEST: edge protection 150 mm high (not from the drawing)",
+   "deck": null,
+   "space_type": "accessible_route",
+   "properties": {
+    "height": 150.0
+   },
+   "provenance": {
+    "file": "designs/demo/ga.pdf",
+    "page": 1,
+    "bbox": [
+     2033.2620000000002,
+     364.65407999999996,
+     2059.344,
+     418.2796799999999
+    ],
+    "element_id": null,
+    "method": "manual",
+    "confidence": 1.0
+   }
+  }
+ ],
+ "source_files": [
+  "designs/demo/ga.pdf"
+ ]
+}

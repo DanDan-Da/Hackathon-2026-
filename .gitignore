@@ -36,5 +36,7 @@ docs/tasks/
 docs/ASSIGNMENTS.md
 docs/*-LOG.md
 
-# Generated design facts (drawing extraction output); stay local
+# Generated design facts (drawing extraction output); stay local.
+# Exception: designs/demo/demo_*.json are the two committed demo files (docs/DEMO.md).
 designs/**/facts*.json
+designs/**/old/

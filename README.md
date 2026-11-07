@@ -45,6 +45,17 @@ cp mocks/rules_nps_poc.json knowledge/compiled/rules.json      # 19 real compile
 .venv/bin/python -m app.check.run mocks/facts_nps_poc.json --rules mocks/rules_nps_poc.json
 ```
 
+### Try the real-drawing demo (no API key)
+Two extracted facts files of the public Dana GA are in the repo, so anyone can run the demo without extracting:
+- `designs/demo/demo_real_drawing.json`: what the reader extracted from the real drawing (0 fail, 9 needs review,
+  10 not applicable with the NPS rules above).
+- `designs/demo/demo_planted_fail.json`: the same file plus **one planted element** (marked "PLANTED TEST") that
+  shows what a fail looks like. It is not from the drawing.
+
+Pick either one in the UI's facts picker and press **Run check**. The red evidence crops also need the drawing
+itself: put the Dana GA at `designs/demo/ga.pdf` (step 2 below). Without it the findings still work; the crop
+shows coordinates as text.
+
 ### Run it on a real drawing (needs an API key)
 The design and regulation PDFs are public but not stored in git (licence and size). See [docs/DATA.md](docs/DATA.md).
 1. `cp .env.example .env` and set `GEMINI_API_KEY`.
