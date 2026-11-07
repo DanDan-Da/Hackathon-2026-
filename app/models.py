@@ -33,6 +33,7 @@ class Applicability(BaseModel):
     max_length_m: float | None = None
     min_gross_tonnage: float | None = None
     min_persons_on_board: int | None = None
+    max_persons_on_board: int | None = None   # inclusive, for "up to N persons" tiers
     space_types: list[str] = Field(default_factory=list, description="e.g. corridor, cabin, stairway, door")
     condition_text: str | None = Field(None, description="Free-text condition from the source, for review")
 
