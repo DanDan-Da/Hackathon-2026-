@@ -1,0 +1,13 @@
+# UNTESTED: docker was not run when this file was written. See docs/DEPLOY.md.
+services:
+  rulecheck:
+    build:
+      context: .
+      args:
+        EXTRAS: ""          # e.g. "[rag]" or "[3d]" or "[rag,3d]"
+    env_file: .env          # copy .env.example to .env first; never commit it
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./knowledge:/srv/knowledge   # rules/<REGIME>/ in, compiled/rules.json out
+      - ./designs:/srv/designs       # designs/<project>/ ; designs stay on this machine
