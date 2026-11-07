@@ -6,8 +6,8 @@ Issue #16 (D8). Rule for this file: **no number without a source**. Each figure 
 | Figure | Source | Status |
 |---|---|---|
 | Planted violations: 15/15 correct, 0 missed, 0 false alarms | `python -m eval.score_findings` on `eval/gold/findings/cases.json` (12 cases, 15 expectations), mock facts `mocks/facts_violation.json`, rules `mocks/rules.json` | **Re-run while writing this doc: confirmed.** Tests the checking logic, not the AI reading |
-| Dana room recall 19/20 (sampled), printed area 19/19 | `python -m eval.score_rooms <facts.json>` against `eval/gold/dana/dana_rooms.json` (20 hand-checked rooms, 4 decks; `eval/gold/dana/README.md` defines the metrics) | **The scores come from a local run on a git-ignored GA; the output facts are not in the repo, so the doc cannot reproduce them.** Re-run and paste the output before presenting |
-| 229 tests | `pytest -q` | **Not confirmed here.** On the branch base this doc was written from: `182 passed, 2 skipped`. 229 presumably includes PRs not yet in this base; run `pytest -q` on merged `main` and use that number |
+| Dana room recall 19/20 (sampled), printed area 19/19 | `python -m eval.score_rooms <facts.json>` against `eval/gold/dana/dana_rooms.json` (20 hand-checked rooms, 4 decks; `eval/gold/dana/README.md` defines the metrics) | **The scores come from a local run on a git-ignored GA; the facts are not in the repo.** To reproduce (needs the Dana PDF from `docs/DATA.md` in `designs/dana/` and an LLM key): `python -m app.design.drawing_vision designs/dana/23007-01-101-0110-01-R2-14-General-arrangement.pdf --out designs/dana/facts.json && python -m eval.score_rooms designs/dana/facts.json`. A new run may differ (model output varies); paste its output before presenting. See `docs/DEPLOY.md` |
+| 225 tests | `pytest -q` | **Run while writing this: `225 passed, 2 skipped`** on commit c91c0c7. `origin/main` could not be fetched (git blocked), so re-run on merged `main` and use that number |
 | 19 real compiled rules | `mocks/rules_nps_poc.json`, history in `docs/L-LOG.md` | 1 page of one 2-page checklist, 7 targets hand-corrected, `reviewed=false` |
 
 Caveats that must go on the slide next to the numbers:
@@ -37,7 +37,7 @@ Mark on the slide which parts are pre-recorded or pending (real compiled rules, 
 ## Slide 6: Accuracy and honesty (numbers above, with caveats printed on the slide)
 - Planted violations: **15/15 correct, 0 missed, 0 false alarms** (12 cases; checking logic only).
 - Dana GA reading: **19/20 sampled rooms found, 19/19 printed areas right** (partial sample, no precision, local run; re-verify before showing).
-- Tests: **[fill from `pytest -q` on merged main]** (182 passed, 2 skipped on the base used for this doc).
+- Tests: **225 passed, 2 skipped** (`pytest -q`, commit c91c0c7; re-run on merged `main` before presenting).
 - Behaviour we can show rather than count: low-confidence reads become `needs_review` (cases "blurry read of a passing/failing door"); a door at exactly 812.8 mm passes, 812.7 fails.
 - "Zero missed violations" is a property of the planted set, not a promise for all designs.
 
@@ -47,7 +47,7 @@ Mark on the slide which parts are pre-recorded or pending (real compiled rules, 
 - Rules: only one real page compiled (19 rules), 7 targets hand-corrected, none human-reviewed; the 37-page UNOLS guide and others are uncompiled (`docs/L-LOG.md`).
 - Retrieval: real `bge-m3` index never run (`docs/L-LOG.md`), so `/ask` is tested with a fake embedder only.
 - 3D: IFC reader proven on a synthetic model only; the 305 MB `.nwd` was not converted (`docs/3D-MODELS.md`, `docs/IFC.md`). The reader uses explicit properties and does not derive clearances from geometry.
-- Not done: Docker / deployment doc (L8), BCF export, SOLAS/MARPOL/DNV text (not obtained), a precision metric for full-drawing extraction.
+- Not done: Docker is untested (files and `docs/DEPLOY.md` exist, docker never run), BCF export, SOLAS/MARPOL/DNV text (not obtained), a precision metric for full-drawing extraction.
 
 ## Slide 8: Next steps
 1. Compile and human-review the full rule libraries with a paid key; target a reviewed-rule percentage on the slide.
