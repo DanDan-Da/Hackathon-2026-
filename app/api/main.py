@@ -1,8 +1,12 @@
 """FastAPI entry point. Run: uvicorn app.api.main:app --reload"""
 from __future__ import annotations
 
-from fastapi import FastAPI, HTTPException
+from pathlib import Path
 
+from fastapi import FastAPI, HTTPException
+from fastapi.staticfiles import StaticFiles
+
+from app.api import evidence, ui
 from app.check.evaluator import evaluate_all
 from app.config import settings
 from app.ingest import rule_compiler
@@ -51,3 +55,9 @@ def update_rule(rule_id: str, patch: RulePatch):
 @app.post("/check", response_model=list[Finding])
 def check(facts: DesignFacts):
     return evaluate_all(load_rules(), facts)
+
+
+# --- D (web UI): extra routers and the static front end. Keep these LAST so API routes win. ---
+app.include_router(ui.router)
+app.include_router(evidence.router)
+app.mount("/", StaticFiles(directory=Path(__file__).resolve().parents[2] / "web", html=True), name="web")
