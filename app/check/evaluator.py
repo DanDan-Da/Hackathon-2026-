@@ -1,15 +1,17 @@
 """Deterministic rule evaluation: numeric, presence and count rules.
 
-No LLM here — results are exact and reproducible. Qualitative rules are handed to
-llm_judge (Person 1, later). Missing evidence always yields needs_review, never a guess.
+No LLM for numeric/presence/count — results are exact and reproducible. Qualitative rules are
+handed to llm_judge. Missing evidence always yields needs_review, never a guess.
 """
 from __future__ import annotations
 
 import operator as op
 
 from app.check.applicability import applies_to_ship, element_matches
+from app.check.llm_judge import judge
 from app.check.units import to_base
 from app.models import CheckType, DesignFacts, Finding, Rule, Status
+from app.providers.llm import LLMProvider
 
 _OPS = {">=": op.ge, ">": op.gt, "<=": op.le, "<": op.lt, "==": op.eq, "!=": op.ne}
 LOW_CONFIDENCE = 0.6
@@ -24,7 +26,7 @@ def _finding(rule: Rule, status: Status, msg: str, **kw) -> Finding:
                    required=_required_text(rule), **kw)
 
 
-def evaluate_rule(rule: Rule, facts: DesignFacts) -> list[Finding]:
+def evaluate_rule(rule: Rule, facts: DesignFacts, llm: LLMProvider | None = None) -> list[Finding]:
     ship_ok = applies_to_ship(rule, facts.particulars)
     if ship_ok is False:
         return [_finding(rule, Status.not_applicable, "Rule does not apply to this ship.")]
@@ -37,8 +39,18 @@ def evaluate_rule(rule: Rule, facts: DesignFacts) -> list[Finding]:
         return _numeric(rule, facts)
     if rule.check_type in (CheckType.presence, CheckType.count):
         return _count(rule, facts)
-    return [_finding(rule, Status.needs_review, "Qualitative rule — requires LLM judge / engineer.",
-                     method="llm_judge")]
+    return [_qualitative(rule, facts, llm)]
+
+
+def _qualitative(rule: Rule, facts: DesignFacts, llm: LLMProvider | None) -> Finding:
+    targets = [e for e in facts.elements if element_matches(rule, e)]
+    res = judge(rule, targets, llm=llm, min_confidence=LOW_CONFIDENCE)
+    cited = [e for e in targets if e.id in set(res.evidence_ids)]
+    source = rule.source.model_copy(update={"quote": res.clause_quote or rule.source.quote})
+    return Finding(rule_id=rule.id, status=res.status, message=res.reasoning, reasoning=res.reasoning,
+                   rule_source=source, required=rule.title, method="llm_judge",
+                   element_id=cited[0].id if len(cited) == 1 else None,
+                   evidence=[e.provenance for e in cited])
 
 
 def _numeric(rule: Rule, facts: DesignFacts) -> list[Finding]:
@@ -95,5 +107,5 @@ def _count(rule: Rule, facts: DesignFacts) -> list[Finding]:
     return [_finding(rule, status, msg, measured=n, evidence=evidence)]
 
 
-def evaluate_all(rules: list[Rule], facts: DesignFacts) -> list[Finding]:
-    return [f for r in rules for f in evaluate_rule(r, facts)]
+def evaluate_all(rules: list[Rule], facts: DesignFacts, llm: LLMProvider | None = None) -> list[Finding]:
+    return [f for r in rules for f in evaluate_rule(r, facts, llm)]
