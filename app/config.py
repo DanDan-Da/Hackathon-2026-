@@ -19,6 +19,8 @@ class Settings(BaseSettings):
     rules_dir: Path = Path("knowledge/rules")
     compiled_rules: Path = Path("knowledge/compiled/rules.json")
     designs_dir: Path = Path("designs")
+    index_dir: Path = Path("knowledge/index")   # on-disk Qdrant (local mode)
+    embedding_model: str = "BAAI/bge-m3"
 
 
 settings = Settings()
