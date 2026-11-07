@@ -94,3 +94,23 @@ def test_crop_rejects_bad_input(design):
     assert client.get("/evidence/crop", params={"file": "p1/ga.pdf", "page": 9}).status_code == 404
     assert client.get("/evidence/crop", params={"file": "p1/ga.pdf", "page": 1, "bbox": "1,2"}).status_code == 400
     assert client.get("/evidence/crop", params={"file": "p1/missing.pdf", "page": 1}).status_code == 404
+
+
+def test_crop_accepts_the_path_exactly_as_the_extractor_stores_it(design, monkeypatch):
+    # readers store provenance.file as given on their command line, e.g. "designs/p1/ga.pdf" (relative to cwd)
+    monkeypatch.chdir(design.parent)
+    monkeypatch.setattr(settings, "designs_dir", Path("designs"))
+    r = client.get("/evidence/crop", params={"file": "designs/p1/ga.pdf", "page": 1, "bbox": "40,80,200,120"})
+    assert r.status_code == 200 and r.content[:8] == b"\x89PNG\r\n\x1a\n"
+
+
+def test_crop_accepts_an_absolute_path_inside_the_designs_folder(design):
+    r = client.get("/evidence/crop", params={"file": str(design / "p1" / "ga.pdf"), "page": 1})
+    assert r.status_code == 200
+
+
+@pytest.mark.parametrize("bad", ["designs/../secret.pdf", "designs/p1/../../secret.pdf"])
+def test_crop_still_rejects_traversal_in_the_extractor_form(design, monkeypatch, bad):
+    monkeypatch.chdir(design.parent)
+    monkeypatch.setattr(settings, "designs_dir", Path("designs"))
+    assert client.get("/evidence/crop", params={"file": bad, "page": 1}).status_code in (400, 404)
