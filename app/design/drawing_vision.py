@@ -26,7 +26,7 @@ from pydantic import BaseModel, Field
 
 from app.check.units import to_base
 from app.config import settings
-from app.design.pdf_text import has_text_layer, parse_dimension_mm, parse_particulars
+from app.design.pdf_text import extract_lines, has_text_layer, parse_dimension_mm, parse_particulars
 from app.models import DesignElement, DesignFacts, Provenance
 from app.providers.llm import LLMProvider, get_llm
 
@@ -232,8 +232,12 @@ def extract_drawing(path: str | Path, project: str, llm: LLMProvider | None = No
             id=f"{etype}-p{prov.page}-{i:03d}", type=etype, name=el.name, deck=el.deck,
             space_type=el.space_type, properties=_properties(el.properties), provenance=prov))
 
-    particulars = parse_particulars(path).to_ship_particulars() if has_text_layer(path) else None
+    text_layer = has_text_layer(path)
+    particulars = parse_particulars(path).to_ship_particulars() if text_layer else None
     facts = DesignFacts(project=project, elements=elements, source_files=[file])
+    if text_layer:   # D3: the text layer is exact; confirm, correct or cap the vision reads
+        from app.design.crosscheck import crosscheck   # late import: crosscheck reads constants from here
+        facts, _report = crosscheck(facts, extract_lines(path))
     if particulars is not None:
         facts.particulars = particulars
     return facts
