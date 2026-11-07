@@ -1,0 +1,265 @@
+[
+  {
+    "id": "SYNTH-1",
+    "title": "Door clear width at least 800 mm",
+    "check_type": "numeric",
+    "target": "door",
+    "parameter": "clear_width",
+    "operator": ">=",
+    "value": 800,
+    "unit": "mm",
+    "applies_to": {},
+    "reviewed": false,
+    "source": {
+      "document": "synthetic.txt",
+      "regime": "SYNTH",
+      "page": 1,
+      "clause": "S1",
+      "quote": "[synthetic test rule S1] Door clear width at least 800 mm"
+    }
+  },
+  {
+    "id": "SYNTH-2",
+    "title": "Escape door clear width at least 0.9 m",
+    "check_type": "numeric",
+    "target": "door",
+    "parameter": "clear_width",
+    "operator": ">=",
+    "value": 0.9,
+    "unit": "m",
+    "applies_to": {
+      "space_types": [
+        "escape"
+      ]
+    },
+    "reviewed": false,
+    "source": {
+      "document": "synthetic.txt",
+      "regime": "SYNTH",
+      "page": 1,
+      "clause": "S2",
+      "quote": "[synthetic test rule S2] Escape door clear width at least 0.9 m"
+    }
+  },
+  {
+    "id": "SYNTH-3",
+    "title": "Corridor width at least 5 ft on passenger ships",
+    "check_type": "numeric",
+    "target": "corridor",
+    "parameter": "width",
+    "operator": ">=",
+    "value": 5,
+    "unit": "ft",
+    "applies_to": {
+      "ship_types": [
+        "passenger"
+      ]
+    },
+    "reviewed": false,
+    "source": {
+      "document": "synthetic.txt",
+      "regime": "SYNTH",
+      "page": 1,
+      "clause": "S3",
+      "quote": "[synthetic test rule S3] Corridor width at least 5 ft on passenger ships"
+    }
+  },
+  {
+    "id": "SYNTH-4",
+    "title": "Cabin area at least 8 m2",
+    "check_type": "numeric",
+    "target": "cabin",
+    "parameter": "area",
+    "operator": ">=",
+    "value": 8,
+    "unit": "m2",
+    "applies_to": {},
+    "reviewed": false,
+    "source": {
+      "document": "synthetic.txt",
+      "regime": "SYNTH",
+      "page": 1,
+      "clause": "S4",
+      "quote": "[synthetic test rule S4] Cabin area at least 8 m2"
+    }
+  },
+  {
+    "id": "SYNTH-5",
+    "title": "Cabin area at least 86 ft2",
+    "check_type": "numeric",
+    "target": "cabin",
+    "parameter": "area",
+    "operator": ">=",
+    "value": 86,
+    "unit": "ft2",
+    "applies_to": {},
+    "reviewed": false,
+    "source": {
+      "document": "synthetic.txt",
+      "regime": "SYNTH",
+      "page": 1,
+      "clause": "S5",
+      "quote": "[synthetic test rule S5] Cabin area at least 86 ft2"
+    }
+  },
+  {
+    "id": "SYNTH-6",
+    "title": "At least two stairways",
+    "check_type": "count",
+    "target": "stairway",
+    "parameter": null,
+    "operator": ">=",
+    "value": 2,
+    "unit": "count",
+    "applies_to": {},
+    "reviewed": false,
+    "source": {
+      "document": "synthetic.txt",
+      "regime": "SYNTH",
+      "page": 1,
+      "clause": "S6",
+      "quote": "[synthetic test rule S6] At least two stairways"
+    }
+  },
+  {
+    "id": "SYNTH-7",
+    "title": "No fuel tank in the design",
+    "check_type": "presence",
+    "target": "fuel_tank",
+    "parameter": null,
+    "operator": "not_exists",
+    "value": null,
+    "unit": null,
+    "applies_to": {},
+    "reviewed": false,
+    "source": {
+      "document": "synthetic.txt",
+      "regime": "SYNTH",
+      "page": 1,
+      "clause": "S7",
+      "quote": "[synthetic test rule S7] No fuel tank in the design"
+    }
+  },
+  {
+    "id": "SYNTH-8",
+    "title": "Door height more than 2000 mm",
+    "check_type": "numeric",
+    "target": "door",
+    "parameter": "height",
+    "operator": ">",
+    "value": 2000,
+    "unit": "mm",
+    "applies_to": {},
+    "reviewed": false,
+    "source": {
+      "document": "synthetic.txt",
+      "regime": "SYNTH",
+      "page": 1,
+      "clause": "S8",
+      "quote": "[synthetic test rule S8] Door height more than 2000 mm"
+    }
+  },
+  {
+    "id": "SYNTH-10",
+    "title": "Ships of 100 m and over: door sill",
+    "check_type": "presence",
+    "target": "sill",
+    "parameter": null,
+    "operator": "exists",
+    "value": null,
+    "unit": null,
+    "applies_to": {
+      "min_length_m": 100
+    },
+    "reviewed": false,
+    "source": {
+      "document": "synthetic.txt",
+      "regime": "SYNTH",
+      "page": 1,
+      "clause": "S10",
+      "quote": "[synthetic test rule S10] Ships of 100 m and over: door sill"
+    }
+  },
+  {
+    "id": "SYNTH-11",
+    "title": "Cargo ships: hold ladder",
+    "check_type": "presence",
+    "target": "ladder",
+    "parameter": null,
+    "operator": "exists",
+    "value": null,
+    "unit": null,
+    "applies_to": {
+      "ship_types": [
+        "cargo"
+      ]
+    },
+    "reviewed": false,
+    "source": {
+      "document": "synthetic.txt",
+      "regime": "SYNTH",
+      "page": 1,
+      "clause": "S11",
+      "quote": "[synthetic test rule S11] Cargo ships: hold ladder"
+    }
+  },
+  {
+    "id": "SYNTH-12",
+    "title": "Ships of 500 GT and over: lifejackets",
+    "check_type": "presence",
+    "target": "lifejacket",
+    "parameter": null,
+    "operator": "exists",
+    "value": null,
+    "unit": null,
+    "applies_to": {
+      "min_gross_tonnage": 500
+    },
+    "reviewed": false,
+    "source": {
+      "document": "synthetic.txt",
+      "regime": "SYNTH",
+      "page": 1,
+      "clause": "S12",
+      "quote": "[synthetic test rule S12] Ships of 500 GT and over: lifejackets"
+    }
+  },
+  {
+    "id": "SYNTH-13",
+    "title": "Escape routes shall be readily accessible",
+    "check_type": "qualitative",
+    "target": "stairway",
+    "parameter": null,
+    "operator": null,
+    "value": null,
+    "unit": null,
+    "applies_to": {},
+    "reviewed": false,
+    "source": {
+      "document": "synthetic.txt",
+      "regime": "SYNTH",
+      "page": 1,
+      "clause": "S13",
+      "quote": "[synthetic test rule S13] Escape routes shall be readily accessible"
+    }
+  },
+  {
+    "id": "SYNTH-14",
+    "title": "Door fire rating at least 60 min",
+    "check_type": "numeric",
+    "target": "door",
+    "parameter": "fire_rating",
+    "operator": ">=",
+    "value": 60,
+    "unit": "min",
+    "applies_to": {},
+    "reviewed": false,
+    "source": {
+      "document": "synthetic.txt",
+      "regime": "SYNTH",
+      "page": 1,
+      "clause": "S14",
+      "quote": "[synthetic test rule S14] Door fire rating at least 60 min"
+    }
+  }
+]
