@@ -34,6 +34,7 @@ DEFAULT_DPI = 200
 DEFAULT_TILE_PX = 1568      # Claude's max long edge; larger images are downscaled anyway
 DEFAULT_OVERLAP_PX = 200
 MERGE_IOU = 0.3
+MERGE_CONTAINMENT = 0.9     # same-named boxes where one lies (almost) inside the other are one element
 COUNT_PROPERTIES = {"capacity", "persons", "count", "steps", "berths"}
 AREA_PROPERTIES = {"area", "floor_area", "deck_area"}
 _AREA = re.compile(r"^\s*(\d[\d ]*(?:[.,]\d+)?)\s*(m2|m²|m\^2|sq\.?\s*m|ft2|ft²|sq\.?\s*ft)?\s*$", re.I)
@@ -178,14 +179,41 @@ def _to_candidates(tile: Tile, extraction: TileExtraction, file: str) -> list[tu
     return out
 
 
+_AREA_IN_NAME = re.compile(r"\d[\d ]*(?:[.,]\d+)?\s*(?:m2|m²|m\^2|sq\.?\s*m)\b", re.I)
+
+
+def _name_key(name: str | None) -> str:
+    """Vision names may embed the area ("DAY ROOM 39 m²"); compare on the label alone."""
+    return re.sub(r"[^\w]+", " ", _AREA_IN_NAME.sub("", name or "").casefold()).strip()
+
+
+def _containment(a, b) -> float:
+    """Overlap as a share of the smaller box (1.0 = one box lies fully inside the other)."""
+    ix = max(0.0, min(a[2], b[2]) - max(a[0], b[0]))
+    iy = max(0.0, min(a[3], b[3]) - max(a[1], b[1]))
+    smaller = min((a[2] - a[0]) * (a[3] - a[1]), (b[2] - b[0]) * (b[3] - b[1]))
+    return ix * iy / smaller if smaller > 0 else 0.0
+
+
+def _same_element(a: tuple[TileElement, Provenance], b: tuple[TileElement, Provenance]) -> bool:
+    (ea, pa), (eb, pb) = a, b
+    if ea.type.lower() != eb.type.lower() or pa.page != pb.page:
+        return False
+    na, nb = _name_key(ea.name), _name_key(eb.name)
+    if na and nb and na != nb:
+        return False                    # two differently named elements are never one element
+    if _iou(pa.bbox, pb.bbox) >= MERGE_IOU:
+        return True
+    return bool(na) and na == nb and _containment(pa.bbox, pb.bbox) >= MERGE_CONTAINMENT
+
+
 def _merge(cands: list[tuple[TileElement, Provenance]]) -> list[tuple[TileElement, Provenance]]:
-    """Same element seen in two overlapping tiles -> keep the more confident read."""
+    """Same element seen twice (overlapping tiles, or read twice with different boxes) -> keep the
+    fuller read (more properties), then the more confident one."""
     kept: list[tuple[TileElement, Provenance]] = []
-    for el, prov in sorted(cands, key=lambda c: -c[1].confidence):
-        dup = any(k.type.lower() == el.type.lower() and kp.page == prov.page
-                  and _iou(kp.bbox, prov.bbox) >= MERGE_IOU for k, kp in kept)
-        if not dup:
-            kept.append((el, prov))
+    for cand in sorted(cands, key=lambda c: (-len(c[0].properties), -c[1].confidence)):
+        if not any(_same_element(k, cand) for k in kept):
+            kept.append(cand)
     return kept
 
 

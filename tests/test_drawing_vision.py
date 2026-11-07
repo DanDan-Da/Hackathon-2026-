@@ -236,3 +236,40 @@ def test_cache_is_per_pdf_content(tmp_path):
     b.model = "m"
     extract_drawing(pdf2, "demo", llm=b, dpi=72, tile_px=2000, cache_dir=cache)
     assert len(b.calls) >= 1
+
+
+# ---------- duplicate rooms (same room read twice with differently sized boxes) ----------
+
+def room(name, bbox, area=None, conf=0.9):
+    props = [TileProperty(name="area", text=area)] if area else []
+    return TileElement(type="space", name=name, space_type="public", box_2d=box(bbox), properties=props,
+                       evidence_text=name, confidence=conf)
+
+
+def _rooms(tmp_path, *rooms):
+    pdf = make_ga(tmp_path, marks=[(50, 50)])
+    llm = FakeVision(default=TileExtraction(elements=list(rooms)))
+    facts = extract_drawing(pdf, project="demo", llm=llm, dpi=144, tile_px=800, overlap_px=100)
+    return [e for e in facts.elements if e.type == "space"]
+
+
+def test_same_room_read_twice_inside_one_box_is_merged_keeping_the_area(tmp_path):
+    spaces = _rooms(tmp_path,
+                    room("DAY ROOM", (100, 100, 400, 300), conf=0.95),
+                    room("DAY ROOM 39 m²", (100, 100, 220, 300), area="39", conf=0.8))
+    assert len(spaces) == 1
+    assert spaces[0].properties["area"] == pytest.approx(39.0)   # the richer read wins, not the more confident one
+
+
+def test_nested_boxes_with_different_names_are_not_merged(tmp_path):
+    spaces = _rooms(tmp_path,
+                    room("ROPE STORE", (100, 100, 400, 300)),
+                    room("STEERING GEAR ROOM", (120, 120, 380, 280)))
+    assert len(spaces) == 2
+
+
+def test_adjacent_rooms_with_the_same_name_are_not_merged(tmp_path):
+    spaces = _rooms(tmp_path,
+                    room("VOID", (100, 100, 300, 300)),
+                    room("VOID", (310, 100, 510, 300)))
+    assert len(spaces) == 2
