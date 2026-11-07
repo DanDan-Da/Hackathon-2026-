@@ -12,3 +12,4 @@ designs/**/*.pdf
 *.egg-info/
 .pytest_cache/
 designs/**/.cache/
+knowledge/index/
