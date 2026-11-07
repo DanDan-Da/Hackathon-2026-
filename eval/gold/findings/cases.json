@@ -1,0 +1,224 @@
+[
+ {
+  "name": "baseline narrow door D-101 (760 < 812.8)",
+  "mutations": [],
+  "expect": [
+   {
+    "rule_id": "PVAG-door-clear-width",
+    "element_id": "D-101",
+    "status": "fail"
+   },
+   {
+    "rule_id": "PVAG-door-clear-width",
+    "element_id": "D-102",
+    "status": "pass"
+   },
+   {
+    "rule_id": "PVAG-route-width",
+    "element_id": "C-4A",
+    "status": "pass"
+   },
+   {
+    "rule_id": "SOLAS-escape-count",
+    "element_id": null,
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "widen D-101 to 900",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "D-101",
+    "property": "clear_width",
+    "value": 900
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "PVAG-door-clear-width",
+    "element_id": "D-101",
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "narrow D-102 to 700",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "D-102",
+    "property": "clear_width",
+    "value": 700
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "PVAG-door-clear-width",
+    "element_id": "D-102",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "door exactly at the limit (812.8)",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "D-102",
+    "property": "clear_width",
+    "value": 812.8
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "PVAG-door-clear-width",
+    "element_id": "D-102",
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "door just under the limit (812.7)",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "D-102",
+    "property": "clear_width",
+    "value": 812.7
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "PVAG-door-clear-width",
+    "element_id": "D-102",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "blurry read of a passing door",
+  "mutations": [
+   {
+    "op": "set_confidence",
+    "element_id": "D-102",
+    "value": 0.3
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "PVAG-door-clear-width",
+    "element_id": "D-102",
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "blurry read of a failing door",
+  "mutations": [
+   {
+    "op": "set_confidence",
+    "element_id": "D-101",
+    "value": 0.3
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "PVAG-door-clear-width",
+    "element_id": "D-101",
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "narrow corridor C-4A (800 < 914.4)",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "C-4A",
+    "property": "clear_width",
+    "value": 800
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "PVAG-route-width",
+    "element_id": "C-4A",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "corridor exactly at the limit (914.4)",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "C-4A",
+    "property": "clear_width",
+    "value": 914.4
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "PVAG-route-width",
+    "element_id": "C-4A",
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "width missing on a door",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "D-102",
+    "property": "clear_width",
+    "value": "unreadable"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "PVAG-door-clear-width",
+    "element_id": "D-102",
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "all doors missing from extraction",
+  "mutations": [
+   {
+    "op": "remove_element",
+    "element_id": "D-101"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "D-102"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "PVAG-door-clear-width",
+    "element_id": null,
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "no stairways extracted",
+  "mutations": [
+   {
+    "op": "remove_element",
+    "element_id": "S-1"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "SOLAS-escape-count",
+    "element_id": null,
+    "status": "needs_review"
+   }
+  ]
+ }
+]
