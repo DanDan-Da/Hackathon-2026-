@@ -1,0 +1,18 @@
+{
+  "_comment": "Tolerances and vocabulary for app/design/vector_rooms.py. Edit here, not in code. Lengths in mm unless the key says pt.",
+  "room_types": ["cabin", "toilet"],
+  "label_types": ["cabin", "toilet", "space"],
+  "nested_allowed": {"cabin": ["toilet"]},
+  "max_wall_color_channel": 0.35,
+  "min_wall_edge_mm": 1500,
+  "axis_tol_pt": 0.3,
+  "merge_gap_mm": 1200,
+  "corner_tol_mm": 400,
+  "candidates_per_side": 25,
+  "min_nest_gap_mm": 400,
+  "min_room_side_mm": 1000,
+  "max_room_side_mm": 15000,
+  "area_tolerance": 0.10,
+  "bbox_inside_min_frac": 0.8,
+  "area_property": "area"
+}

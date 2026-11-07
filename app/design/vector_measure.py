@@ -276,12 +276,19 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--page", type=int, default=1)
     ap.add_argument("--scale", type=int, help="override; default: read from the drawing text layer")
     ap.add_argument("--add-new", action="store_true", help="append unmatched swings as new door elements")
+    ap.add_argument("--rooms", action="store_true", help="measure room long/short side instead of doors")
     a = ap.parse_args(argv)
     scale = a.scale or find_scale(a.pdf)
     if not scale:
         print("no stated scale found; refusing to measure (pass --scale to override)")
         return 2
     facts = json.loads(Path(a.facts).read_text())
+    if a.rooms:
+        from app.design import vector_rooms
+        stats = vector_rooms.apply_rooms(facts, a.pdf, scale, a.page)
+        Path(a.out).write_text(json.dumps(facts, indent=2))
+        print(f"scale 1:{scale}; {stats}")
+        return 0
     cands = measure_doors(a.pdf, scale, a.page)
     stats = apply_to_facts(facts, cands, a.pdf, a.page, a.add_new)
     Path(a.out).write_text(json.dumps(facts, indent=2))
