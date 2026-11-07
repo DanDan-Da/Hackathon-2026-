@@ -8,6 +8,7 @@ class Settings(BaseSettings):
 
     llm_provider: str = "gemini"  # gemini | claude | local
     llm_max_parallel: int = 2     # parallel AI requests (free-tier keys: keep low)
+    llm_max_rpm: int = 0          # AI requests per minute (0 = unlimited). Free-tier Gemini: 4
     gemini_api_key: str | None = None
     gemini_model: str = "gemini-flash-latest"   # or gemini-pro-latest for best accuracy
     anthropic_api_key: str | None = None

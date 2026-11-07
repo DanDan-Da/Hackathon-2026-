@@ -191,3 +191,48 @@ def test_box_2d_outside_tile_is_clamped(tmp_path):
     [d] = extract_drawing(pdf, project="demo", llm=FakeVision(default=TileExtraction(elements=[el])),
                           dpi=144, tile_px=800, overlap_px=100).elements
     assert d.provenance.bbox == pytest.approx((0, 0, 200, 400))   # clamped to the 800x800 px tile
+
+
+# ---------- resumable runs (tile cache) ----------
+
+def test_cached_rerun_makes_no_llm_calls(tmp_path):
+    pdf = make_ga(tmp_path)
+    cache = tmp_path / "cache"
+    first = FakeVision(default=TileExtraction(elements=[door()]))
+    first.model = "m1"
+    facts1 = extract_drawing(pdf, "demo", llm=first, dpi=72, tile_px=2000, cache_dir=cache)
+    assert len(first.calls) >= 1
+
+    second = FakeVision()          # would return nothing if it were asked
+    second.model = "m1"
+    facts2 = extract_drawing(pdf, "demo", llm=second, dpi=72, tile_px=2000, cache_dir=cache)
+    assert second.calls == []
+    assert facts2 == facts1
+
+
+def test_cache_is_per_model(tmp_path):
+    pdf = make_ga(tmp_path)
+    cache = tmp_path / "cache"
+    a = FakeVision(default=TileExtraction(elements=[door()]))
+    a.model = "model-a"
+    extract_drawing(pdf, "demo", llm=a, dpi=72, tile_px=2000, cache_dir=cache)
+
+    b = FakeVision(default=TileExtraction(elements=[]))
+    b.model = "model-b"
+    facts_b = extract_drawing(pdf, "demo", llm=b, dpi=72, tile_px=2000, cache_dir=cache)
+    assert len(b.calls) >= 1 and facts_b.elements == []
+
+
+def test_cache_is_per_pdf_content(tmp_path):
+    cache = tmp_path / "cache"
+    pdf1 = make_ga(tmp_path, marks=((100, 100),))
+    a = FakeVision(default=TileExtraction(elements=[door()]))
+    a.model = "m"
+    extract_drawing(pdf1, "demo", llm=a, dpi=72, tile_px=2000, cache_dir=cache)
+
+    pdf1.unlink()
+    pdf2 = make_ga(tmp_path, marks=((300, 300),))      # same filename, different drawing
+    b = FakeVision()
+    b.model = "m"
+    extract_drawing(pdf2, "demo", llm=b, dpi=72, tile_px=2000, cache_dir=cache)
+    assert len(b.calls) >= 1

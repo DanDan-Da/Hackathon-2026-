@@ -16,6 +16,10 @@ class LLMRefusal(RuntimeError):
     """The model declined or returned nothing usable. Callers turn this into needs_review."""
 
 
+class LLMQuotaExhausted(RuntimeError):
+    """A hard quota (e.g. free-tier requests per DAY) is used up. Retrying will not help; say when it resets."""
+
+
 class LLMProvider(ABC):
     @abstractmethod
     def complete(self, system: str, prompt: str) -> str: ...

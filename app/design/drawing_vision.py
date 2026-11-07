@@ -16,6 +16,7 @@ CLI:  python -m app.design.drawing_vision designs/<project>/ga.pdf [--dpi 200]
 from __future__ import annotations
 
 import argparse
+import hashlib
 import re
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -188,16 +189,35 @@ def _merge(cands: list[tuple[TileElement, Provenance]]) -> list[tuple[TileElemen
     return kept
 
 
+def _cache_key(pdf_hash: str, model: str, tile: Tile, dpi: int) -> str:
+    """Changes whenever the drawing, model, prompt or tile geometry changes, so stale reads are impossible."""
+    parts = [pdf_hash, model, hashlib.sha256(SYSTEM_PROMPT.encode()).hexdigest(), str(dpi),
+             str(tile.page), *map(str, tile.origin_pt), *map(str, tile.size_px)]
+    return hashlib.sha256("|".join(parts).encode()).hexdigest()[:32]
+
+
 def extract_drawing(path: str | Path, project: str, llm: LLMProvider | None = None,
                     dpi: int = DEFAULT_DPI, tile_px: int = DEFAULT_TILE_PX,
-                    overlap_px: int = DEFAULT_OVERLAP_PX) -> DesignFacts:
+                    overlap_px: int = DEFAULT_OVERLAP_PX, cache_dir: str | Path | None = None) -> DesignFacts:
+    """`cache_dir` makes a run resumable: each tile's AI answer is stored there and reused on a rerun."""
     llm = llm or get_llm()
     file = str(path)
     tiles = render_tiles(path, dpi=dpi, tile_px=tile_px, overlap_px=overlap_px)
+    cache = Path(cache_dir) if cache_dir else None
+    if cache:
+        cache.mkdir(parents=True, exist_ok=True)
+        pdf_hash = hashlib.sha256(Path(path).read_bytes()).hexdigest()
+        model = str(getattr(llm, "model", type(llm).__name__))
 
     def ask(tile: Tile) -> TileExtraction:
-        return llm.complete_structured(SYSTEM_PROMPT, _tile_prompt(tile), TileExtraction,
-                                       images_png=[tile.png])
+        entry = cache / f"{_cache_key(pdf_hash, model, tile, dpi)}.json" if cache else None
+        if entry is not None and entry.exists():
+            return TileExtraction.model_validate_json(entry.read_text())
+        result = llm.complete_structured(SYSTEM_PROMPT, _tile_prompt(tile), TileExtraction,
+                                         images_png=[tile.png])
+        if entry is not None:
+            entry.write_text(result.model_dump_json())
+        return result
 
     with ThreadPoolExecutor(max_workers=max(1, settings.llm_max_parallel)) as pool:
         results = list(pool.map(ask, tiles))
@@ -225,8 +245,11 @@ def main() -> None:
     ap.add_argument("--project", default=None, help="defaults to the PDF's parent folder name")
     ap.add_argument("--dpi", type=int, default=DEFAULT_DPI)
     ap.add_argument("--out", type=Path, default=None, help="defaults to <pdf folder>/facts.json")
+    ap.add_argument("--cache", type=Path, default=None,
+                    help="tile cache folder, defaults to <pdf folder>/.cache (a stopped run resumes from it)")
     args = ap.parse_args()
-    facts = extract_drawing(args.pdf, project=args.project or args.pdf.parent.name, dpi=args.dpi)
+    facts = extract_drawing(args.pdf, project=args.project or args.pdf.parent.name, dpi=args.dpi,
+                            cache_dir=args.cache or args.pdf.parent / ".cache")
     out = args.out or args.pdf.parent / "facts.json"
     out.write_text(facts.model_dump_json(indent=2))
     print(f"{len(facts.elements)} elements -> {out}")
