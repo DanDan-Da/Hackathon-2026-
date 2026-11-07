@@ -1,5 +1,7 @@
 # IFC reader (D5)
 
+See also: [3D-MODELS.md](3D-MODELS.md) (status and sources), [3D.md](3D.md) (mesh size check on the real IFC export).
+
 Install the optional `3d` extra, then run these commands from the repository root:
 
 ```bash

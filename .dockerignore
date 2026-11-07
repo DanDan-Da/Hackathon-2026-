@@ -8,3 +8,7 @@ Files
 .claude
 **/__pycache__
 *.nwd
+**/CLAUDE.md
+**/AGENTS.md
+* 2.*
+**/* 2.*
