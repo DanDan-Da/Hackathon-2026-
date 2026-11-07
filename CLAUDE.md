@@ -18,7 +18,7 @@ Two people work on this repo. **L** owns the rules, checking and AI. **D** owns 
 - **Deterministic first.** Python checks numeric, presence and count rules (`app/check/evaluator.py`). The LLM only judges qualitative rules, and its output must be structured.
 - **Internal units:** lengths in mm, areas in m². Convert with `app/check/units.py`.
 - **`app/models.py` is the shared contract between L and D.** Change it only in its own small PR, and tell the user to inform the other person.
-- **LLM calls only go through `app/providers/llm.get_llm()`.** Never import `anthropic` or `openai` elsewhere. `LLM_PROVIDER=claude|local` switches between them.
+- **LLM calls only go through `app/providers/llm.get_llm()`.** Never import `anthropic` or `openai` elsewhere. `LLM_PROVIDER=gemini|claude|local` switches between them (gemini is the default).
 - Never commit `.env`, `Files/`, `*.nwd` or large design PDFs (see `docs/DATA.md`).
 
 ## 3. Git workflow

@@ -20,7 +20,11 @@ curl -X POST localhost:8000/check -H 'content-type: application/json' -d @mocks/
 ```
 
 ## AI providers
-`LLM_PROVIDER=claude` (default, `claude-opus-5-5`) or `LLM_PROVIDER=local` (any OpenAI-compatible server):
+`LLM_PROVIDER=gemini` (default). Set `GEMINI_API_KEY` in `.env` (from https://aistudio.google.com/apikey) and pick `GEMINI_MODEL`: `gemini-flash-latest` is the default, and `gemini-pro-latest` gives the best accuracy.
+On a free-tier key, keep `LLM_MAX_PARALLEL` at 1–2. Rate limits are retried automatically.
+On the free tier, Google may use prompts to improve its models, so use it only with public or sample drawings.
+
+Alternatives: `LLM_PROVIDER=claude` (`claude-opus-5-5`), or `LLM_PROVIDER=local` (any OpenAI-compatible server, on-prem, for confidential designs):
 ```bash
 vllm serve Qwen/Qwen2.5-VL-32B-Instruct --port 8001 --max-model-len 32768
 ```
