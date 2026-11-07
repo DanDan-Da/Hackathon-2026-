@@ -159,3 +159,16 @@ def test_daily_quota_fails_fast_instead_of_retrying_for_hours():
         p.complete("S", "P")
     assert len(models.calls) == 1 and sleeps == []
     assert "20" in str(exc.value) and "20h" in str(exc.value)     # says the limit and when it resets
+
+
+def test_json_wrapped_in_a_markdown_fence_is_accepted():
+    # Gemma models have no strict JSON mode and sometimes wrap the answer in a code fence
+    fenced = '```json\n{"label": "MESS", "width_text": "83"}\n```\n'
+    p, _ = provider(reply(fenced))
+    assert p.complete_structured("S", "P", Answer) == Answer(label="MESS", width_text="83")
+
+
+def test_text_around_a_json_object_is_not_guessed_at():
+    p, _ = provider(reply('Sure! {"label": "MESS", "width_text": "83"}'))
+    with pytest.raises(Exception):
+        p.complete_structured("S", "P", Answer)
