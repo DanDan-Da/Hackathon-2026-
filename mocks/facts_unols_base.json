@@ -1,0 +1,115 @@
+{
+ "project": "UNOLS eval research vessel",
+ "particulars": {
+  "name": null,
+  "ship_type": "Global Class research vessel",
+  "length_overall_m": 70.0,
+  "persons_on_board": 38,
+  "provenance": [
+   {
+    "file": "spec.pdf",
+    "page": 1,
+    "method": "spec_text",
+    "confidence": 1.0
+   }
+  ]
+ },
+ "elements": [
+  {
+   "id": "D-1",
+   "type": "door",
+   "properties": {
+    "clear_width": 900
+   },
+   "provenance": {
+    "file": "unols_base.pdf",
+    "page": 1,
+    "bbox": [
+     0,
+     0,
+     10,
+     10
+    ],
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "D-2",
+   "type": "door",
+   "properties": {
+    "clear_width": 850
+   },
+   "provenance": {
+    "file": "unols_base.pdf",
+    "page": 1,
+    "bbox": [
+     0,
+     0,
+     10,
+     10
+    ],
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "P-1",
+   "type": "corridor",
+   "space_type": "passageway",
+   "properties": {
+    "clear_width": 1000,
+    "width": 1300
+   },
+   "provenance": {
+    "file": "unols_base.pdf",
+    "page": 1,
+    "bbox": [
+     0,
+     0,
+     10,
+     10
+    ],
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "T-1",
+   "type": "toilet",
+   "properties": {
+    "width": 1600,
+    "depth": 1500
+   },
+   "provenance": {
+    "file": "unols_base.pdf",
+    "page": 1,
+    "bbox": [
+     0,
+     0,
+     10,
+     10
+    ],
+    "method": "vision",
+    "confidence": 0.9
+   }
+  },
+  {
+   "id": "C-1",
+   "type": "cabin",
+   "properties": {},
+   "provenance": {
+    "file": "unols_base.pdf",
+    "page": 1,
+    "bbox": [
+     0,
+     0,
+     10,
+     10
+    ],
+    "method": "vision",
+    "confidence": 0.9
+   }
+  }
+ ]
+}

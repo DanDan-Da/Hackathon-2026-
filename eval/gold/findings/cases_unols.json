@@ -1,0 +1,354 @@
+[
+ {
+  "name": "base: compliant research vessel",
+  "mutations": [],
+  "expect": [
+   {
+    "rule_id": "ADA-UNOLS-RV404-2-3-clear-width",
+    "element_id": "D-1",
+    "status": "pass"
+   },
+   {
+    "rule_id": "ADA-UNOLS-RV404-2-3-clear-width",
+    "element_id": "D-2",
+    "status": "pass"
+   },
+   {
+    "rule_id": "ADA-UNOLS-RV403-5-1-clear-width",
+    "element_id": "P-1",
+    "status": "pass"
+   },
+   {
+    "rule_id": "ADA-UNOLS-B-width",
+    "element_id": "P-1",
+    "status": "pass"
+   },
+   {
+    "rule_id": "ADA-UNOLS-RV604-8-1-1-width-2",
+    "element_id": "T-1",
+    "status": "pass"
+   },
+   {
+    "rule_id": "ADA-UNOLS-RV604-8-1-1-depth-2",
+    "element_id": "T-1",
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "door exactly 32 in = 812.8 mm",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "D-1",
+    "property": "clear_width",
+    "value": 812.8
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "ADA-UNOLS-RV404-2-3-clear-width",
+    "element_id": "D-1",
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "door 812 mm is just under 32 in",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "D-1",
+    "property": "clear_width",
+    "value": 812
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "ADA-UNOLS-RV404-2-3-clear-width",
+    "element_id": "D-1",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "door 700 mm violates 32 in",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "D-2",
+    "property": "clear_width",
+    "value": 700
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "ADA-UNOLS-RV404-2-3-clear-width",
+    "element_id": "D-2",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "door measured at low confidence is never decided",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "D-1",
+    "property": "clear_width",
+    "value": 700
+   },
+   {
+    "op": "set_confidence",
+    "element_id": "D-1",
+    "value": 0.5
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "ADA-UNOLS-RV404-2-3-clear-width",
+    "element_id": "D-1",
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "door width missing",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "D-1",
+    "property": "clear_width",
+    "value": null
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "ADA-UNOLS-RV404-2-3-clear-width",
+    "element_id": "D-1",
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "passageway exactly 36 in = 914.4 mm",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "P-1",
+    "property": "clear_width",
+    "value": 914.4
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "ADA-UNOLS-RV403-5-1-clear-width",
+    "element_id": "P-1",
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "passageway 914 mm is just under 36 in",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "P-1",
+    "property": "clear_width",
+    "value": 914
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "ADA-UNOLS-RV403-5-1-clear-width",
+    "element_id": "P-1",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "passageway 900 mm violates 36 in",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "P-1",
+    "property": "clear_width",
+    "value": 900
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "ADA-UNOLS-RV403-5-1-clear-width",
+    "element_id": "P-1",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "passageway low confidence",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "P-1",
+    "property": "clear_width",
+    "value": 900
+   },
+   {
+    "op": "set_confidence",
+    "element_id": "P-1",
+    "value": 0.4
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "ADA-UNOLS-RV403-5-1-clear-width",
+    "element_id": "P-1",
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "ARRV passageway width 4 ft = 1219.2 mm exactly",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "P-1",
+    "property": "width",
+    "value": 1219.2
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "ADA-UNOLS-B-width",
+    "element_id": "P-1",
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "ARRV passageway width 1219 mm is under 4 ft",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "P-1",
+    "property": "width",
+    "value": 1219
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "ADA-UNOLS-B-width",
+    "element_id": "P-1",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "toilet width exactly 60 in = 1524 mm",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "T-1",
+    "property": "width",
+    "value": 1524
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "ADA-UNOLS-RV604-8-1-1-width-2",
+    "element_id": "T-1",
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "toilet width 1523 mm fails",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "T-1",
+    "property": "width",
+    "value": 1523
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "ADA-UNOLS-RV604-8-1-1-width-2",
+    "element_id": "T-1",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "toilet depth exactly 56 in = 1422.4 mm",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "T-1",
+    "property": "depth",
+    "value": 1422.4
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "ADA-UNOLS-RV604-8-1-1-depth-2",
+    "element_id": "T-1",
+    "status": "pass"
+   }
+  ]
+ },
+ {
+  "name": "toilet depth 1400 mm fails",
+  "mutations": [
+   {
+    "op": "set_property",
+    "element_id": "T-1",
+    "property": "depth",
+    "value": 1400
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "ADA-UNOLS-RV604-8-1-1-depth-2",
+    "element_id": "T-1",
+    "status": "fail"
+   }
+  ]
+ },
+ {
+  "name": "toilet removed: absence is needs_review, never pass",
+  "mutations": [
+   {
+    "op": "remove_element",
+    "element_id": "T-1"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "ADA-UNOLS-RV604-8-1-1-width-2",
+    "element_id": null,
+    "status": "needs_review"
+   }
+  ]
+ },
+ {
+  "name": "no doors extracted: needs_review",
+  "mutations": [
+   {
+    "op": "remove_element",
+    "element_id": "D-1"
+   },
+   {
+    "op": "remove_element",
+    "element_id": "D-2"
+   }
+  ],
+  "expect": [
+   {
+    "rule_id": "ADA-UNOLS-RV404-2-3-clear-width",
+    "element_id": null,
+    "status": "needs_review"
+   }
+  ]
+ }
+]
