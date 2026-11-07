@@ -13,19 +13,14 @@ something material changes. Last updated: 2026-11-07.
 | L4 review endpoints | merged (#24) | `POST /ingest/rules`, `GET /rules`, `PATCH /rules/{id}` |
 | L5 LLM judge | merged (#25) | `app/check/llm_judge.py`; no elements -> no LLM call; unverifiable verdict -> `needs_review` |
 | L6 local GPU | optional / unavailable | D's #31: Meyer's GPU machine is unavailable. Mention in slides instead |
-| L7 `/ask` | **done, PR #40 open (not merged)** | branch `l/ask-chat`; `app/check/ask.py`, route in `app/api/main.py`; tests with fake embedder + fake LLM |
+| L7 `/ask` | merged (#40) |  `app/check/ask.py`, route in `app/api/main.py`; tests with fake embedder + fake LLM |
 | L8 Docker + `docs/DEPLOY.md` | **not started, on purpose** | deliberately waits until L and D are connected so it can be done once, on one computer |
 
-## Open PRs (pushed 2026-11-07, **not merged yet**: none of this is on `main` until they are)
-Stack: `main` <- #39 `l/poc-mocks` <- #40 `l/ask-chat` <- #41 `l/offline-check`; #38 `l/max-persons` is separate, off `main`.
-Merge in this order: #38, #39, then retarget #40 to `main` and merge, then #41. After each squash-merge, retarget the next PR
-to `main` and merge `main` into its branch (no force-push), as done for #22-#25.
-| PR | Branch | Content |
-|---|---|---|
-| #38 | `l/max-persons` | **`app/models.py` change** (`Applicability.max_persons_on_board`, optional, inclusive) + `applicability.py` + tests. Own PR by the contract rule; **tell D** |
-| #39 | `l/poc-mocks` | `mocks/rules_nps_poc.json`, `mocks/facts_nps_poc.json`, `tests/test_poc_pipeline.py`; compiler prompt now says `target` must be a physical element; warning when `target == space_type` |
-| #40 | `l/ask-chat` | L7 |
-| #41 | `l/offline-check` | `python -m app.check.run` CLI, `mocks/*_synthetic.json`, clearer evaluator messages, this log, and a copy of the `max-persons` commit (identical to #38, merges cleanly in either order) |
+## Merged to `main` (2026-11-07)
+All L work so far is on `main`; no local-only branches remain. Merged in this order (squash): #38 `max_persons_on_board`
+(**`app/models.py` contract change: D must be told**), #39 PoC mocks + compiler prompt/warning, #40 L7 `/ask`, #41 offline
+check CLI + synthetic mocks + evaluator messages + this log. Stacked PRs were retargeted to `main` with `main` merged into the
+branch (no force-push), as for #22-#25. At the last check `main` had 190 tests passing, 1 skipped.
 
 ## Gemini / API history and decision
 - Provider: `LLM_PROVIDER=gemini`, model `gemini-3.8-flash` (the old `gemini-flash-latest` alias returns 404).
@@ -73,7 +68,7 @@ Add `--llm` to let the judge use the configured provider (needs a key). Exit cod
 3. Compile the remaining pages / the 37-page UNOLS guide **only if a key and quota exist again** (about 40 calls; cache protects partial runs).
 4. Build the real index (`pip install -e ".[rag]"`, downloads ~2 GB `bge-m3`) and try `/ask` retrieval on the real PDFs.
 5. L8 Docker + `docs/DEPLOY.md` once connected with D.
-6. Merge PRs #38-#41 (order above) and tell D about the `models.py` field.
+6. Tell D about the `Applicability.max_persons_on_board` field (merged in #38).
 
 ## Rules of the road (from CLAUDE.md, learned the hard way here)
 - Never push to `main`; one short branch per task; squash-merge PRs; contract (`app/models.py`) changes in their own PR.
