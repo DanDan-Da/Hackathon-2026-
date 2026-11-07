@@ -1,0 +1,21 @@
+{
+  "_comment": "Label spellings per field (matched case-insensitively at line start, punctuation ignored) and which stated fields a mesh extent is compared with. Longest label wins. Edit here, not in code.",
+  "fields": {
+    "length_overall": ["length overall", "length (overall)", "length over all", "loa"],
+    "length_waterline": ["length waterline", "length (waterline)", "length on design waterline", "lwl"],
+    "beam": ["beam overall", "beam (overall)", "beam, overall"],
+    "beam_main_deck": ["beam at main deck", "beam (at main deck)"],
+    "depth": ["depth baseline to main deck", "depth"],
+    "draft": ["design draft"],
+    "air_draft": ["air draft"]
+  },
+  "units": ["mm", "cm", "m", "ft", "feet", "foot", "in", "inch", "inches"],
+  "comparisons": {
+    "length_overall": ["length_overall"],
+    "beam": ["beam"],
+    "height": ["draft", "air_draft"]
+  },
+  "comparison_notes": {
+    "height": "mesh height (keel to mast top) is compared with design draft + air draft"
+  }
+}
