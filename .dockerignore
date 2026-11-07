@@ -1,0 +1,10 @@
+.venv
+.git
+.env
+knowledge
+designs
+Files
+.playwright-mcp
+.claude
+**/__pycache__
+*.nwd

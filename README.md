@@ -57,7 +57,7 @@ The design and regulation PDFs are public but not stored in git (licence and siz
 
 ## Deployment
 Install, configuration, running, compiling rules, extracting drawings, providers and on-prem use:
-**[docs/DEPLOY.md](docs/DEPLOY.md)**. A `Dockerfile` and `docker-compose.yml` are included but untested.
+**[docs/DEPLOY.md](docs/DEPLOY.md)**. Or with Docker: `cp .env.example .env && docker compose up --build` (tested without extras).
 
 ## AI providers
 All LLM calls go through one gateway, `app/providers/llm.get_llm()`. `LLM_PROVIDER=gemini` (default) with
@@ -74,7 +74,7 @@ confidential drawings (implemented in `app/providers/local.py` but never run: no
 
 ## Limits
 Compiled rules are not human-reviewed; no SOLAS/MARPOL/DNV text was available to us; 3D is proven on a synthetic IFC
-(the Navisworks `.nwd` cannot be read by open-source tools); no on-prem model run; Docker untested.
+(the Navisworks `.nwd` cannot be read by open-source tools); no on-prem model run; Docker image tested only without the `rag`/`3d` extras.
 
 ## Docs
 [Demo script](docs/DEMO.md) · [Evaluation](docs/EVAL.md) · [Deployment](docs/DEPLOY.md) · [Slides and Q&A](docs/SLIDES.md) ·

@@ -1,4 +1,4 @@
-# UNTESTED: docker was not run when this file was written. See docs/DEPLOY.md.
+# Tested 2026-11-07: docker compose up --build, base image (no extras). See docs/DEPLOY.md.
 FROM python:3.12-slim
 ARG EXTRAS=""
 WORKDIR /srv
@@ -7,6 +7,7 @@ COPY pyproject.toml ./
 COPY app ./app
 COPY web ./web
 COPY mocks ./mocks
+COPY eval ./eval
 RUN pip install --no-cache-dir -e ".${EXTRAS}"
 # Rules, compiled rules and designs live on volumes (see docker-compose.yml), not in the image.
 EXPOSE 8000
