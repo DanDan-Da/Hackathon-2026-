@@ -61,3 +61,5 @@ It answers questions from the L2 index with citations.
 ## Checkpoints with D
 - **About 5h:** real `rules.json` against D's real `DesignFacts` from one GA.
 - **About 8h:** full pipeline plus D's eval numbers. Fix the rules that cause false positives.
+
+> D's hand-off notes for L (changes in your files, open asks) are in `docs/D-LOG.md`.
