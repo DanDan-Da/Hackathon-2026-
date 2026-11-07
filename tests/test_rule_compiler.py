@@ -91,3 +91,39 @@ def test_main_writes_rules_json(tmp_path, monkeypatch):
     rc.main()
     data = json.loads(out.read_text(encoding="utf-8"))
     assert [Rule.model_validate(d).source.regime for d in data] == ["REG"]
+
+
+def test_cache_skips_llm_on_rerun(tmp_path):
+    cache = tmp_path / "rules.cache.json"
+    first = FakeLLM([er()])
+    a = rc.compile_rules([chunk()], first, max_parallel=1, cache_path=cache)
+    assert len(first.calls) == 1 and cache.exists()
+    second = FakeLLM([er(title="different")])
+    b = rc.compile_rules([chunk()], second, max_parallel=1, cache_path=cache)
+    assert second.calls == [] and [r.model_dump() for r in b] == [r.model_dump() for r in a]
+
+
+def test_failed_chunk_not_cached_and_retried(tmp_path):
+    cache = tmp_path / "rules.cache.json"
+    assert rc.compile_rules([chunk()], FakeLLM(fail=True), max_parallel=1, cache_path=cache) == []
+    retry = FakeLLM([er()])
+    assert len(rc.compile_rules([chunk()], retry, max_parallel=1, cache_path=cache)) == 1
+    assert len(retry.calls) == 1
+
+
+def test_cache_saved_per_chunk_survives_partial_run(tmp_path):
+    cache = tmp_path / "rules.cache.json"
+
+    class DiesOnSecond(FakeLLM):
+        def complete_structured(self, *a, **k):
+            if self.calls:
+                raise KeyboardInterrupt   # simulates the run being stopped mid-way
+            return super().complete_structured(*a, **k)
+
+    try:
+        rc.compile_rules([chunk(page=1), chunk(page=2)], DiesOnSecond([er()]), max_parallel=1, cache_path=cache)
+    except KeyboardInterrupt:
+        pass
+    resume = FakeLLM([er()])
+    rc.compile_rules([chunk(page=1), chunk(page=2)], resume, max_parallel=1, cache_path=cache)
+    assert len(resume.calls) == 1          # page 1 came from the cache, only page 2 is re-asked
