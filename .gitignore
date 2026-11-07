@@ -11,4 +11,5 @@ designs/**/*.pdf
 .claude/settings.local.json
 *.egg-info/
 .pytest_cache/
+designs/**/.cache/
 knowledge/index/

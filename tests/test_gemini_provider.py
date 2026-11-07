@@ -5,8 +5,8 @@ import pytest
 from google.genai import errors, types
 from pydantic import BaseModel
 
-from app.providers.llm import LLMRefusal
-from app.providers.gemini import GeminiProvider
+from app.providers.llm import LLMQuotaExhausted, LLMRefusal
+from app.providers.gemini import MAX_TRIES, GeminiProvider
 
 PNG = b"\x89PNG\r\n\x1a\n" + b"fake"
 
@@ -77,10 +77,10 @@ def test_server_error_is_retried():
 
 
 def test_gives_up_after_max_tries():
-    p, models = provider(*[rate_limited("1s")] * 6)
+    p, models = provider(*[rate_limited("1s")] * MAX_TRIES)
     with pytest.raises(errors.ClientError):
         p.complete_structured("S", "P", Answer)
-    assert len(models.calls) == 6
+    assert len(models.calls) == MAX_TRIES
 
 
 def test_client_error_other_than_429_is_not_retried():
@@ -115,3 +115,47 @@ def test_get_llm_selects_gemini(monkeypatch):
     monkeypatch.setattr(settings, "llm_provider", "gemini")
     monkeypatch.setattr(settings, "gemini_api_key", "test-key")
     assert isinstance(llm.get_llm(), GeminiProvider)
+
+
+def test_max_rpm_spaces_calls_so_the_free_tier_limit_is_never_hit():
+    now = [100.0]
+    sleeps = []
+
+    def sleep(s):
+        sleeps.append(s)
+        now[0] += s
+
+    fake = SimpleNamespace(models=FakeModels([reply("a"), reply("b"), reply("c")]))
+    p = GeminiProvider(client=fake, model="m", sleep=sleep, max_rpm=5, clock=lambda: now[0])
+    for _ in range(3):
+        p.complete("sys", "hi")
+    # 5 requests/minute = one every 12 s: no wait before the first call, then 12 s between calls
+    assert sleeps == pytest.approx([12.0, 12.0])
+    assert len(fake.models.calls) == 3
+
+
+def test_no_pacing_by_default():
+    sleeps = []
+    fake = SimpleNamespace(models=FakeModels([reply("a"), reply("b")]))
+    p = GeminiProvider(client=fake, model="m", sleep=sleeps.append, max_rpm=0)
+    p.complete("s", "x"); p.complete("s", "x")
+    assert sleeps == []
+
+
+def daily_quota_exhausted(delay="72209s"):
+    return errors.ClientError(429, {"error": {"code": 429, "status": "RESOURCE_EXHAUSTED", "message": "quota",
+                                              "details": [
+                                                  {"@type": "type.googleapis.com/google.rpc.QuotaFailure",
+                                                   "violations": [{"quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+                                                                   "quotaValue": "20"}]},
+                                                  {"@type": "type.googleapis.com/google.rpc.RetryInfo",
+                                                   "retryDelay": delay}]}})
+
+
+def test_daily_quota_fails_fast_instead_of_retrying_for_hours():
+    sleeps = []
+    p, models = provider(daily_quota_exhausted(), reply("never reached"), sleeps=sleeps)
+    with pytest.raises(LLMQuotaExhausted) as exc:
+        p.complete("S", "P")
+    assert len(models.calls) == 1 and sleeps == []
+    assert "20" in str(exc.value) and "20h" in str(exc.value)     # says the limit and when it resets
