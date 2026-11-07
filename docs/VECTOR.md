@@ -27,3 +27,33 @@ CLI: `python -m app.design.vector_measure FACTS PDF -o OUT [--add-new]`.
 
 ## Wiring decision
 - The 4 existing door elements have no matching swing, so the default run changes nothing. With `--add-new` the 143 swings are appended as new `door` elements (`door-vec-NNN`, `method='vector'`, confidence 0.5, bbox). Existing `clear_width` values are never overwritten, ambiguous matches are skipped. `--add-new` is off by default: they have no deck or room link yet (matching to cabins by bbox is a follow-up).
+
+# Room long/short side from wall rectangles (issue #18)
+
+Code: `app/design/vector_rooms.py`, config (all tolerances): `app/design/vector_rooms.json`, tests: `tests/test_vector_rooms.py`.
+CLI: `python -m app.design.vector_measure FACTS PDF -o OUT --rooms` (same scale detection, refuses without a stated scale).
+
+## What it does
+- For every `cabin`/`toilet` element (types from the config) the label position is taken (`properties.text_label_bbox` if present, else the provenance bbox). Axis-aligned dark lines are collected from the vector paths, collinear pieces are merged over door gaps (1.2 m), lines shorter than 1.5 m are dropped (furniture). The smallest closed rectangle around the label is measured.
+- Output properties (mm): `room_long_side`, `room_short_side`. The drawing does not say which is "width" and which "depth", so none is invented. Also `room_area_vector_m2`, `room_area_check` (`confirmed` | `agree_unconfirmed` | `disagree` | `no_printed_area`), `room_area_error` (fraction vs the printed area) and `prev_provenance`.
+- Provenance becomes `method='vector'`, bbox = the rectangle, confidence 0.5 (`vector_measure.CONF_VECTOR`). Existing `room_*` values are never overwritten.
+- Independent check with the printed area (the vision extraction reads it from the label): within +-10 % (`area_tolerance`) AND at least 80 % of the element's own bbox inside the rectangle AND no other room's label inside (a toilet label inside a cabin is allowed) raises confidence to `crosscheck.CONFIRMED_CONF` (0.9). Area agreement alone is not enough because it does not pin the short side. Disagreement stays at 0.5 and is flagged. Agreement without the outline match stays at 0.5 (`agree_unconfirmed`).
+- Skipped (counted, nothing written): no closed rectangle, concentric nesting (an enclosing closed rectangle clear of the inner one by >= 400 mm on all four sides), or a rectangle that contains another room's label (it spans several rooms).
+
+## Walls in this drawing
+Room walls are NOT heavier lines: cabin walls, partitions and furniture are all 0.15 pt black. Only the hull line and some WC boxes are 0.72 pt. So a weight filter does not work; length (>= 1.5 m after merging) and closure are what separate walls from furniture. Walls are drawn as double lines about 100 to 200 mm apart, hence the 400 mm nest gap.
+
+## Measured on designs/demo/ga.pdf (1:150), 65 cabin/toilet elements
+- Rectangle written: 35. Skipped: 3 no closed rectangle, 8 ambiguous nesting, 19 rectangle spans another room's label (22 of the 36 toilets, 8 of 29 cabins; the WC boxes are chamfered, not rectangles, so most fall through to the enclosing cabin and are rightly rejected).
+- 29 rooms (all cabins) have a printed area: rectangle written for 21; 16 of those 21 within 10 % (13 confirmed at 0.9, 3 agree-but-unconfirmed), 5 disagree (flagged at 0.5). Area error on the 21: median -1.4 %, median absolute 5.1 %, range -63 % to +6 %. The 8 without a rectangle are skipped, not guessed.
+- Caution: the printed areas are nominal (12, 15, 20, 25 m2), so the 10 % check is a coarse independent check, not a precise one.
+- 14 toilets got a rectangle; they have no printed area, so they stay at 0.5 (needs_review). Not verified one by one beyond a few crops.
+
+## What the crops showed (scratchpad only, not committed)
+- Correct: cabin-p1-027 (15 m2, rectangle on the cabin walls incl. the WC corner, +1.5 %), cabin-p1-089 and neighbours (2-person cabins, within 1.5 %), toilet-p1-035 (rectangle around the WC box).
+- Wrong and flagged: cabin-p1-029, -034, -064, -076 (printed 20/12/12/15, rectangle 12.0/6.3/8.7/5.5 m2). The smallest closed rectangle was bounded by a furniture outline (a bed or desk) instead of the real bulkhead, or the cabin is not rectangular. These are exactly the cases the printed area catches; they stay at 0.5.
+- Correctly skipped: cabin-p1-025 (machine chief, angled hull side, not a rectangle).
+- Known weakness: a room without a printed area (all toilets) can get a furniture-bounded rectangle that nothing detects. That is why unconfirmed results are capped at 0.5 and give needs_review.
+
+## Side effect to know about
+Writing the measurement replaces the element's provenance (vision, confidence 1.0) with the vector one (0.5, or 0.9 when confirmed). A rule on the printed `area` of an unconfirmed or disagreeing cabin therefore becomes needs_review instead of using the label value at 1.0. This is conservative; the old method/confidence/bbox are kept in `prev_provenance`. Not wired into any default pipeline: run `--rooms` explicitly.
