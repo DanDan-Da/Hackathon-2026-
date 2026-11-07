@@ -99,23 +99,36 @@ def _numeric(rule: Rule, facts: DesignFacts) -> list[Finding]:
     return out
 
 
+def _count_ok(rule: Rule, n: int) -> bool:
+    oper = rule.operator or "exists"
+    if oper == "exists":
+        return n > 0
+    if oper == "not_exists":
+        return n == 0
+    return _OPS[oper](n, float(rule.value))  # type: ignore[arg-type]
+
+
 def _count(rule: Rule, facts: DesignFacts) -> list[Finding]:
     targets = [e for e in facts.elements if element_matches(rule, e)]
     n = len(targets)
+    confident = [e for e in targets if e.provenance.confidence >= LOW_CONFIDENCE]
     evidence = [e.provenance for e in targets]
     oper = rule.operator or "exists"
-    if oper == "exists":
-        ok = n > 0
-    elif oper == "not_exists":
-        ok = n == 0
-    else:
-        ok = _OPS[oper](n, float(rule.value))  # type: ignore[arg-type]
+    ok = _count_ok(rule, n)
     if not ok and n == 0 and oper != "not_exists":
         # absence in an extracted model may be an extraction gap, not a design error
         return [_finding(rule, Status.needs_review,
                          f"No '{rule.target}' found; verify it is absent from the design, not just unextracted."
                          + _place_hint(rule, facts),
                          measured=0)]
+    if len(confident) < n and _count_ok(rule, len(confident)) != ok:
+        # the verdict flips depending on whether the doubtful reads are real: do not guess
+        required = f"{oper} {rule.value}" if rule.value is not None else oper
+        return [_finding(rule, Status.needs_review,
+                         f"Found {n} '{rule.target}', but {n - len(confident)} of them were read with low "
+                         f"extraction confidence (< {LOW_CONFIDENCE:.0%}) and the result depends on them; "
+                         f"required {required}. Verify in the drawing.",
+                         measured=n, evidence=evidence)]
     status = Status.passed if ok else Status.failed
     msg = (f"Found {n} '{rule.target}' — "
            + ("OK." if ok else f"{rule.source.regime} {rule.source.clause or ''} requires {oper} {rule.value}."))

@@ -3,7 +3,7 @@
     "id": "NPS-Accessible-Vessels-Accessible-route-to-vessel-boarding-area-accessible-route",
     "title": "Accessible route to vessel boarding area",
     "check_type": "presence",
-    "target": "accessible_route",
+    "target": "corridor",
     "parameter": null,
     "operator": "exists",
     "value": null,
@@ -14,7 +14,9 @@
       "max_length_m": null,
       "min_gross_tonnage": null,
       "min_persons_on_board": null,
-      "space_types": [],
+      "space_types": [
+        "accessible_route"
+      ],
       "condition_text": null
     },
     "source": {
@@ -272,7 +274,8 @@
       "min_gross_tonnage": null,
       "min_persons_on_board": 1,
       "space_types": [],
-      "condition_text": "Total Passengers 1 ‐ 25"
+      "condition_text": "Total Passengers 1 ‐ 25",
+      "max_persons_on_board": 25
     },
     "source": {
       "document": "ACC-Vessel-Standards.pdf",
@@ -301,7 +304,8 @@
       "min_gross_tonnage": null,
       "min_persons_on_board": 26,
       "space_types": [],
-      "condition_text": "Total Passengers 26-50"
+      "condition_text": "Total Passengers 26-50",
+      "max_persons_on_board": 50
     },
     "source": {
       "document": "ACC-Vessel-Standards.pdf",
@@ -330,7 +334,8 @@
       "min_gross_tonnage": null,
       "min_persons_on_board": 51,
       "space_types": [],
-      "condition_text": "Total Passengers 51-75"
+      "condition_text": "Total Passengers 51-75",
+      "max_persons_on_board": 75
     },
     "source": {
       "document": "ACC-Vessel-Standards.pdf",
@@ -359,7 +364,8 @@
       "min_gross_tonnage": null,
       "min_persons_on_board": 76,
       "space_types": [],
-      "condition_text": "Total Passengers 76-100"
+      "condition_text": "Total Passengers 76-100",
+      "max_persons_on_board": 100
     },
     "source": {
       "document": "ACC-Vessel-Standards.pdf",
@@ -388,7 +394,8 @@
       "min_gross_tonnage": null,
       "min_persons_on_board": 101,
       "space_types": [],
-      "condition_text": "Total Passengers 101-150"
+      "condition_text": "Total Passengers 101-150",
+      "max_persons_on_board": 150
     },
     "source": {
       "document": "ACC-Vessel-Standards.pdf",
@@ -417,7 +424,8 @@
       "min_gross_tonnage": null,
       "min_persons_on_board": 151,
       "space_types": [],
-      "condition_text": "Total Passengers 151-200"
+      "condition_text": "Total Passengers 151-200",
+      "max_persons_on_board": 200
     },
     "source": {
       "document": "ACC-Vessel-Standards.pdf",
@@ -446,7 +454,8 @@
       "min_gross_tonnage": null,
       "min_persons_on_board": 201,
       "space_types": [],
-      "condition_text": "Total Passengers 201-300"
+      "condition_text": "Total Passengers 201-300",
+      "max_persons_on_board": 300
     },
     "source": {
       "document": "ACC-Vessel-Standards.pdf",
@@ -475,7 +484,8 @@
       "min_gross_tonnage": null,
       "min_persons_on_board": 301,
       "space_types": [],
-      "condition_text": "Total Passengers 301-400"
+      "condition_text": "Total Passengers 301-400",
+      "max_persons_on_board": 400
     },
     "source": {
       "document": "ACC-Vessel-Standards.pdf",
