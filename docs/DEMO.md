@@ -11,7 +11,8 @@ Nothing here calls an LLM except step 0b. The free Gemini tier allows about 20 r
 | # | Prep | Command / file | Why |
 |---|---|---|---|
 | 0a | Install and start the app | `uv venv -p 3.12 .venv && uv pip install -p .venv -e ".[dev,rag,3d]"` then `.venv/bin/uvicorn app.api.main:app` | UI is static files served at `/` (`app/api/main.py`, `web/`) |
-| 0b | Pre-extract one public GA (needs a key, uses quota) | copy a public GA to `designs/demo/ga.pdf`, then `.venv/bin/python -m app.design.drawing_vision designs/demo/ga.pdf` | Writes `designs/demo/facts.json`. Tiles are cached in `designs/demo/.cache`, so an interrupted run resumes (`drawing_vision.py`, `--cache`) |
+| 0b | GA already extracted | `designs/demo/ga.pdf` + `designs/demo/facts_dana_full.json` (local only, gitignored). To redo: `.venv/bin/python -m app.design.drawing_vision designs/demo/ga.pdf` (needs a key, uses quota; tiles cached in `designs/demo/.cache`) | Never run extraction live |
+| 0b2 | Planted copy | `designs/demo/facts_dana_planted.json` = `facts_dana_full.json` + one element named "PLANTED TEST: corridor 1200 mm (not from the drawing)", `method=manual`, anchored on a real stairway bbox | Gives exactly 1 `fail` with a real drawing crop. **Always say it is planted** |
 | 0c | Rules in place | `cp mocks/rules_nps_poc.json knowledge/compiled/rules.json` | 19 real Gemini-compiled rules, 7 targets hand-corrected, **not human-reviewed** (`docs/L-LOG.md`). Say so on stage |
 | 0d | Confirm offline fallbacks work | `.venv/bin/python -m eval.score_findings` and `.venv/bin/python -m app.check.run mocks/facts_nps_poc.json --rules mocks/rules_nps_poc.json` | No key needed |
 | 0e | Only public drawings | | Free-tier Google may train on prompts (README). Never upload confidential Meyer drawings in the demo |
@@ -32,7 +33,7 @@ Say: no regulation value lives in code. Show the folder `knowledge/rules/<REGIME
 - **[NOT MERGED] real compiled rules.** Today only page 1 of the NPS checklist (19 rules) was ever compiled for real (`docs/L-LOG.md`); the rest of the library is not compiled because of quota. **Fallback:** "this is a proof-of-concept rule set; the compiler is proven on one real page and by `tests/test_rule_compiler.py`, scaling it is a quota question, not a design question."
 
 ### 3. Read a GA drawing (0:50-1:30)
-In the UI, "Open facts.json" and pick `designs/demo/facts.json` (from prep 0b).
+In the UI facts picker, choose `demo/facts_dana_full.json` (prep 0b). Real result with the NPS rules: **0 fail, 9 needs_review, 10 not_applicable** (ship type passenger: 12 needs_review, 7 not_applicable). The real drawing gives no fail: this is the honesty story, not a bug.
 Say what the reader did (`drawing_vision.py`, `crosscheck.py`):
 - rendered each page at 200 dpi, cut it into overlapping tiles, asked the vision model for what it **sees**; tile answers are cached on disk;
 - numbers are converted by our own parser, never by the model; an unparseable value is dropped;
@@ -44,20 +45,20 @@ Leave "Ship type" blank and click **Run check**: ship-type-dependent rules come 
 
 ### 5. Findings and evidence (1:50-2:40)
 - Use the status chips (fail / needs review / pass) and the Regime filter (`web/app.js`).
-- Click a **fail** finding. Show: the verbatim rule quote with document/page/clause, the design value, and the **drawing crop with the evidence box outlined in red** (`/evidence/crop`, `app/api/evidence.py`; two crops load automatically, others on "Show drawing crop").
+- For a fail on the real drawing, pick `demo/facts_dana_planted.json` and say "this one is planted". Click the **fail** finding. Show: the verbatim rule quote with document/page/clause, the design value, and the **drawing crop with the evidence box outlined in red** (`/evidence/crop`, `app/api/evidence.py`; two crops load automatically, others on "Show drawing crop").
 - Click a **needs review** finding. Say: "the evidence is missing or too uncertain, so a person has to check this", shown in the red-bordered note (`web/app.js`). This is the product's honesty feature.
 - Needs `designs/demo/ga.pdf` to exist locally so the crop can render. **Fallback:** show the quote and the evidence coordinates in text and say the crop needs the PDF on disk.
-- **[NOT MERGED] trust scoreboard (PR `d/ui-trust`).** If merged, show the summary of how many findings are pass / fail / unsure at the top. **Fallback:** point at the existing counts bar and colored summary (`#counts`, `#bar` in `web/index.html`).
+- Trust scoreboard (merged): show the summary at the top (planted eval 15/15, 0 missed, `/ui/trust`).
 
 ### 6. Proof it catches planted violations (2:40-3:10)
 In a terminal: `.venv/bin/python -m eval.score_findings`. Expected output ends with
 `Planted cases correct: 15/15`, `MISSED VIOLATIONS: 0 (must be 0)`, `False alarms: 0` (run and confirmed while writing this doc; 12 cases in `eval/gold/findings/cases.json`).
 State the caveat immediately: the cases test the **checking logic** on mock facts and mock rules (limit edge cases like 812.8 vs 812.7 mm, blurry reads becoming `needs_review`, missing elements). They do not test the AI reading the drawing.
-Then: `.venv/bin/python -m eval.score_rooms designs/demo/facts.json` scores room reading against the 20-room hand-checked Dana gold set (`eval/gold/dana/`). It only works if the demo drawing is the Dana GA; otherwise skip it and quote the slide figure with its caveat (see `docs/SLIDES.md`).
+Then: `.venv/bin/python -m eval.score_rooms designs/demo/facts_dana_full.json` scores room reading against the 20-room hand-checked Dana gold set (`eval/gold/dana/`). Result: 19/19 room areas correct on the 20-room partial sample (precision not reported).
 
 ### 7. Ask the regulations (3:10-3:35)
 `POST /ask` with `{"question": "...", "regime": "..."}` (Swagger at `/docs`). Say: the model may use only the retrieved passages; every citation is verified as a verbatim quote from a retrieved passage, and an answer with no verified citation is withheld and the raw passages returned instead (`app/check/ask.py`).
-- Needs the `rag` extra and a built index; `sentence-transformers` was **not installed** on L's machine, so real `bge-m3` retrieval has never run (`docs/L-LOG.md`). **Fallback:** skip live, show `tests/test_ask.py` passing and say retrieval is tested with a fake embedder only. There is no /ask panel in the UI.
+- **Works live on D's machine** (2026-11-07): `rag` extra installed, `python -m app.ingest.index` indexed 86 passages (bge-m3) into `knowledge/index`. Tested question "What is the minimum clear width of an accessible route?" (regime NPS-Accessible-Vessels) answered "60” wide" with a verified verbatim citation (ACC-Vessel-Standards.pdf p1). Use the Ask panel in the UI. Each question costs 1 Gemini request (~20/day free), so ask once on stage, not in rehearsal. **Fallback** if quota/503: show `tests/test_ask.py` passing.
 
 ### 8. 3D (3:35-3:50)
 `.venv/bin/python scripts/generate_synthetic_ifc.py /tmp/x.ifc && .venv/bin/python -m app.design.ifc_reader /tmp/x.ifc --project synthetic` prints facts with the IFC GlobalId as the element id and `method="ifc"` (`docs/IFC.md`). Say: this is a **synthetic** model with semantics only; the real 305 MB Navisworks `.nwd` cannot be read by any open-source tool and was not converted (`docs/3D-MODELS.md`). Overall door width is never treated as clear width.
