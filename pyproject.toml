@@ -21,6 +21,8 @@ dev = ["pytest>=8"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
+# PyMuPDF's SWIG bindings warn on import under Python 3.12+ (third-party, harmless)
+filterwarnings = ["ignore:builtin type .* has no __module__ attribute:DeprecationWarning"]
 
 [build-system]
 requires = ["setuptools>=68"]
