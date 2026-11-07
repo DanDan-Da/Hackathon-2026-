@@ -10,9 +10,12 @@ Run:  python -m app.ingest.rule_compiler [--regime NAME]
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import logging
 import re
+import threading
+from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 from typing import Iterable
 
@@ -148,17 +151,59 @@ def deduplicate(rules: Iterable[Rule]) -> list[Rule]:
     return result
 
 
+def _cache_key(c: Chunk) -> str:
+    """Same chunk text + same prompt -> same key. Editing SYSTEM or the source text invalidates it."""
+    raw = "\x00".join([SYSTEM, c.regime, c.document, str(c.page), c.text])
+    return hashlib.sha256(raw.encode("utf-8")).hexdigest()
+
+
+class _ChunkCache:
+    """Per-chunk results saved to disk as each one finishes, so a stopped or crashed run
+    does not throw away API calls that already succeeded. Failed chunks are never cached."""
+
+    def __init__(self, path: Path | None):
+        self.path, self._lock = path, threading.Lock()
+        self._data: dict[str, list[dict]] = {}
+        if path is not None and path.exists():
+            try:
+                self._data = json.loads(path.read_text(encoding="utf-8"))
+            except (OSError, ValueError):
+                log.warning("Ignoring unreadable chunk cache %s", path)
+
+    def get(self, key: str) -> list[Rule] | None:
+        with self._lock:
+            hit = self._data.get(key)
+        return None if hit is None else [Rule.model_validate(r) for r in hit]
+
+    def put(self, key: str, rules: list[Rule]) -> None:
+        with self._lock:
+            self._data[key] = [r.model_dump(mode="json") for r in rules]
+            if self.path is None:
+                return
+            self.path.parent.mkdir(parents=True, exist_ok=True)
+            tmp = self.path.with_suffix(".tmp")
+            tmp.write_text(json.dumps(self._data, ensure_ascii=False), encoding="utf-8")
+            tmp.replace(self.path)
+
+
 def compile_rules(chunks: Iterable[Chunk], llm: LLMProvider | None = None,
-                  max_parallel: int | None = None) -> list[Rule]:
+                  max_parallel: int | None = None, cache_path: Path | None = None) -> list[Rule]:
     llm = llm or get_llm()
     todo = [c for c in chunks if len(c.text) >= MIN_CHUNK_CHARS]
+    cache = _ChunkCache(cache_path)
 
     def run(c: Chunk) -> list[Rule]:
+        key = _cache_key(c)
+        if (hit := cache.get(key)) is not None:
+            log.info("cache hit %s p%s", c.document, c.page)
+            return hit
         try:
-            return extract_chunk(c, llm)
+            rules = extract_chunk(c, llm)
         except Exception:   # one bad chunk (refusal, rate limit exhausted) must not lose the run
             log.exception("Chunk failed, skipped: %s p%s", c.document, c.page)
             return []
+        cache.put(key, rules)
+        return rules
 
     workers = max(1, max_parallel or settings.llm_max_parallel)
     with ThreadPoolExecutor(workers) as pool:
@@ -180,10 +225,14 @@ def write_rules(rules: list[Rule]) -> None:
                     encoding="utf-8")
 
 
-def main(regime: str | None = None) -> list[Rule]:
+def cache_file() -> Path:
+    return settings.compiled_rules.with_suffix(".cache.json")   # git-ignored with the other compiled json
+
+
+def main(regime: str | None = None, max_parallel: int | None = None, use_cache: bool = True) -> list[Rule]:
     chunks = list(load_chunks(regime=regime))
     log.info("Compiling %d chunks", len(chunks))
-    rules = compile_rules(chunks)
+    rules = compile_rules(chunks, max_parallel=max_parallel, cache_path=cache_file() if use_cache else None)
     path = settings.compiled_rules
     if path.exists():
         existing = [Rule.model_validate(r) for r in json.loads(path.read_text(encoding="utf-8"))]
@@ -199,4 +248,7 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     ap = argparse.ArgumentParser(description="Compile regulation files into knowledge/compiled/rules.json")
     ap.add_argument("--regime", help="only this folder under the rules dir")
-    main(ap.parse_args().regime)
+    ap.add_argument("--parallel", type=int, help="override LLM_MAX_PARALLEL (1 = strictly sequential)")
+    ap.add_argument("--fresh", action="store_true", help="ignore and do not write the per-chunk cache")
+    a = ap.parse_args()
+    main(a.regime, a.parallel, use_cache=not a.fresh)
