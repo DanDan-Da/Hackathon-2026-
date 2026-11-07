@@ -687,8 +687,7 @@
    {
     "rule_id": "NPS-Accessible-Vessels-Handrails-along-route-handrail",
     "element_id": null,
-    "status": "needs_review",
-    "known_disagreement": "Evaluator ignores extraction confidence for presence/count rules and returns pass"
+    "status": "needs_review"
    }
   ]
  },
@@ -822,20 +821,17 @@
    {
     "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-1-to-25-passengers-count",
     "element_id": null,
-    "status": "not_applicable",
-    "known_disagreement": "Tier rules have no max_persons_on_board, so lower tiers also apply to larger ships (pass instead of not_applicable); harmless for violations"
+    "status": "not_applicable"
    },
    {
     "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-26-to-50-passengers-count",
     "element_id": null,
-    "status": "not_applicable",
-    "known_disagreement": "Tier rules have no max_persons_on_board, so lower tiers also apply to larger ships (pass instead of not_applicable); harmless for violations"
+    "status": "not_applicable"
    },
    {
     "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-76-to-100-passengers-count",
     "element_id": null,
-    "status": "not_applicable",
-    "known_disagreement": "Tier rules have no max_persons_on_board, so lower tiers also apply to larger ships (pass instead of not_applicable); harmless for violations"
+    "status": "not_applicable"
    }
   ]
  },
@@ -964,8 +960,7 @@
    {
     "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-1-to-25-passengers-count",
     "element_id": null,
-    "status": "not_applicable",
-    "known_disagreement": "Tier rules have no max_persons_on_board, so lower tiers also apply to larger ships (pass instead of not_applicable); harmless for violations"
+    "status": "not_applicable"
    }
   ]
  },
@@ -1287,8 +1282,7 @@
    {
     "rule_id": "NPS-Accessible-Vessels-Accessible-accommodations-for-101-to-150-passengers-count",
     "element_id": null,
-    "status": "needs_review",
-    "known_disagreement": "Evaluator ignores extraction confidence for count rules and returns pass"
+    "status": "needs_review"
    }
   ]
  },
@@ -1398,13 +1392,13 @@
   ]
  },
  {
-  "name": "route-to-boarding rule targets a space, not an element",
+  "name": "route-to-boarding rule targets a corridor in an accessible route",
   "mutations": [],
   "expect": [
    {
     "rule_id": "NPS-Accessible-Vessels-Accessible-route-to-vessel-boarding-area-accessible-route",
     "element_id": null,
-    "status": "needs_review"
+    "status": "pass"
    }
   ]
  }

@@ -50,7 +50,7 @@ def test_expected_findings_per_rule():
     rules, out, judge = run()
     P, F, N, NA = Status.passed, Status.failed, Status.needs_review, Status.not_applicable
     expect = {
-        0: {"-": N},                                   # no accessible_route element extracted -> verify, don't guess
+        0: {"-": P},                                   # a corridor sits in the accessible route (rule target is now an element)
         1: {"C-1": F, "C-2": P, "C-3": N},             # width >= 60 in (1524 mm); C-3 low confidence
         2: {"C-1": P, "C-2": F, "C-3": N},             # headroom >= 80 in (2032 mm)
         4: {"W-1": F, "W-2": P},                       # slope <= 8.33 %
@@ -58,7 +58,7 @@ def test_expected_findings_per_rule():
         6: {"E-1": F},                                 # edge protection height <= 4 in
         7: {"E-1": P},                                 # edge protection width <= 2 in
         8: {"-": N},                                   # crew training: nothing in a drawing to judge
-        9: {"-": P}, 10: {"-": P}, 11: {"-": P}, 12: {"-": P},   # 4 accessible cabins, 120 persons on board
+        9: {"-": NA}, 10: {"-": NA}, 11: {"-": NA}, 12: {"-": NA},   # tiers up to 100 persons end below the 120 on board
         13: {"-": F},                                  # 101-150 persons needs 5
         14: {"-": NA}, 15: {"-": NA}, 16: {"-": NA},   # tiers above 120 persons do not apply
         17: {"-": N},                                  # no entry_deck element extracted
