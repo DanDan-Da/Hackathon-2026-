@@ -24,6 +24,7 @@ import pymupdf
 from pydantic import BaseModel, Field
 
 from app.check.units import to_base
+from app.config import settings
 from app.design.pdf_text import has_text_layer, parse_dimension_mm, parse_particulars
 from app.models import DesignElement, DesignFacts, Provenance
 from app.providers.llm import LLMProvider, get_llm
@@ -32,7 +33,6 @@ DEFAULT_DPI = 200
 DEFAULT_TILE_PX = 1568      # Claude's max long edge; larger images are downscaled anyway
 DEFAULT_OVERLAP_PX = 200
 MERGE_IOU = 0.3
-MAX_PARALLEL = 6
 COUNT_PROPERTIES = {"capacity", "persons", "count", "steps", "berths"}
 AREA_PROPERTIES = {"area", "floor_area", "deck_area"}
 _AREA = re.compile(r"^\s*(\d[\d ]*(?:[.,]\d+)?)\s*(m2|m²|m\^2|sq\.?\s*m|ft2|ft²|sq\.?\s*ft)?\s*$", re.I)
@@ -52,7 +52,8 @@ class TileElement(BaseModel):
     space_type: str | None = Field(None, description="Use only if the drawing states it, e.g. "
                                                      "'accessible_route', 'escape', 'accommodation'")
     deck: str | None = Field(None, description="Deck name/number if printed on this tile")
-    bbox_px: list[float] = Field(description="[x0, y0, x1, y1] in pixels of THIS tile image")
+    box_2d: list[float] = Field(description="[ymin, xmin, ymax, xmax] of the element in THIS tile image, "
+                                            "normalised to 0-1000")
     properties: list[TileProperty] = Field(default_factory=list,
                                            description="Only dimensions/values that are printed")
     evidence_text: str = Field(description="Verbatim text you read for this element ('' if none)")
@@ -69,7 +70,8 @@ compliance checker. Accuracy matters more than completeness.
 Rules:
 - Report only elements you can actually see on this tile: doors, corridors, stairways, cabins,
   lifeboats/liferafts, muster stations, toilets, elevators and other labelled spaces.
-- bbox_px must tightly enclose the element in THIS image's pixel coordinates.
+- box_2d must tightly enclose the element: [ymin, xmin, ymax, xmax] normalised to 0-1000
+  of THIS tile image.
 - properties: only values printed on the drawing (dimension strings, capacities). Copy the
   value text exactly as printed; do not convert units, do not estimate from scale.
 - space_type / deck: only when stated on the drawing; otherwise null.
@@ -162,10 +164,14 @@ def _to_candidates(tile: Tile, extraction: TileExtraction, file: str) -> list[tu
     s = tile.pt_per_px
     out = []
     for el in extraction.elements:
-        if len(el.bbox_px) != 4:
+        if len(el.box_2d) != 4:
             continue
-        x0, y0, x1, y1 = el.bbox_px
-        bbox = (ox + min(x0, x1) * s, oy + min(y0, y1) * s, ox + max(x0, x1) * s, oy + max(y0, y1) * s)
+        w_px, h_px = tile.size_px                       # edge tiles are smaller: use the real size
+        ymin, xmin, ymax, xmax = (min(1000.0, max(0.0, v)) for v in el.box_2d)
+        xa, xb = sorted((xmin, xmax))
+        ya, yb = sorted((ymin, ymax))
+        bbox = (ox + xa / 1000 * w_px * s, oy + ya / 1000 * h_px * s,
+                ox + xb / 1000 * w_px * s, oy + yb / 1000 * h_px * s)
         conf = min(1.0, max(0.0, el.confidence))
         out.append((el, Provenance(file=file, page=tile.page, bbox=bbox, method="vision", confidence=conf)))
     return out
@@ -193,7 +199,7 @@ def extract_drawing(path: str | Path, project: str, llm: LLMProvider | None = No
         return llm.complete_structured(SYSTEM_PROMPT, _tile_prompt(tile), TileExtraction,
                                        images_png=[tile.png])
 
-    with ThreadPoolExecutor(max_workers=MAX_PARALLEL) as pool:
+    with ThreadPoolExecutor(max_workers=max(1, settings.llm_max_parallel)) as pool:
         results = list(pool.map(ask, tiles))
 
     cands = [c for tile, res in zip(tiles, results) for c in _to_candidates(tile, res, file)]

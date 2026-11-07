@@ -46,8 +46,14 @@ def make_ga(tmp_path, w=1200, h=800, marks=((100, 100),)):
     return path
 
 
-def door(name="Cabin 101 door", bbox=(10, 10, 50, 30), width_text="760", conf=0.9):
-    return TileElement(type="door", name=name, space_type="accessible_route", bbox_px=list(bbox),
+def box(px, tile_w=800, tile_h=800):
+    """Pixel bbox (x0, y0, x1, y1) in a tile -> Gemini-style box_2d [ymin, xmin, ymax, xmax] in 0..1000."""
+    x0, y0, x1, y1 = px
+    return [y0 / tile_h * 1000, x0 / tile_w * 1000, y1 / tile_h * 1000, x1 / tile_w * 1000]
+
+
+def door(name="Cabin 101 door", bbox=(10, 10, 50, 30), width_text="760", conf=0.9, tile_w=800, tile_h=800):
+    return TileElement(type="door", name=name, space_type="accessible_route", box_2d=box(bbox, tile_w, tile_h),
                        properties=[TileProperty(name="clear_width", text=width_text)],
                        evidence_text=f"D {width_text}", confidence=conf)
 
@@ -104,8 +110,8 @@ def test_duplicates_from_overlapping_tiles_are_merged(tmp_path):
     pdf = make_ga(tmp_path, w=800, h=300, marks=[(330, 100)])
     # tile 0 origin x=0, tile 1 origin x=350 pt (dpi 144, 800 px tiles, 100 px overlap)
     llm = FakeVision(script={
-        "origin=(0,0)": TileExtraction(elements=[door(bbox=(680, 200, 760, 260), conf=0.8)]),
-        "origin=(350,0)": TileExtraction(elements=[door(bbox=(-20, 200, 60, 260), conf=0.95)]),
+        "origin=(0,0)": TileExtraction(elements=[door(bbox=(680, 200, 760, 260), conf=0.8, tile_h=600)]),
+        "origin=(350,0)": TileExtraction(elements=[door(bbox=(-20, 200, 60, 260), conf=0.95, tile_h=600)]),
     })
     facts = extract_drawing(pdf, project="demo", llm=llm, dpi=144, tile_px=800, overlap_px=100)
     doors = [e for e in facts.elements if e.type == "door"]
@@ -161,9 +167,27 @@ def test_each_tile_prompt_states_its_origin_and_page(tmp_path):
 def test_area_property_parsed_to_m2(tmp_path, text, expected):
     # Dana GA prints room areas as "15 m²" next to the room name
     pdf = make_ga(tmp_path, marks=[(50, 50)])
-    cabin = TileElement(type="cabin", name="2 PERS.", bbox_px=[0, 0, 40, 40],
+    cabin = TileElement(type="cabin", name="2 PERS.", box_2d=[0, 0, 50, 50],
                         properties=[TileProperty(name="area", text=text)], evidence_text=f"2 PERS. {text}",
                         confidence=0.9)
     llm = FakeVision(default=TileExtraction(elements=[cabin]))
     [el] = extract_drawing(pdf, project="demo", llm=llm, dpi=144, tile_px=800, overlap_px=100).elements
     assert el.properties["area"] == pytest.approx(expected)
+
+
+def test_box_2d_uses_each_tiles_own_size_and_yx_order(tmp_path):
+    # 800x300 pt page at 144 dpi -> 1600x600 px; first tile is 800 px wide but only 600 px high
+    pdf = make_ga(tmp_path, w=800, h=300, marks=[(50, 50)])
+    el = TileElement(type="stairway", box_2d=[500, 250, 1000, 500], evidence_text="UP", confidence=0.9)
+    llm = FakeVision(script={"origin=(0,0)": TileExtraction(elements=[el])})
+    [st] = extract_drawing(pdf, project="demo", llm=llm, dpi=144, tile_px=800, overlap_px=100).elements
+    # x: 250/1000*800 px = 200 px -> 100 pt ; y: 500/1000*600 px = 300 px -> 150 pt
+    assert st.provenance.bbox == pytest.approx((100, 150, 200, 300))
+
+
+def test_box_2d_outside_tile_is_clamped(tmp_path):
+    pdf = make_ga(tmp_path, marks=[(50, 50)])
+    el = TileElement(type="door", box_2d=[-30, -30, 1200, 500], evidence_text="", confidence=0.9)
+    [d] = extract_drawing(pdf, project="demo", llm=FakeVision(default=TileExtraction(elements=[el])),
+                          dpi=144, tile_px=800, overlap_px=100).elements
+    assert d.provenance.bbox == pytest.approx((0, 0, 200, 400))   # clamped to the 800x800 px tile
