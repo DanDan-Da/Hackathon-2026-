@@ -29,7 +29,7 @@ body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.5 va
 .inputs { background: var(--panel); border: 1px solid var(--line); padding: 16px; position: sticky; top: 12px; }
 .inputs h2 { font-size: 15px; margin: 0 0 8px; }
 .inputs section { margin-bottom: 16px; }
-textarea { width: 100%; height: 110px; font: 12px/1.4 var(--mono); border: 1px solid var(--line); padding: 8px; resize: vertical; background: #fbfcfc; color: var(--ink); }
+textarea, input[type=text] { width: 100%; font: 12px/1.4 var(--mono); border: 1px solid var(--line); padding: 8px; resize: vertical; background: #fbfcfc; color: var(--ink); }
 fieldset { border: 0; padding: 0; margin: 0 0 8px; } fieldset label { display: block; margin: 2px 0; }
 .file { display: inline-block; margin-bottom: 6px; font-size: 13px; color: var(--steel); text-decoration: underline; cursor: pointer; }
 .file input { max-width: 100%; font-size: 12px; display: block; color: var(--muted); text-decoration: none; }
@@ -88,6 +88,7 @@ blockquote { margin: 6px 0; padding: 8px 14px; border-left: 3px solid var(--stee
 .cite { font-size: 13px; color: var(--muted); }
 .cmp { display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; margin: 4px 0; }
 .cmp dt { color: var(--muted); } .cmp dd { margin: 0; font-family: var(--mono); font-size: 14px; }
+textarea { height: 110px; }
 .note { font-size: 12.5px; color: var(--muted); }
 .ev { border: 1px solid var(--line); padding: 8px 10px; margin: 6px 0; font-size: 13px; }
 .ev code { font: 12.5px var(--mono); }
