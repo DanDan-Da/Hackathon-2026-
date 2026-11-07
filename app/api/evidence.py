@@ -1,6 +1,6 @@
 """Owner: D. Read-only evidence crops: render a bbox region of a design PDF page as PNG.
 
-The file path is resolved against settings.designs_dir and must stay inside it.
+The file path (as stored in provenance.file) must resolve to a file inside settings.designs_dir.
 """
 from __future__ import annotations
 
@@ -18,12 +18,18 @@ SCALE = 2.0
 
 
 def resolve_design_file(rel: str) -> Path:
+    """Accept the file as readers store it in provenance.file: relative to the designs folder, relative
+    to the working directory (e.g. "designs/p1/ga.pdf"), or absolute. Whatever the form, the resolved
+    path must lie inside the designs folder."""
     root = settings.designs_dir.resolve()
-    if "\x00" in rel or Path(rel).is_absolute():
+    if "\x00" in rel:
         raise HTTPException(400, "Invalid file path")
-    path = (root / rel).resolve()
-    if not path.is_relative_to(root):
+    given = Path(rel)
+    candidates = [given] if given.is_absolute() else [root / given, given]
+    inside = [p.resolve() for p in candidates if p.resolve().is_relative_to(root)]
+    if not inside:
         raise HTTPException(400, "File must be inside the designs folder")
+    path = next((p for p in inside if p.is_file()), inside[0])
     if path.suffix.lower() != ".pdf":
         raise HTTPException(400, "Only PDF files can be rendered")
     if not path.is_file():

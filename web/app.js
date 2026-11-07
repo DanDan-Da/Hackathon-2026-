@@ -124,25 +124,29 @@ function provLine(p) {
   return parts.join(", ");
 }
 
-function evidenceBox(p) {
+const AUTO_CROPS = 2;   // show this many drawing crops straight away; the rest load on click
+
+function evidenceBox(p, index = 0) {
   const box = el("div", { class: "ev" }, el("div", {}, provLine(p)));
   if (p.page != null && p.bbox) {
     box.append(el("div", {}, `Page ${p.page}, bbox (PDF points) `, el("code", {}, p.bbox.join(", "))));
     const out = el("div");
     const btn = el("button", { type: "button" }, "Show drawing crop");
-    btn.addEventListener("click", async () => {
+    const load = async () => {
       btn.disabled = true;
       try {
         const q = new URLSearchParams({ file: p.file, page: p.page, bbox: p.bbox.join(",") });
         const blob = await (await api("/evidence/crop?" + q)).blob();
-        out.replaceChildren(el("img", { src: URL.createObjectURL(blob), alt: `Drawing page ${p.page} around bbox ${p.bbox.join(", ")}` }));
+        out.replaceChildren(el("img", { src: URL.createObjectURL(blob), alt: `Drawing page ${p.page} around bbox ${p.bbox.join(", ")}; the evidence is outlined in red` }));
         btn.remove();
       } catch (e) {
-        out.replaceChildren(el("p", { class: "note" }, `Crop not available: ${e.message}. The file must be a PDF inside the designs folder, path relative to it.`));
+        out.replaceChildren(el("p", { class: "note" }, `Crop not available: ${e.message}. The file must be a PDF inside the designs folder.`));
         btn.disabled = false;
       }
-    });
+    };
+    btn.addEventListener("click", load);
     box.append(btn, out);
+    if (index < AUTO_CROPS) load();
   } else if (p.page != null) {
     box.append(el("div", { class: "note" }, "No bbox recorded for this fact."));
   }
@@ -174,7 +178,7 @@ function detail(f) {
     el("blockquote", {}, src.quote));
 
   kids.push(el("h4", {}, `Design evidence${f.element_id ? " for " + f.element_id : ""}`));
-  if (f.evidence.length) kids.push(...f.evidence.map(evidenceBox));
+  if (f.evidence.length) kids.push(...f.evidence.map((p, i) => evidenceBox(p, i)));
   else kids.push(el("p", { class: "note" }, "No design evidence attached to this finding."));
   d.replaceChildren(...kids);
 }
