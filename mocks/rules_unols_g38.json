@@ -1,0 +1,4932 @@
+[
+ {
+  "id": "ADA-UNOLS-Accessible-stateroom-and-bathroom-provision-count",
+  "title": "Accessible stateroom and bathroom provision",
+  "check_type": "count",
+  "target": "cabin",
+  "parameter": "count",
+  "operator": ">=",
+  "value": 1.0,
+  "unit": "count",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "bathroom"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 10,
+   "clause": null,
+   "quote": "least one stateroom and bathroom should be outfitted to accommodate wheelchairs and other mobility impairments"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Wheelchair-access-and-turnaround-space-in-passageways-passageway",
+  "title": "Wheelchair access and turnaround space in passageways",
+  "check_type": "qualitative",
+  "target": "corridor",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "passageway"
+   ],
+   "condition_text": "connect the science and living spaces"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 10,
+   "clause": null,
+   "quote": "Passageways that connect the science and living spaces must be designed to allow wheelchair access and turn-around-space"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Wheelchair-latchdowns-installation-wheelchair-latchdown",
+  "title": "Wheelchair latchdowns installation",
+  "check_type": "presence",
+  "target": "wheelchair latchdown",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "areas that can accommodate wheelchairs"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 10,
+   "clause": null,
+   "quote": "Wheelchair latchdowns should be installed in areas that can accommodate wheelchairs"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Bunk-restraint-rails-in-staterooms-bunk-restraint-rail",
+  "title": "Bunk restraint rails in staterooms",
+  "check_type": "presence",
+  "target": "bunk restraint rail",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [
+    "research"
+   ],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "stateroom"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 10,
+   "clause": null,
+   "quote": "Provide bunk restraint rails in all staterooms"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Tactile-warning-strips-at-ladders-and-weather-deck-edges-tactile-warning-strip",
+  "title": "Tactile warning strips at ladders and weather deck edges",
+  "check_type": "presence",
+  "target": "tactile warning strip",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "ladder",
+    "weather deck"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 11,
+   "clause": null,
+   "quote": "install tactile strips at bottom and top of ladders and weather deck edges"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Handrails-at-ladders-handrail",
+  "title": "Handrails at ladders",
+  "check_type": "presence",
+  "target": "handrail",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "ladder"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 11,
+   "clause": null,
+   "quote": "install handrails before the start of ladders and on both sides."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Handrails-in-passageways-handrail",
+  "title": "Handrails in passageways",
+  "check_type": "presence",
+  "target": "handrail",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "passageway"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 11,
+   "clause": null,
+   "quote": "Install handrails in all passageways"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Color-marking-of-trip-hazards-and-ladder-step-edges-ladder",
+  "title": "Color marking of trip hazards and ladder step edges",
+  "check_type": "qualitative",
+  "target": "ladder",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 11,
+   "clause": null,
+   "quote": "Use bright colors to identify trip hazards and the edge of steps on ladders"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Passageway-obstacles-and-recessed-fixtures-fixture",
+  "title": "Passageway obstacles and recessed fixtures",
+  "check_type": "qualitative",
+  "target": "fixture",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "passageway"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 11,
+   "clause": null,
+   "quote": "Reduce passageway obstacles with recessed fixtures"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Signage-for-designated-science-and-living-spaces-signage",
+  "title": "Signage for designated science and living spaces",
+  "check_type": "presence",
+  "target": "signage",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "science space",
+    "living space"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 11,
+   "clause": null,
+   "quote": "Install signage to indicate designated science and living spaces"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Handrail-starting-position-on-ladders-handrail",
+  "title": "Handrail starting position on ladders",
+  "check_type": "qualitative",
+  "target": "handrail",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "weather deck"
+   ],
+   "condition_text": "Weather Decks"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 14,
+   "clause": null,
+   "quote": "Ladders – handrails should start before first step"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Hatchway-audible-signals-and-induction-mechanisms-hatchway",
+  "title": "Hatchway audible signals and induction mechanisms",
+  "check_type": "presence",
+  "target": "hatchway",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "weather deck"
+   ],
+   "condition_text": "Weather Decks"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 14,
+   "clause": null,
+   "quote": "Audible signals and induction mechanisms should be installed on hatchways"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Tactile-stripping-at-obstructions-or-steps-tactile-stripping",
+  "title": "Tactile stripping at obstructions or steps",
+  "check_type": "presence",
+  "target": "tactile_stripping",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "weather deck"
+   ],
+   "condition_text": "Weather Decks"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 14,
+   "clause": null,
+   "quote": "Tactile stripping to alert of obstructions or steps"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Trip-hazard-coloring-trip-hazard",
+  "title": "Trip hazard coloring",
+  "check_type": "qualitative",
+  "target": "trip_hazard",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "weather deck"
+   ],
+   "condition_text": "Weather Decks"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 14,
+   "clause": null,
+   "quote": "Paint trip hazards a prominent color such as yellow"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Hazard-warning-signage-signage",
+  "title": "Hazard warning signage",
+  "check_type": "presence",
+  "target": "signage",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "weather deck"
+   ],
+   "condition_text": "Weather Decks"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 14,
+   "clause": null,
+   "quote": "Signage installed to alert of hazards (Refer to RV216)"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Accessibility-of-food-and-beverage-service-areas-space",
+  "title": "Accessibility of food and beverage service areas",
+  "check_type": "qualitative",
+  "target": "space",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "food and beverage service area"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 17,
+   "clause": null,
+   "quote": "Food and beverage service areas should be accessible"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Tactile-stripping-for-obstructions-or-steps-on-weather-decks-tactile-strip",
+  "title": "Tactile stripping for obstructions or steps on weather decks",
+  "check_type": "presence",
+  "target": "tactile strip",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "weather deck"
+   ],
+   "condition_text": "to alert of obstructions or steps"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 17,
+   "clause": null,
+   "quote": "Tactile stripping to alert of obstructions or steps"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Audible-signals-and-induction-mechanisms-on-weather-deck-hatchways-audible-signal",
+  "title": "Audible signals and induction mechanisms on weather deck hatchways",
+  "check_type": "presence",
+  "target": "audible signal",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "weather deck",
+    "hatchway"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 17,
+   "clause": null,
+   "quote": "Audible signals and induction mechanisms should be installed on hatchways"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Designated-mobility-impaired-stateroom-in-Global-Class-vessels-count",
+  "title": "Designated mobility impaired stateroom in Global Class vessels",
+  "check_type": "count",
+  "target": "cabin",
+  "parameter": "count",
+  "operator": ">=",
+  "value": 1.0,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [
+    "Global Class research vessel"
+   ],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "all new Global Class research vessel construction"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 19,
+   "clause": null,
+   "quote": "One designated Stateroom for personnel with mobility impairments should be incorporated in all new Global Class research vessel construction."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Personnel-rated-elevator-access-to-scientific-spaces-elevator",
+  "title": "Personnel rated elevator access to scientific spaces",
+  "check_type": "presence",
+  "target": "elevator",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [
+    "Global Class research vessel"
+   ],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "to allow access to scientific spaces on all decks"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 19,
+   "clause": null,
+   "quote": "A personnel rated elevator should also be included to allow access to scientific spaces on all decks."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Emergency-wiring-for-hearing-and-vision-impairments-portable-kit-wiring",
+  "title": "Emergency wiring for hearing and vision impairments",
+  "check_type": "presence",
+  "target": "portable_kit_wiring",
+  "parameter": "portable_kit_wiring",
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "stateroom"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 19,
+   "clause": null,
+   "quote": "Staterooms equipped with wiring to accept portable kits to accommodate hearing and vision impairments that go beyond bells and claxons."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV806-rail-restraints",
+  "title": "Rail restraints for berths",
+  "check_type": "presence",
+  "target": "berth",
+  "parameter": "rail_restraints",
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "stateroom"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 19,
+   "clause": "RV806",
+   "quote": "Provide rail restraints for berths"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV403-tactile-strip",
+  "title": "Tactile strips in passageways",
+  "check_type": "presence",
+  "target": "tactile strip",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "passageway"
+   ],
+   "condition_text": "to alert for obstructions and/or steps"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 19,
+   "clause": "RV403",
+   "quote": "Tactile strips installed to alert for obstructions and/or steps"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-toRV606-count",
+  "title": "Public restroom provision per accessible deck",
+  "check_type": "count",
+  "target": "restroom",
+  "parameter": "count",
+  "operator": ">=",
+  "value": 1.0,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "accessible deck"
+   ],
+   "condition_text": "near to main laboratory"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 19,
+   "clause": "RV604 toRV606",
+   "quote": "Public Restrooms (RV604 toRV606) – One on each accessible deck and near to main laboratory"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV602-count",
+  "title": "Drinking fountain provision per accessible deck",
+  "check_type": "count",
+  "target": "drinking fountain",
+  "parameter": "count",
+  "operator": ">=",
+  "value": 1.0,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "accessible deck"
+   ],
+   "condition_text": "If you provide a drinking fountain"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 19,
+   "clause": "RV602",
+   "quote": "Drinking Fountains (RV602) - If you provide a drinking fountain, one on each accessible deck"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV902-count",
+  "title": "Accessible table in mess deck",
+  "check_type": "count",
+  "target": "table",
+  "parameter": "count",
+  "operator": ">=",
+  "value": 1.0,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "mess deck"
+   ],
+   "condition_text": "with clear access and away from heavy traffic patterns"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 19,
+   "clause": "RV902",
+   "quote": "One table with clear access and away from heavy traffic patterns"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV806-2-1-space",
+  "title": "Accessible living and dining areas",
+  "check_type": "qualitative",
+  "target": "space",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "living area",
+    "dining area"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 22,
+   "clause": "RV806.2.1",
+   "quote": "Living and dining areas shall be accessible."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV806-2-3-clear-deck-space",
+  "title": "Clear deck space on both sides of a bed",
+  "check_type": "presence",
+  "target": "clear deck space",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "sleeping area"
+   ],
+   "condition_text": "At least one sleeping area shall provide a clear deck space complying with RV305 on both sides of a bed."
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 22,
+   "clause": "RV806.2.3",
+   "quote": "At least one sleeping area shall provide a clear deck space complying with RV305 on both sides of a bed."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV806-2-4-count",
+  "title": "Accessible water closet minimum count in stateroom",
+  "check_type": "count",
+  "target": "water closet",
+  "parameter": "count",
+  "operator": ">=",
+  "value": 1.0,
+  "unit": "count",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "stateroom"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 22,
+   "clause": "RV806.2.4",
+   "quote": "No fewer than one water closet, one lavatory, and one bathtub or shower shall comply with RV603."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV806-2-4-count-2",
+  "title": "Accessible lavatory minimum count in stateroom",
+  "check_type": "count",
+  "target": "lavatory",
+  "parameter": "count",
+  "operator": ">=",
+  "value": 1.0,
+  "unit": "count",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "stateroom"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 22,
+   "clause": "RV806.2.4",
+   "quote": "No fewer than one water closet, one lavatory, and one bathtub or shower shall comply with RV603."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV806-2-4-count-3",
+  "title": "Accessible bathtub or shower minimum count in stateroom",
+  "check_type": "count",
+  "target": "shower",
+  "parameter": "count",
+  "operator": ">=",
+  "value": 1.0,
+  "unit": "count",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "stateroom"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 22,
+   "clause": "RV806.2.4",
+   "quote": "No fewer than one water closet, one lavatory, and one bathtub or shower shall comply with RV603."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV806-2-6-turning-space",
+  "title": "Guest room turning space",
+  "check_type": "presence",
+  "target": "turning space",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "guest room"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 22,
+   "clause": "RV806.2.6",
+   "quote": "Turning space complying with RV304 shall be provided within the guest room."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV806-3-1-alarm",
+  "title": "Emergency alarms in staterooms",
+  "check_type": "presence",
+  "target": "alarm",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "stateroom"
+   ],
+   "condition_text": "Where emergency warning systems are provided"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 22,
+   "clause": "RV806.3.1",
+   "quote": "Where emergency warning systems are provided, alarms complying with RV702 shall be provided."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-2-centerline-to-side-wall-distance",
+  "title": "Water closet minimum distance from side wall",
+  "check_type": "numeric",
+  "target": "water closet",
+  "parameter": "centerline_to_side_wall_distance",
+  "operator": ">=",
+  "value": 16.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet compartment"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 22,
+   "clause": "RV604.2",
+   "quote": "The centerline of the water closet shall be 16 inches (405 mm) minimum to 18 inches (455 mm) maximum from the side wall or partition, except that the water closet shall be 17 inches (430 mm) minimum and 19 inches (485 mm) maximum from the side wall or partition in the ambulatory accessible toilet compartment specified in RV604.8.2."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-3-1-clearance-from-side-wall",
+  "title": "Water closet clearance measured perpendicular from side wall",
+  "check_type": "numeric",
+  "target": "water closet",
+  "parameter": "clearance_from_side_wall",
+  "operator": ">=",
+  "value": 60.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet compartment"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 22,
+   "clause": "RV604.3.1",
+   "quote": "Clearance around a water closet shall be 60 inches (1525 mm) minimum measured perpendicular from the side wall and 56 inches (1420 mm) minimum measured perpendicular from the rear wall."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-3-1-clearance-from-rear-wall",
+  "title": "Water closet clearance measured perpendicular from rear wall",
+  "check_type": "numeric",
+  "target": "water closet",
+  "parameter": "clearance_from_rear_wall",
+  "operator": ">=",
+  "value": 56.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet compartment"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 22,
+   "clause": "RV604.3.1",
+   "quote": "Clearance around a water closet shall be 60 inches (1525 mm) minimum measured perpendicular from the side wall and 56 inches (1420 mm) minimum measured perpendicular from the rear wall."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-3-2-fixture",
+  "title": "Obstructions within water closet clearance",
+  "check_type": "presence",
+  "target": "fixture",
+  "parameter": null,
+  "operator": "not_exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "water closet clearance"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 22,
+   "clause": "RV604.3.2",
+   "quote": "No other fixtures or obstructions shall be located within the required water closet clearance."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-4-height",
+  "title": "Water Closet Seat Height - Minimum",
+  "check_type": "numeric",
+  "target": "seat",
+  "parameter": "height",
+  "operator": ">=",
+  "value": 17.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 23,
+   "clause": "RV604.4",
+   "quote": "The seat height of a water closet above the finish deck surface shall be 17 inches (430 mm) minimum and 19 inches (485 mm) maximum measured to the top of the seat."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-4-seat",
+  "title": "Water Closet Seat Sprung Return Prohibition",
+  "check_type": "qualitative",
+  "target": "seat",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 23,
+   "clause": "RV604.4",
+   "quote": "Seats shall not be sprung to return to a lifted position."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-5-grab-bar",
+  "title": "Water Closet Grab Bars Provision",
+  "check_type": "presence",
+  "target": "grab_bar",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 23,
+   "clause": "RV604.5",
+   "quote": "Grab bars shall be provided on the side wall closest to the water closet and on the rear wall."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-5-1-length",
+  "title": "Side Wall Grab Bar Length",
+  "check_type": "numeric",
+  "target": "grab_bar",
+  "parameter": "length",
+  "operator": ">=",
+  "value": 42.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 23,
+   "clause": "RV604.5.1",
+   "quote": "The side wall grab bar shall be 42 inches (1065 mm) long minimum, located 12 inches (305 mm) maximum from the rear wall and extending 54 inches (1370 mm) minimum from the rear wall."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-5-1-distance-from-wall",
+  "title": "Side Wall Grab Bar Location from Rear Wall",
+  "check_type": "numeric",
+  "target": "grab_bar",
+  "parameter": "distance_from_wall",
+  "operator": "<=",
+  "value": 12.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 23,
+   "clause": "RV604.5.1",
+   "quote": "located 12 inches (305 mm) maximum from the rear wall and extending 54 inches (1370 mm) minimum from the rear wall."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-5-1-extension-distance",
+  "title": "Side Wall Grab Bar Extension from Rear Wall",
+  "check_type": "numeric",
+  "target": "grab_bar",
+  "parameter": "extension_distance",
+  "operator": ">=",
+  "value": 54.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 23,
+   "clause": "RV604.5.1",
+   "quote": "extending 54 inches (1370 mm) minimum from the rear wall."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-5-2-length",
+  "title": "Rear Wall Grab Bar Length",
+  "check_type": "numeric",
+  "target": "grab_bar",
+  "parameter": "length",
+  "operator": ">=",
+  "value": 36.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 23,
+   "clause": "RV604.5.2",
+   "quote": "The rear wall grab bar shall be 36 inches (915 mm) long minimum and extend from the centerline of the water closet 12 inches (305 mm) minimum on one side and 24 inches (610 mm) minimum on the other side."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-5-2-extension-distance",
+  "title": "Rear Wall Grab Bar Extension - First Side",
+  "check_type": "numeric",
+  "target": "grab_bar",
+  "parameter": "extension_distance",
+  "operator": ">=",
+  "value": 12.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 23,
+   "clause": "RV604.5.2",
+   "quote": "extend from the centerline of the water closet 12 inches (305 mm) minimum on one side and 24 inches (610 mm) minimum on the other side."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-6-flush-control",
+  "title": "Flush Controls Location",
+  "check_type": "qualitative",
+  "target": "flush_control",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "except in ambulatory accessible compartments complying with RV604.8.2"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 23,
+   "clause": "RV604.6",
+   "quote": "Flush controls shall be located on the open side of the water closet except in ambulatory accessible compartments complying with RV604.8.2."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-7-distance-from-toilet",
+  "title": "Toilet Paper Dispenser Position in Front of Water Closet - Minimum",
+  "check_type": "numeric",
+  "target": "dispenser",
+  "parameter": "distance_from_toilet",
+  "operator": ">=",
+  "value": 7.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 23,
+   "clause": "RV604.7",
+   "quote": "Toilet paper dispensers shall comply with RV309.4 and shall be 7 inches (180 mm) minimum and 9 inches (230 mm) maximum in front of the water closet measured to the centerline of the dispenser."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-7-height",
+  "title": "Toilet Paper Dispenser Outlet Height - Minimum",
+  "check_type": "numeric",
+  "target": "dispenser",
+  "parameter": "height",
+  "operator": ">=",
+  "value": 15.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 23,
+   "clause": "RV604.7",
+   "quote": "The outlet of the dispenser shall be 15 inches (380 mm) minimum and 48 inches (1220 mm) maximum above the finish deck surface and shall not be located behind grab bars."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-7-dispenser",
+  "title": "Toilet Paper Dispenser Location Relative to Grab Bars",
+  "check_type": "qualitative",
+  "target": "dispenser",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 23,
+   "clause": "RV604.7",
+   "quote": "shall not be located behind grab bars."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-8-1-1-width",
+  "title": "Wheelchair Accessible Toilet Compartment Width",
+  "check_type": "numeric",
+  "target": "compartment",
+  "parameter": "width",
+  "operator": ">=",
+  "value": 60.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet_compartment"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 23,
+   "clause": "RV604.8.1.1",
+   "quote": "Wheelchair accessible compartments shall be 60 inches (1525 mm) wide minimum measured perpendicular to the side wall, and 56 inches (1420 mm) deep minimum for wall hung water closets, and 59 inches (1500 mm) deep minimum for deck surface mounted water closets measured perpendicular to the rear wall."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-8-1-1-depth",
+  "title": "Wheelchair Accessible Toilet Compartment Depth - Wall Hung Water Closet",
+  "check_type": "numeric",
+  "target": "compartment",
+  "parameter": "depth",
+  "operator": ">=",
+  "value": 56.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "for wall hung water closets"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 23,
+   "clause": "RV604.8.1.1",
+   "quote": "and 56 inches (1420 mm) deep minimum for wall hung water closets"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV606-3-height",
+  "title": "Lavatory and Sink Counter or Rim Height",
+  "check_type": "numeric",
+  "target": "lavatory",
+  "parameter": "height",
+  "operator": "<=",
+  "value": 34.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 23,
+   "clause": "RV606.3",
+   "quote": "Lavatories and sinks shall be installed with the front of the higher of the rim or counter surface 34 inches (865 mm) maximum above the finish deck surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV606-4-open-duration",
+  "title": "Metering Faucet Open Duration",
+  "check_type": "numeric",
+  "target": "faucet",
+  "parameter": "open_duration",
+  "operator": ">=",
+  "value": 10.0,
+  "unit": "s",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 23,
+   "clause": "RV606.4",
+   "quote": "Hand-operated, metering faucets shall remain open for 10 seconds minimum."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV606-5-pipe",
+  "title": "Exposed Pipes Protection Under Lavatories and Sinks",
+  "check_type": "qualitative",
+  "target": "pipe",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "under lavatories and sinks"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 23,
+   "clause": "RV606.5",
+   "quote": "Water supply and drain pipes under lavatories and sinks shall be insulated or otherwise configured to protect against contact."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV606-5-surface",
+  "title": "Surfaces Under Lavatories and Sinks",
+  "check_type": "qualitative",
+  "target": "surface",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "under lavatories and sinks"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 23,
+   "clause": "RV606.5",
+   "quote": "There shall be no sharp or abrasive surfaces under lavatories and sinks."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Grab-Bars-Above-Seat-Prohibition-grab-bar",
+  "title": "Grab Bars Above Seat Prohibition",
+  "check_type": "presence",
+  "target": "grab bar",
+  "parameter": null,
+  "operator": "not_exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "shower compartment"
+   ],
+   "condition_text": "above the seat"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": null,
+   "quote": "Grab bars shall not be provided above the seat."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Standard-Roll-In-Shower-Grab-Bars-on-Three-Walls-walls-count",
+  "title": "Standard Roll-In Shower Grab Bars on Three Walls",
+  "check_type": "count",
+  "target": "grab bar",
+  "parameter": "walls_count",
+  "operator": "==",
+  "value": 3.0,
+  "unit": "walls",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "standard roll-in type shower compartment"
+   ],
+   "condition_text": "Where a seat is not provided in standard roll-in type shower compartments"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": null,
+   "quote": "Where a seat is not provided in standard roll-in type shower compartments, grab bars shall be provided on three walls."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Shower-Compartment-Grab-Bar-Maximum-Distance-from-Adjacent-Walls-distance-from-adjacent-wall",
+  "title": "Shower Compartment Grab Bar Maximum Distance from Adjacent Walls",
+  "check_type": "numeric",
+  "target": "grab bar",
+  "parameter": "distance_from_adjacent_wall",
+  "operator": "<=",
+  "value": 6.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "shower compartment"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": null,
+   "quote": "Grab bars shall be installed 6 inches (150 mm) maximum from adjacent walls."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV608-3-4-1-grab-bar",
+  "title": "Vertical Grab Bar on Post-Mounted Shower Head",
+  "check_type": "presence",
+  "target": "grab bar",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "shower compartment"
+   ],
+   "condition_text": "Where the shower head is mounted on a post"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": "RV608.3.4.1",
+   "quote": "Where the shower head is mounted on a post, a vertical grab shall be provided under the shower head."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV608-3-4-1-distance-to-shower-head",
+  "title": "Vertical Grab Bar Proximity to Shower Head",
+  "check_type": "numeric",
+  "target": "grab bar",
+  "parameter": "distance_to_shower_head",
+  "operator": "<=",
+  "value": 3.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "shower compartment"
+   ],
+   "condition_text": "Where the shower head is mounted on a post"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": "RV608.3.4.1",
+   "quote": "The grab bar shall start at a point at or below the minimum grab bar mounting height in RV609 and shall extend to within at least 3 inches (75 mm) of the shower head."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV608-3-4-2-grab-bar",
+  "title": "Circular Grab Bar on Post-Mounted Shower Head",
+  "check_type": "presence",
+  "target": "grab bar",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "shower compartment"
+   ],
+   "condition_text": "Where the shower head is mounted on a post"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": "RV608.3.4.2",
+   "quote": "Where the shower head is mounted on a post, a circular grab bar that surrounds the usable part of the post shall be provided."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV608-3-4-3-extension-length",
+  "title": "Horizontal Grab Bar Extension from Shower Head",
+  "check_type": "numeric",
+  "target": "grab bar",
+  "parameter": "extension_length",
+  "operator": ">=",
+  "value": 18.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "shower compartment"
+   ],
+   "condition_text": "Where the shower head is mounted on a post or a wall"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": "RV608.3.4.3",
+   "quote": "Where the shower head is mounted on a post or a wall, a horizontal grab bar extending 18 inches (455 mm) minimum in both directions from the center line of the shower head shall be provided."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV608-5-2-height",
+  "title": "Standard Roll-In Shower Controls Maximum Height",
+  "check_type": "numeric",
+  "target": "controls",
+  "parameter": "height",
+  "operator": "<=",
+  "value": 48.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "standard roll-in type shower compartment"
+   ],
+   "condition_text": "In standard roll-in type shower compartments"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": "RV608.5.2",
+   "quote": "In standard roll-in type shower compartments, the controls, faucets, and shower spray unit shall be located above the grab bar, but no higher than 48 inches (1220 mm) above the shower deck surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV608-5-2-distance-from-seat-wall",
+  "title": "Standard Roll-In Shower Controls Distance from Seat Wall",
+  "check_type": "numeric",
+  "target": "controls",
+  "parameter": "distance_from_seat_wall",
+  "operator": "<=",
+  "value": 27.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "standard roll-in type shower compartment"
+   ],
+   "condition_text": "Where a seat is provided"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": "RV608.5.2",
+   "quote": "Where a seat is provided, the controls, faucets, and shower spray unit shall be installed on the back wall adjacent to the seat wall and shall be located 27 inches (685 mm) maximum from the seat wall."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV608-6-length",
+  "title": "Shower Spray Unit Hose Minimum Length",
+  "check_type": "numeric",
+  "target": "hose",
+  "parameter": "length",
+  "operator": ">=",
+  "value": 59.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "shower compartment"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": "RV608.6",
+   "quote": "A shower spray unit with a hose 59 inches (1500 mm) long minimum that can be used both as a fixed-position shower head and as a hand-held shower shall be provided."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV608-6-shower-spray-unit",
+  "title": "Shower Spray Unit Non-Positive Shut-Off",
+  "check_type": "qualitative",
+  "target": "shower spray unit",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "shower compartment"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": "RV608.6",
+   "quote": "The shower spray unit shall have an on/off control with a non-positive shut-off."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV608-6-vertical-bar",
+  "title": "Adjustable-Height Shower Head Obstruction of Grab Bars",
+  "check_type": "qualitative",
+  "target": "vertical bar",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "shower compartment"
+   ],
+   "condition_text": "If an adjustable-height shower head on a vertical bar is used"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": "RV608.6",
+   "quote": "If an adjustable-height shower head on a vertical bar is used, the bar shall be installed so as not to obstruct the use of grab bars."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV608-6-water-temperature",
+  "title": "Shower Spray Unit Maximum Water Temperature",
+  "check_type": "numeric",
+  "target": "shower spray unit",
+  "parameter": "water_temperature",
+  "operator": "<=",
+  "value": 120.0,
+  "unit": "°F",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "shower compartment"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": "RV608.6",
+   "quote": "Shower spray units shall deliver water that is 120°F (49°C) maximum."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV609-2-1-outside-diameter",
+  "title": "Circular Grab Bar Minimum Outside Diameter",
+  "check_type": "numeric",
+  "target": "grab bar",
+  "parameter": "outside_diameter",
+  "operator": ">=",
+  "value": 1.25,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "Grab bars with circular cross sections"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": "RV609.2.1",
+   "quote": "Grab bars with circular cross sections shall have an outside diameter of 1¼ inches (32 mm) minimum and 2 inches (51 mm) maximum."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV609-3-clearance-to-wall",
+  "title": "Grab Bar Wall Clearance",
+  "check_type": "numeric",
+  "target": "grab bar",
+  "parameter": "clearance_to_wall",
+  "operator": "==",
+  "value": 1.5,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": "RV609.3",
+   "quote": "The space between the wall and the grab bar shall be 1½ inches (38 mm)."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV609-3-clearance-to-post",
+  "title": "Grab Bar Post Clearance at Rinsing Showers",
+  "check_type": "numeric",
+  "target": "grab bar",
+  "parameter": "clearance_to_post",
+  "operator": "==",
+  "value": 1.5,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "rinsing shower"
+   ],
+   "condition_text": "At rinsing showers, if grab bars are installed on posts"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": "RV609.3",
+   "quote": "At rinsing showers, if grab bars are installed on posts, the space between the post and grab bar shall be 1½ inches (38 mm)."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV609-3-clearance-below-and-ends",
+  "title": "Grab Bar Clearance to Projecting Objects Below and at Ends",
+  "check_type": "numeric",
+  "target": "grab bar",
+  "parameter": "clearance_below_and_ends",
+  "operator": ">=",
+  "value": 1.5,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": "RV609.3",
+   "quote": "The space between the grab bar and projecting objects below and at the ends shall be 1½ inches (38 mm) minimum."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV609-3-clearance-above",
+  "title": "Grab Bar Clearance to Projecting Objects Above",
+  "check_type": "numeric",
+  "target": "grab bar",
+  "parameter": "clearance_above",
+  "operator": ">=",
+  "value": 12.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": "RV609.3",
+   "quote": "The space between the grab bar and projecting objects above shall be 12 inches (305 mm) minimum."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV609-4-mounting-height",
+  "title": "Grab Bar Minimum Mounting Height",
+  "check_type": "numeric",
+  "target": "grab bar",
+  "parameter": "mounting_height",
+  "operator": ">=",
+  "value": 33.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": "RV609.4",
+   "quote": "Grab bars shall be installed in a horizontal position, 33 inches (840 mm) minimum and 36 inches (915 mm) maximum above the finish deck surface measured to the top of the gripping surface"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV609-8-structural-strength",
+  "title": "Grab Bar Structural Strength",
+  "check_type": "numeric",
+  "target": "grab bar",
+  "parameter": "structural_strength",
+  "operator": ">=",
+  "value": 250.0,
+  "unit": "pounds",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 24,
+   "clause": "RV609.8",
+   "quote": "Allowable stresses shall not be exceeded for materials used when a vertical or horizontal force of 250 pounds (1112 N) is applied at any point on the grab bar, fastener, mounting device, or supporting structure."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV610-3-distance-to-entry",
+  "title": "Shower Compartment Seat Distance to Entry (Standard Roll-in)",
+  "check_type": "numeric",
+  "target": "seat",
+  "parameter": "distance_to_entry",
+  "operator": "<=",
+  "value": 3.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "standard roll-in shower compartment"
+   ],
+   "condition_text": "Where a seat is provided in a standard roll-in shower compartment"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 25,
+   "clause": "RV610.3",
+   "quote": "Where a seat is provided in a standard roll-in shower compartment, it shall be a folding type, shall be installed on the side wall adjacent to the controls, and shall extend from the back wall to a point within 3 inches (75 mm) of the compartment entry."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV610-3-height",
+  "title": "Shower Seat Minimum Height",
+  "check_type": "numeric",
+  "target": "seat",
+  "parameter": "height",
+  "operator": ">=",
+  "value": 17.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "shower compartment"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 25,
+   "clause": "RV610.3",
+   "quote": "The top of the seat shall be 17 inches (430 mm) minimum and 19 inches (485 mm) maximum above the bathroom finish deck surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV403-5-1-clear-width",
+  "title": "Passageway Minimum Clear Width",
+  "check_type": "numeric",
+  "target": "corridor",
+  "parameter": "clear_width",
+  "operator": ">=",
+  "value": 36.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "passageway"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 25,
+   "clause": "RV403.5.1",
+   "quote": "The clear width of walking surfaces shall be 36 inches (915 mm) minimum."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV307-2-protrusion",
+  "title": "Passageway Protrusion Limits",
+  "check_type": "numeric",
+  "target": "object",
+  "parameter": "protrusion",
+  "operator": "<=",
+  "value": 4.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "circulation path"
+   ],
+   "condition_text": "Objects with leading edges more than 27 inches (685 mm) and not more than 80 inches (2030 mm) above the finish deck surface"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 25,
+   "clause": "RV307.2",
+   "quote": "Objects with leading edges more than 27 inches (685 mm) and not more than 80 inches (2030 mm) above the finish deck surface shall protrude 4 inches (100 mm) maximum horizontally into the circulation path."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV404-2-3-clear-width",
+  "title": "Doorway Minimum Clear Width",
+  "check_type": "numeric",
+  "target": "door",
+  "parameter": "clear_width",
+  "operator": ">=",
+  "value": 32.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 25,
+   "clause": "RV404.2.3",
+   "quote": "Door openings shall provide a clear width of 32 inches (815 mm) minimum."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-2-centerline-distance-to-side-wall",
+  "title": "Water Closet Centerline Minimum Distance from Side Wall",
+  "check_type": "numeric",
+  "target": "water closet",
+  "parameter": "centerline_distance_to_side_wall",
+  "operator": ">=",
+  "value": 16.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "public restroom"
+   ],
+   "condition_text": "except that the water closet shall be 17 inches (430 mm) minimum and 19 inches (485 mm) maximum from the side wall or partition in the ambulatory accessible toilet compartment specified in RV604.8.2"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 25,
+   "clause": "RV604.2",
+   "quote": "The centerline of the water closet shall be 16 inches (405 mm) minimum to 18 inches (455 mm) maximum from the side wall or partition, except that the water closet shall be 17 inches (430 mm) minimum and 19 inches (485 mm) maximum from the side wall or partition in the ambulatory accessible toilet compartment specified in RV604.8.2."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-5-grab-bar-2",
+  "title": "Water Closet Grab Bars",
+  "check_type": "presence",
+  "target": "grab bar",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "public restroom"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 25,
+   "clause": "RV604.5",
+   "quote": "Grab bars shall be provided on the side wall closest to the water closet and on the rear wall."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-5-1-distance-from-rear-wall",
+  "title": "Side wall grab bar maximum distance from rear wall",
+  "check_type": "numeric",
+  "target": "grab_bar",
+  "parameter": "distance_from_rear_wall",
+  "operator": "<=",
+  "value": 12.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet_compartment"
+   ],
+   "condition_text": "side wall grab bar"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 26,
+   "clause": "RV604.5.1",
+   "quote": "located 12 inches (305 mm) maximum from the rear wall"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-5-1-extension-from-rear-wall",
+  "title": "Side wall grab bar minimum extension from rear wall",
+  "check_type": "numeric",
+  "target": "grab_bar",
+  "parameter": "extension_from_rear_wall",
+  "operator": ">=",
+  "value": 54.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet_compartment"
+   ],
+   "condition_text": "side wall grab bar"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 26,
+   "clause": "RV604.5.1",
+   "quote": "extending 54 inches (1370 mm) minimum from the rear wall."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-5-2-extension-from-centerline",
+  "title": "Rear wall grab bar minimum extension from centerline - one side",
+  "check_type": "numeric",
+  "target": "grab_bar",
+  "parameter": "extension_from_centerline",
+  "operator": ">=",
+  "value": 12.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet_compartment"
+   ],
+   "condition_text": "rear wall grab bar"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 26,
+   "clause": "RV604.5.2",
+   "quote": "extend from the centerline of the water closet 12 inches (305 mm) minimum on one side"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-7-distance-in-front-of-water-closet",
+  "title": "Toilet paper dispenser minimum distance in front of water closet",
+  "check_type": "numeric",
+  "target": "dispenser",
+  "parameter": "distance_in_front_of_water_closet",
+  "operator": ">=",
+  "value": 7.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet_compartment"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 26,
+   "clause": "RV604.7",
+   "quote": "shall be 7 inches (180 mm) minimum and 9 inches (230 mm) maximum in front of the water closet measured to the centerline of the dispenser."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-7-outlet-height",
+  "title": "Toilet paper dispenser outlet minimum height",
+  "check_type": "numeric",
+  "target": "dispenser",
+  "parameter": "outlet_height",
+  "operator": ">=",
+  "value": 15.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "toilet_compartment"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 26,
+   "clause": "RV604.7",
+   "quote": "The outlet of the dispenser shall be 15 inches (380 mm) minimum and 48 inches (1220 mm) maximum above the finish deck surface and shall not be located behind grab bars."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-8-1-1-width-2",
+  "title": "Wheelchair accessible compartment minimum width",
+  "check_type": "numeric",
+  "target": "toilet",
+  "parameter": "width",
+  "operator": ">=",
+  "value": 60.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "Wheelchair accessible compartments"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 26,
+   "clause": "RV604.8.1.1",
+   "quote": "Wheelchair accessible compartments shall be 60 inches (1525 mm) wide minimum measured perpendicular to the side wall"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV604-8-1-1-depth-2",
+  "title": "Wheelchair accessible compartment minimum depth - wall hung water closet",
+  "check_type": "numeric",
+  "target": "toilet",
+  "parameter": "depth",
+  "operator": ">=",
+  "value": 56.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "for wall hung water closets"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 26,
+   "clause": "RV604.8.1.1",
+   "quote": "56 inches (1420 mm) deep minimum for wall hung water closets"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV606-5-lavatory",
+  "title": "Prohibition of sharp or abrasive surfaces under lavatories and sinks",
+  "check_type": "qualitative",
+  "target": "lavatory",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "under lavatories and sinks"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 26,
+   "clause": "RV606.5",
+   "quote": "There shall be no sharp or abrasive surfaces under lavatories and sinks."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV605-2-rim-height",
+  "title": "Urinal rim maximum height",
+  "check_type": "numeric",
+  "target": "urinal",
+  "parameter": "rim_height",
+  "operator": "<=",
+  "value": 17.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "Urinals shall be the stall-type or the wall-hung type"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 26,
+   "clause": "RV605.2",
+   "quote": "Urinals shall be the stall-type or the wall-hung type with the rim 17 inches (430 mm) maximum above the finish deck surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV605-2-depth",
+  "title": "Urinal minimum depth",
+  "check_type": "numeric",
+  "target": "urinal",
+  "parameter": "depth",
+  "operator": ">=",
+  "value": 13.5,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 26,
+   "clause": "RV605.2",
+   "quote": "Urinals shall be 13½ inches (345 mm) deep minimum measured from the outer face of the urinal rim to the back of the fixture."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV605-3-clear-deck-space",
+  "title": "Urinal clear deck space provision",
+  "check_type": "presence",
+  "target": "clear_deck_space",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "at urinals"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 26,
+   "clause": "RV605.3",
+   "quote": "A clear deck space complying with RV305 positioned for forward approach shall be provided."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV605-4-flush-control",
+  "title": "Flush Controls Operation",
+  "check_type": "qualitative",
+  "target": "flush_control",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV605.4",
+   "quote": "Flush controls shall be hand operated or automatic."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV602-4-height",
+  "title": "Drinking Fountain Spout Height",
+  "check_type": "numeric",
+  "target": "spout",
+  "parameter": "height",
+  "operator": "<=",
+  "value": 36.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV602.4",
+   "quote": "Spout outlets shall be 36 inches (915 mm) maximum above the finish deck surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV602-5-distance-from-vertical-support",
+  "title": "Drinking Fountain Spout Location - Distance from Vertical Support",
+  "check_type": "numeric",
+  "target": "spout",
+  "parameter": "distance_from_vertical_support",
+  "operator": ">=",
+  "value": 15.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV602.5",
+   "quote": "The spout shall be located 15 inches (380 mm) minimum from the vertical support"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV602-5-distance-from-front-edge",
+  "title": "Drinking Fountain Spout Location - Distance from Front Edge",
+  "check_type": "numeric",
+  "target": "spout",
+  "parameter": "distance_from_front_edge",
+  "operator": "<=",
+  "value": 5.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV602.5",
+   "quote": "5 inches (125 mm) maximum from the front edge of the unit, including bumpers."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV602-6-height",
+  "title": "Drinking Fountain Water Flow Height",
+  "check_type": "numeric",
+  "target": "water_flow",
+  "parameter": "height",
+  "operator": ">=",
+  "value": 4.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV602.6",
+   "quote": "The spout shall provide a flow of water 4 inches (100 mm) high minimum"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV602-6-distance-from-front",
+  "title": "Drinking Fountain Spout Location from Front of Unit",
+  "check_type": "numeric",
+  "target": "spout",
+  "parameter": "distance_from_front",
+  "operator": "<=",
+  "value": 5.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV602.6",
+   "quote": "shall be located 5 inches (125 mm) maximum from the front of the unit."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV602-6-angle",
+  "title": "Water Stream Angle - Spout Located Less Than 3 Inches from Front",
+  "check_type": "numeric",
+  "target": "water_stream",
+  "parameter": "angle",
+  "operator": "<=",
+  "value": 30.0,
+  "unit": "degrees",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "Where spouts are located less than 3 inches (75 mm) of the front of the unit"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV602.6",
+   "quote": "Where spouts are located less than 3 inches (75 mm) of the front of the unit, the angle of the water stream shall be 30 degrees maximum."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV602-7-height",
+  "title": "Drinking Fountains for Standing Persons - Spout Height Minimum",
+  "check_type": "numeric",
+  "target": "spout",
+  "parameter": "height",
+  "operator": ">=",
+  "value": 38.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "drinking fountains for standing persons"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV602.7",
+   "quote": "Spout outlets of drinking fountains for standing persons shall be 38 inches (965 mm) minimum and 43 inches (1090 mm) maximum above the finish deck surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV902-3-height",
+  "title": "Dining Surfaces and Work Surfaces - Height Minimum",
+  "check_type": "numeric",
+  "target": "dining_surface",
+  "parameter": "height",
+  "operator": ">=",
+  "value": 28.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "mess deck",
+    "dining hall"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV902.3",
+   "quote": "The tops of dining surfaces and work surfaces shall be 28 inches (710 mm) minimum and 34 inches (865 mm) maximum above the finish deck surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV902-4-1-clear-deck-space",
+  "title": "Dining and Work Surfaces - Clear Deck Space",
+  "check_type": "presence",
+  "target": "clear_deck_space",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "mess deck",
+    "dining hall"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV902.4.1",
+   "quote": "A clear deck space complying with RV305 positioned for a forward approach shall be provided."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV902-4-1-height",
+  "title": "Dining and Work Surfaces - Knee Clearance Minimum Height",
+  "check_type": "numeric",
+  "target": "knee_clearance",
+  "parameter": "height",
+  "operator": ">=",
+  "value": 24.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "mess deck",
+    "dining hall"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV902.4.1",
+   "quote": "Knee and toe clearance complying with V306 shall be provided, except that knee clearance 24 inches (610 mm) minimum above the finish deck surface shall be permitted."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV902-4-2-height",
+  "title": "Tables and Counters - Height Minimum",
+  "check_type": "numeric",
+  "target": "table",
+  "parameter": "height",
+  "operator": ">=",
+  "value": 26.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "mess deck",
+    "dining hall"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV902.4.2",
+   "quote": "The tops of tables and counters shall be 26 inches (660 mm) minimum and 30 inches (760 mm) maximum above the finish deck surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV903-2-clear-deck-space",
+  "title": "Bench Clear Deck Space",
+  "check_type": "presence",
+  "target": "clear_deck_space",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "positioned at the end of the bench seat and parallel to the short axis of the bench"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV903.2",
+   "quote": "Clear deck space complying with RV305 shall be provided and shall be positioned at the end of the bench seat and parallel to the short axis of the bench."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV903-3-length",
+  "title": "Bench Seat Minimum Length",
+  "check_type": "numeric",
+  "target": "bench_seat",
+  "parameter": "length",
+  "operator": ">=",
+  "value": 42.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV903.3",
+   "quote": "Benches shall have seats that are 42 inches (1065 mm) long minimum and 20 inches (510 mm) deep minimum and 24 inches (610 mm) deep maximum."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV903-3-depth",
+  "title": "Bench Seat Minimum Depth",
+  "check_type": "numeric",
+  "target": "bench_seat",
+  "parameter": "depth",
+  "operator": ">=",
+  "value": 20.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV903.3",
+   "quote": "Benches shall have seats that are 42 inches (1065 mm) long minimum and 20 inches (510 mm) deep minimum and 24 inches (610 mm) deep maximum."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV903-4-bench",
+  "title": "Bench Back Support",
+  "check_type": "qualitative",
+  "target": "bench",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV903.4",
+   "quote": "The bench shall provide for back support or shall be affixed to a wall."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV903-4-length",
+  "title": "Bench Back Support Length",
+  "check_type": "numeric",
+  "target": "back_support",
+  "parameter": "length",
+  "operator": ">=",
+  "value": 42.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV903.4",
+   "quote": "Back support shall be 42 inches (1065 mm) long minimum and shall extend from a point 2 inches (51 mm) maximum above the seat surface to a point 18 inches (455 mm) minimum above the seat surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV903-4-lower-extension-above-seat",
+  "title": "Bench Back Support Lower Extension",
+  "check_type": "numeric",
+  "target": "back_support",
+  "parameter": "lower_extension_above_seat",
+  "operator": "<=",
+  "value": 2.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV903.4",
+   "quote": "Back support shall be 42 inches (1065 mm) long minimum and shall extend from a point 2 inches (51 mm) maximum above the seat surface to a point 18 inches (455 mm) minimum above the seat surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV903-4-upper-extension-above-seat",
+  "title": "Bench Back Support Upper Extension",
+  "check_type": "numeric",
+  "target": "back_support",
+  "parameter": "upper_extension_above_seat",
+  "operator": ">=",
+  "value": 18.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV903.4",
+   "quote": "Back support shall be 42 inches (1065 mm) long minimum and shall extend from a point 2 inches (51 mm) maximum above the seat surface to a point 18 inches (455 mm) minimum above the seat surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV903-4-distance-from-seat-rear-edge",
+  "title": "Bench Back Support Horizontal Clearance from Rear Edge",
+  "check_type": "numeric",
+  "target": "back_support",
+  "parameter": "distance_from_seat_rear_edge",
+  "operator": "<=",
+  "value": 2.5,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV903.4",
+   "quote": "Back support shall be 2½ inches (64 mm) maximum from the rear edge of the seat measured horizontally."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV903-5-height",
+  "title": "Bench Seat Height Minimum",
+  "check_type": "numeric",
+  "target": "bench_seat",
+  "parameter": "height",
+  "operator": ">=",
+  "value": 17.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 27,
+   "clause": "RV903.5",
+   "quote": "The top of the bench seat surface shall be 17 inches (430 mm) minimum and 19 inches (485 mm) maximum above the finish deck surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV903-6-force-capacity",
+  "title": "Seat - structural strength",
+  "check_type": "numeric",
+  "target": "seat",
+  "parameter": "force_capacity",
+  "operator": ">=",
+  "value": 250.0,
+  "unit": "pounds",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 28,
+   "clause": "RV903.6",
+   "quote": "Allowable stresses shall not be exceeded for materials used when a vertical or horizontal force of 250 pounds (1112 N) is applied at any point on the seat, fastener, mounting device, or supporting structure."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV611-4-door-height",
+  "title": "Top loading laundry machines - door height",
+  "check_type": "numeric",
+  "target": "washing machine",
+  "parameter": "door_height",
+  "operator": "<=",
+  "value": 36.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "Top loading machines"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 28,
+   "clause": "RV611.4",
+   "quote": "Top loading machines shall have the door to the laundry compartment located 36 inches (915 mm) maximum above the finish deck surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV611-4-opening-height",
+  "title": "Front loading laundry machines - minimum opening height",
+  "check_type": "numeric",
+  "target": "washing machine",
+  "parameter": "opening_height",
+  "operator": ">=",
+  "value": 15.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "Front loading machines"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 28,
+   "clause": "RV611.4",
+   "quote": "Front loading machines shall have the bottom of the opening to the laundry compartment located 15 inches (380 mm) minimum and 36 inches (915 mm) maximum above the finish deck surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV902-2-clear-deck-space",
+  "title": "Dining and work surfaces - clear deck space",
+  "check_type": "presence",
+  "target": "work surface",
+  "parameter": "clear_deck_space",
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 28,
+   "clause": "RV902.2",
+   "quote": "A clear deck space complying with RV305 positioned for a forward approach shall be provided."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV902-2-knee-and-toe-clearance",
+  "title": "Dining and work surfaces - knee and toe clearance",
+  "check_type": "presence",
+  "target": "work surface",
+  "parameter": "knee_and_toe_clearance",
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 28,
+   "clause": "RV902.2",
+   "quote": "Knee and toe clearance complying with RV306 shall be provided."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV902-3-height-2",
+  "title": "Dining and work surfaces - minimum top height",
+  "check_type": "numeric",
+  "target": "work surface",
+  "parameter": "height",
+  "operator": ">=",
+  "value": 28.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 28,
+   "clause": "RV902.3",
+   "quote": "The tops of dining surfaces and work surfaces shall be 28 inches (710 mm) minimum and 34 inches (865 mm) maximum above the finish deck surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV308-2-1-high-forward-reach",
+  "title": "Unobstructed high forward reach - maximum height",
+  "check_type": "numeric",
+  "target": "element",
+  "parameter": "high_forward_reach",
+  "operator": "<=",
+  "value": 48.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "Where a forward reach is unobstructed"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 28,
+   "clause": "RV308.2.1",
+   "quote": "Where a forward reach is unobstructed, the high forward reach shall be 48 inches (1220 mm) maximum and the low forward reach shall be 15 inches (380 mm) minimum above the finish deck surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV308-2-1-low-forward-reach",
+  "title": "Unobstructed low forward reach - minimum height",
+  "check_type": "numeric",
+  "target": "element",
+  "parameter": "low_forward_reach",
+  "operator": ">=",
+  "value": 15.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "Where a forward reach is unobstructed"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 28,
+   "clause": "RV308.2.1",
+   "quote": "Where a forward reach is unobstructed, the high forward reach shall be 48 inches (1220 mm) maximum and the low forward reach shall be 15 inches (380 mm) minimum above the finish deck surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Maximum-high-forward-reach-over-obstruction-reach-depth-up-to-20-inches-high-forward-reach",
+  "title": "Maximum high forward reach over obstruction (reach depth up to 20 inches)",
+  "check_type": "numeric",
+  "target": "element",
+  "parameter": "high_forward_reach",
+  "operator": "<=",
+  "value": 48.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "where the reach depth is 20 inches (510 mm) maximum"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 29,
+   "clause": null,
+   "quote": "The high forward reach shall be 48 inches (1220 mm) maximum where the reach depth is 20 inches (510 mm) maximum."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Maximum-high-forward-reach-over-obstruction-reach-depth-exceeding-20-inches-high-forward-reach",
+  "title": "Maximum high forward reach over obstruction (reach depth exceeding 20 inches)",
+  "check_type": "numeric",
+  "target": "element",
+  "parameter": "high_forward_reach",
+  "operator": "<=",
+  "value": 44.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "Where the reach depth exceeds 20 inches (510 mm)"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 29,
+   "clause": null,
+   "quote": "Where the reach depth exceeds 20 inches (510 mm), the high forward reach shall be 44 inches (1120 mm) maximum and the reach depth shall be 25 inches (635 mm) maximum."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-Maximum-reach-depth-over-obstruction-reach-depth",
+  "title": "Maximum reach depth over obstruction",
+  "check_type": "numeric",
+  "target": "element",
+  "parameter": "reach_depth",
+  "operator": "<=",
+  "value": 25.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "Where the reach depth exceeds 20 inches (510 mm)"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 29,
+   "clause": null,
+   "quote": "Where the reach depth exceeds 20 inches (510 mm), the high forward reach shall be 44 inches (1120 mm) maximum and the reach depth shall be 25 inches (635 mm) maximum."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV308-3-1-high-side-reach",
+  "title": "Maximum high unobstructed side reach",
+  "check_type": "numeric",
+  "target": "element",
+  "parameter": "high_side_reach",
+  "operator": "<=",
+  "value": 48.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "Where a clear deck space allows a parallel approach to an element and the side reach is unobstructed"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 29,
+   "clause": "RV308.3.1",
+   "quote": "Where a clear deck space allows a parallel approach to an element and the side reach is unobstructed, the high side reach shall be 48 inches (1220 mm) maximum and the low side reach shall be 15 inches (380 mm) minimum above the finish deck surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV308-3-1-low-side-reach",
+  "title": "Minimum low unobstructed side reach",
+  "check_type": "numeric",
+  "target": "element",
+  "parameter": "low_side_reach",
+  "operator": ">=",
+  "value": 15.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "Where a clear deck space allows a parallel approach to an element and the side reach is unobstructed"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 29,
+   "clause": "RV308.3.1",
+   "quote": "Where a clear deck space allows a parallel approach to an element and the side reach is unobstructed, the high side reach shall be 48 inches (1220 mm) maximum and the low side reach shall be 15 inches (380 mm) minimum above the finish deck surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV702-1-emergency-alarm-system",
+  "title": "Permanently installed audible and visible emergency alarms",
+  "check_type": "qualitative",
+  "target": "emergency alarm system",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 29,
+   "clause": "RV702.1",
+   "quote": "Emergency alarm systems shall have permanently installed audible and visible alarms complying with NFPA 72 (1999 or 2002 edition) (incorporated by reference, see “Referenced Standards” in Chapter 1)"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV702-1-sound-level",
+  "title": "Maximum sound level of audible notification appliances",
+  "check_type": "numeric",
+  "target": "audible notification appliance",
+  "parameter": "sound_level",
+  "operator": "<=",
+  "value": 110.0,
+  "unit": "dB",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "at the minimum hearing distance from the audible appliance"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 29,
+   "clause": "RV702.1",
+   "quote": "the maximum allowable sound level of audible notification appliances complying with section 4-3.2.1 of NFPA 72 (1999 edition) shall have a sound level no more than 110 dB at the minimum hearing distance from the audible appliance."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-1-sign",
+  "title": "Provision of visual and tactile characters on signs",
+  "check_type": "qualitative",
+  "target": "sign",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "Where both visual and tactile characters are required"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 29,
+   "clause": "RV703.1",
+   "quote": "Where both visual and tactile characters are required, either one sign with both visual and tactile characters, or two separate signs, one with visual, and one with tactile characters, shall be provided."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-2-raised-character",
+  "title": "Raised Characters - Braille Duplication",
+  "check_type": "presence",
+  "target": "raised character",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 30,
+   "clause": "RV703.2",
+   "quote": "Raised characters shall comply with RV703.2 and shall be duplicated in Braille complying with V703.3."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-2-1-depth",
+  "title": "Raised Characters - Minimum Depth",
+  "check_type": "numeric",
+  "target": "raised character",
+  "parameter": "depth",
+  "operator": ">=",
+  "value": 0.8,
+  "unit": "mm",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 30,
+   "clause": "RV703.2.1",
+   "quote": "Raised characters shall be 1/32 inch (0.8 mm) minimum above their background."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-2-2-raised-character",
+  "title": "Raised Characters - Case",
+  "check_type": "qualitative",
+  "target": "raised character",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 30,
+   "clause": "RV703.2.2",
+   "quote": "Characters shall be uppercase."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-2-3-raised-character",
+  "title": "Raised Characters - Font Style",
+  "check_type": "qualitative",
+  "target": "raised character",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 30,
+   "clause": "RV703.2.3",
+   "quote": "Characters shall be sans serif. Characters shall not be italic, oblique, script, highly decorative, or of other unusual forms."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-2-4-width-ratio",
+  "title": "Raised Characters - Minimum Width Proportion",
+  "check_type": "numeric",
+  "target": "raised character",
+  "parameter": "width_ratio",
+  "operator": ">=",
+  "value": 55.0,
+  "unit": "percent",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 30,
+   "clause": "RV703.2.4",
+   "quote": "Characters shall be selected from fonts where the width of the uppercase letter \"O\" is 55 percent minimum and 110 percent maximum of the height of the uppercase letter \"I\"."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-2-5-height",
+  "title": "Raised Characters - Minimum Character Height",
+  "check_type": "numeric",
+  "target": "raised character",
+  "parameter": "height",
+  "operator": ">=",
+  "value": 16.0,
+  "unit": "mm",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 30,
+   "clause": "RV703.2.5",
+   "quote": "Character height measured vertically from the baseline of the character shall be e inch (16 mm) minimum and 2 inches (51 mm) maximum based on the height of the uppercase letter \"I\"."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-2-6-stroke-thickness-ratio",
+  "title": "Raised Characters - Maximum Stroke Thickness",
+  "check_type": "numeric",
+  "target": "raised character",
+  "parameter": "stroke_thickness_ratio",
+  "operator": "<=",
+  "value": 15.0,
+  "unit": "percent",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 30,
+   "clause": "RV703.2.6",
+   "quote": "Stroke thickness of the uppercase letter \"I\" shall be 15 percent maximum of the height of the character."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-2-7-spacing",
+  "title": "Raised Characters (Rectangular Cross Section) - Minimum Spacing",
+  "check_type": "numeric",
+  "target": "raised character",
+  "parameter": "spacing",
+  "operator": ">=",
+  "value": 0.13,
+  "unit": "inch",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "Where characters have rectangular cross sections"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 30,
+   "clause": "RV703.2.7",
+   "quote": "Where characters have rectangular cross sections, spacing between individual raised characters shall be 0.13 inch (3.2 mm) minimum and 4 times the raised character stroke width maximum."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-2-7-spacing-base",
+  "title": "Raised Characters (Non-Rectangular Cross Section) - Minimum Spacing at Base",
+  "check_type": "numeric",
+  "target": "raised character",
+  "parameter": "spacing_base",
+  "operator": ">=",
+  "value": 1.6,
+  "unit": "mm",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "Where characters have other cross sections, at the base of the cross sections"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 30,
+   "clause": "RV703.2.7",
+   "quote": "Where characters have other cross sections, spacing between individual raised characters shall be 1/16 inch (1.6 mm) minimum and 4 times the raised character stroke width maximum at the base of the cross sections, and 0.13 inch (3.2 mm) minimum and 4 times the raised character stroke width maximum at the top of the cross sections."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-2-7-spacing-top",
+  "title": "Raised Characters (Non-Rectangular Cross Section) - Minimum Spacing at Top",
+  "check_type": "numeric",
+  "target": "raised character",
+  "parameter": "spacing_top",
+  "operator": ">=",
+  "value": 0.13,
+  "unit": "inch",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "Where characters have other cross sections, at the top of the cross sections"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 30,
+   "clause": "RV703.2.7",
+   "quote": "Where characters have other cross sections, spacing between individual raised characters shall be 1/16 inch (1.6 mm) minimum and 4 times the raised character stroke width maximum at the base of the cross sections, and 0.13 inch (3.2 mm) minimum and 4 times the raised character stroke width maximum at the top of the cross sections."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-2-7-separation",
+  "title": "Raised Characters - Minimum Separation from Raised Borders and Decorative Elements",
+  "check_type": "numeric",
+  "target": "raised character",
+  "parameter": "separation",
+  "operator": ">=",
+  "value": 0.37,
+  "unit": "inch",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 30,
+   "clause": "RV703.2.7",
+   "quote": "Characters shall be separated from raised borders and decorative elements 0.37 inch (9.5 mm) minimum."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-2-8-line-spacing-ratio",
+  "title": "Raised Characters - Minimum Line Spacing",
+  "check_type": "numeric",
+  "target": "raised character",
+  "parameter": "line_spacing_ratio",
+  "operator": ">=",
+  "value": 135.0,
+  "unit": "percent",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 30,
+   "clause": "RV703.2.8",
+   "quote": "Spacing between the baselines of separate lines of raised characters within a message shall be 135 percent minimum and 170 percent maximum of the raised character height."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-3-braille",
+  "title": "Braille - Grade Specification",
+  "check_type": "qualitative",
+  "target": "braille",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 30,
+   "clause": "RV703.3",
+   "quote": "Braille shall be contracted (Grade 2) and shall comply with RV703.3 and RV703.4."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-3-1-braille-dot",
+  "title": "Braille Dots - Shape",
+  "check_type": "qualitative",
+  "target": "braille dot",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 30,
+   "clause": "RV703.3.1",
+   "quote": "Braille dots shall have a domed or rounded shape and shall comply with Table RV703.3.1."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-3-1-braille",
+  "title": "Braille - Uppercase Letter Indication",
+  "check_type": "qualitative",
+  "target": "braille",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 30,
+   "clause": "RV703.3.1",
+   "quote": "The indication of an uppercase letter or letters shall only be used before the first word of sentences, proper nouns and names, individual letters of the alphabet, initials, and acronyms."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-3-2-braille",
+  "title": "Braille Position Below Text",
+  "check_type": "qualitative",
+  "target": "braille",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 31,
+   "clause": "RV703.3.2",
+   "quote": "Braille shall be positioned below the corresponding text."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-4-1-height-above-deck",
+  "title": "Tactile Characters Minimum Height Above Finish Deck Surface",
+  "check_type": "numeric",
+  "target": "tactile character",
+  "parameter": "height_above_deck",
+  "operator": ">=",
+  "value": 48.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 31,
+   "clause": "RV703.4.1",
+   "quote": "Tactile characters on signs shall be located 48 inches (1220 mm) minimum above the finish deck surface, measured from the baseline of the lowest tactile character"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-4-2-sign",
+  "title": "Tactile Sign Location at Door",
+  "check_type": "qualitative",
+  "target": "sign",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "door"
+   ],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 31,
+   "clause": "RV703.4.2",
+   "quote": "Where a tactile sign is provided at a door, the sign shall be located alongside the door at the latch side."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-4-2-clear-width",
+  "title": "Clear Deck Space at Tactile Characters Minimum Width",
+  "check_type": "numeric",
+  "target": "space",
+  "parameter": "clear_width",
+  "operator": ">=",
+  "value": 18.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 31,
+   "clause": "RV703.4.2",
+   "quote": "Signs containing tactile characters shall be located so that a clear deck space of 18 inches (455 mm) minimum by 18 inches (455 mm) minimum, centered on the tactile characters, is provided beyond the arc of any door swing between the closed position and 45 degree open position."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-4-2-clear-depth",
+  "title": "Clear Deck Space at Tactile Characters Minimum Depth",
+  "check_type": "numeric",
+  "target": "space",
+  "parameter": "clear_depth",
+  "operator": ">=",
+  "value": 18.0,
+  "unit": "inches",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 31,
+   "clause": "RV703.4.2",
+   "quote": "Signs containing tactile characters shall be located so that a clear deck space of 18 inches (455 mm) minimum by 18 inches (455 mm) minimum, centered on the tactile characters, is provided beyond the arc of any door swing between the closed position and 45 degree open position."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-5-1-character",
+  "title": "Visual Characters Contrast",
+  "check_type": "qualitative",
+  "target": "character",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 31,
+   "clause": "RV703.5.1",
+   "quote": "Characters shall contrast with their background with either light characters on a dark background or dark characters on a light background."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-5-3-character",
+  "title": "Visual Character Prohibited Styles",
+  "check_type": "qualitative",
+  "target": "character",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 31,
+   "clause": "RV703.5.3",
+   "quote": "Characters shall not be italic, oblique, script, highly decorative, or of other unusual forms."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-5-4-width-ratio",
+  "title": "Visual Character Proportion Minimum Width",
+  "check_type": "numeric",
+  "target": "character",
+  "parameter": "width_ratio",
+  "operator": ">=",
+  "value": 55.0,
+  "unit": "percent",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 31,
+   "clause": "RV703.5.4",
+   "quote": "Characters shall be selected from fonts where the width of the uppercase letter \"O\" is 55 percent minimum and 110 percent maximum of the height of the uppercase letter \"I\"."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-5-6-height-above-deck",
+  "title": "Visual Characters - Minimum Height From Finish Deck Surface",
+  "check_type": "numeric",
+  "target": "character",
+  "parameter": "height_above_deck",
+  "operator": ">=",
+  "value": 40.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "This requirement does not apply where the administrative authority requires signs to be mounted below 40 inches (1015 mm)."
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 32,
+   "clause": "RV703.5.6",
+   "quote": "Visual characters shall be 40 inches (1015 mm) minimum above the finish deck surface."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-5-7-stroke-thickness-percentage",
+  "title": "Visual Characters - Minimum Stroke Thickness",
+  "check_type": "numeric",
+  "target": "character",
+  "parameter": "stroke_thickness_percentage",
+  "operator": ">=",
+  "value": 10.0,
+  "unit": "%",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 32,
+   "clause": "RV703.5.7",
+   "quote": "Stroke thickness of the uppercase letter \"I\" shall be 10 percent minimum and 30 percent maximum of the height of the character."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-5-8-character-spacing-percentage",
+  "title": "Visual Characters - Minimum Character Spacing",
+  "check_type": "numeric",
+  "target": "character",
+  "parameter": "character_spacing_percentage",
+  "operator": ">=",
+  "value": 10.0,
+  "unit": "%",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 32,
+   "clause": "RV703.5.8",
+   "quote": "Spacing between individual characters shall be 10 percent minimum and 35 percent maximum of character height."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-5-9-line-spacing-percentage",
+  "title": "Visual Characters - Minimum Line Spacing",
+  "check_type": "numeric",
+  "target": "character",
+  "parameter": "line_spacing_percentage",
+  "operator": ">=",
+  "value": 135.0,
+  "unit": "%",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 32,
+   "clause": "RV703.5.9",
+   "quote": "Spacing between the baselines of separate lines of characters within a message shall be 135 percent minimum and 170 percent maximum of the character height."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-6-1-field-height",
+  "title": "Pictogram Field - Minimum Height",
+  "check_type": "numeric",
+  "target": "sign",
+  "parameter": "field_height",
+  "operator": ">=",
+  "value": 6.0,
+  "unit": "in",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 32,
+   "clause": "RV703.6.1",
+   "quote": "Pictograms shall have a field height of 6 inches (150 mm) minimum."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-6-1-character",
+  "title": "Pictogram Field - Prohibition of Characters and Braille",
+  "check_type": "presence",
+  "target": "character",
+  "parameter": null,
+  "operator": "not_exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 32,
+   "clause": "RV703.6.1",
+   "quote": "Characters and Braille shall not be located in the pictogram field."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-6-2-finish",
+  "title": "Pictograms - Finish",
+  "check_type": "qualitative",
+  "target": "sign",
+  "parameter": "finish",
+  "operator": null,
+  "value": "non-glare",
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 32,
+   "clause": "RV703.6.2",
+   "quote": "Pictograms and their field shall have a non-glare finish."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-6-2-contrast",
+  "title": "Pictograms - Contrast",
+  "check_type": "qualitative",
+  "target": "sign",
+  "parameter": "contrast",
+  "operator": null,
+  "value": "light pictogram on a dark field or a dark pictogram on a light field",
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 32,
+   "clause": "RV703.6.2",
+   "quote": "Pictograms shall contrast with their field with either a light pictogram on a dark field or a dark pictogram on a light field."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-6-3-text-descriptors-location",
+  "title": "Pictograms - Text Descriptors Location",
+  "check_type": "presence",
+  "target": "sign",
+  "parameter": "text_descriptors_location",
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 32,
+   "clause": "RV703.6.3",
+   "quote": "Pictograms shall have text descriptors located directly below the pictogram field."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-7-1-finish",
+  "title": "Symbols of Accessibility - Finish",
+  "check_type": "qualitative",
+  "target": "symbol",
+  "parameter": "finish",
+  "operator": null,
+  "value": "non-glare",
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 32,
+   "clause": "RV703.7.1",
+   "quote": "Symbols of accessibility and their background shall have a non-glare finish."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-7-1-contrast",
+  "title": "Symbols of Accessibility - Contrast",
+  "check_type": "qualitative",
+  "target": "symbol",
+  "parameter": "contrast",
+  "operator": null,
+  "value": "light symbol on a dark background or a dark symbol on a light background",
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 32,
+   "clause": "RV703.7.1",
+   "quote": "Symbols of accessibility shall contrast with their background with either a light symbol on a dark background or a dark symbol on a light background."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-7-2-1-symbol",
+  "title": "International Symbol of Accessibility",
+  "check_type": "qualitative",
+  "target": "symbol",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 33,
+   "clause": "RV703.7.2.1",
+   "quote": "The International Symbol of Accessibility shall comply with Figure RV703.7.2.1."
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-RV703-7-2-2-assistive-listening-system",
+  "title": "Assistive Listening Systems Identification",
+  "check_type": "qualitative",
+  "target": "assistive listening system",
+  "parameter": null,
+  "operator": null,
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": null
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 33,
+   "clause": "RV703.7.2.2",
+   "quote": "Assistive listening systems shall be identified by the International Symbol of Access for Hearing Loss complying with Figure RV703.7.2.2"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-B-count",
+  "title": "ARRV - Handicap staterooms on 01 deck",
+  "check_type": "count",
+  "target": "cabin",
+  "parameter": "count",
+  "operator": ">=",
+  "value": 1.0,
+  "unit": "count",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "01 deck"
+   ],
+   "condition_text": "ARRV"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 37,
+   "clause": "B",
+   "quote": "One handicap stateroom is provided on the 01 deck (see example below)"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-B-lift",
+  "title": "ARRV - Accessible personnel lift",
+  "check_type": "presence",
+  "target": "lift",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [],
+   "condition_text": "ARRV; for access to all deck levels with the exception of the bridge"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 37,
+   "clause": "B",
+   "quote": "A personnel lift, handicap accessible, is provided for access to all deck levels with the exception of the bridge"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-B-width",
+  "title": "ARRV - Minimum passageway width",
+  "check_type": "numeric",
+  "target": "corridor",
+  "parameter": "width",
+  "operator": ">=",
+  "value": 4.0,
+  "unit": "ft",
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "passageway"
+   ],
+   "condition_text": "ARRV"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 37,
+   "clause": "B",
+   "quote": "All passageways are minimum 4 ft width to accommodate handicap access"
+  },
+  "reviewed": false
+ },
+ {
+  "id": "ADA-UNOLS-B-door-coaming",
+  "title": "ARRV - Portable or dropping door coamings on main deck exterior entry door",
+  "check_type": "presence",
+  "target": "door_coaming",
+  "parameter": null,
+  "operator": "exists",
+  "value": null,
+  "unit": null,
+  "applies_to": {
+   "ship_types": [],
+   "min_length_m": null,
+   "max_length_m": null,
+   "min_gross_tonnage": null,
+   "min_persons_on_board": null,
+   "max_persons_on_board": null,
+   "space_types": [
+    "main deck"
+   ],
+   "condition_text": "ARRV; exterior entry door on main deck"
+  },
+  "source": {
+   "document": "ADAGuidelines_for_UNOLS_RVs_Final_Feb08.pdf",
+   "regime": "ADA-UNOLS",
+   "page": 37,
+   "clause": "B",
+   "quote": "Portable/dropping door coamings will be provided on exterior entry door on main deck"
+  },
+  "reviewed": false
+ }
+]
