@@ -44,6 +44,21 @@ def _daily_quota(err: errors.APIError) -> tuple[str, str] | None:
     return None
 
 
+_FENCE = re.compile(r"\A\s*```(?:json)?\s*\n(.*?)\n?```\s*\Z", re.S)
+
+
+def _unfence(text: str) -> str:
+    """Gemma models have no strict JSON mode and may wrap the answer in a ``` fence. Only a fence around the
+    WHOLE reply is removed; prose around the JSON is not guessed at (validation then fails loudly)."""
+    m = _FENCE.match(text)
+    if m:
+        return m[1]
+    stripped = text.strip()
+    if stripped.startswith("{") and stripped.endswith("```"):      # seen in real replies: lone closing fence
+        return stripped[:-3].rstrip()
+    return text
+
+
 def _retryable(err: Exception) -> bool:
     return isinstance(err, errors.ServerError) or (isinstance(err, errors.ClientError) and err.code == 429)
 
@@ -109,4 +124,4 @@ class GeminiProvider(LLMProvider):
             temperature=0,
             media_resolution=types.MediaResolution.MEDIA_RESOLUTION_HIGH,   # keep small drawing text legible
         )
-        return schema.model_validate_json(self._text(self._generate(contents, config)))
+        return schema.model_validate_json(_unfence(self._text(self._generate(contents, config))))
