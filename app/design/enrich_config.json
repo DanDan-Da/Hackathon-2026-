@@ -1,0 +1,24 @@
+{
+  "_comment": "Vocabulary for app/design/enrich.py. Edit here, not in code. Regexes are matched case-insensitively.",
+  "ship_type_phrases": ["research vessel", "passenger ship", "cargo ship", "cruise ship", "ro-ro passenger ship", "tanker", "offshore supply vessel"],
+  "text_confidence": 0.9,
+  "space_types": {
+    "cabin": ["\\bPERS\\b\\.?", "\\bCABIN\\b", "\\bSTATEROOM\\b"],
+    "toilet": ["^W\\.?\\s?C\\.?$", "\\bTOILET\\b", "\\bLAVATORY\\b"],
+    "corridor": ["\\bCORRIDOR\\b", "\\bPASSAGE(WAY)?\\b"],
+    "lobby": ["\\bLOBBY\\b"],
+    "stairway": ["\\bSTAIR(S|WAY|CASE)?\\b"],
+    "mess": ["\\bMESS\\b"],
+    "galley": ["\\bGALLEY\\b"],
+    "hospital": ["\\bHOSPITAL\\b", "\\bSICK\\s?BAY\\b"],
+    "laundry": ["\\bLAUNDRY\\b"]
+  },
+  "cabin_summary": {
+    "deck_header": "^(.*?\\bDECK)\\s*:\\s*(.*)$",
+    "cabin_word": "\\bCABINS?\\b",
+    "count_pattern": "(\\d+)\\s+(SINGLE|DOUBLE|TWIN|TRIPLE)\\b",
+    "element_type": "cabin",
+    "rule_id": "drawing.cabin_count_summary",
+    "regime": "DRAWING_SELF_CHECK"
+  }
+}
