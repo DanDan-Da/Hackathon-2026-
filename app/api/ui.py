@@ -87,3 +87,51 @@ def planted_eval() -> dict | None:
 def trust():
     """Inputs for the trust scoreboard that are not in the findings themselves."""
     return {"eval": planted_eval(), "low_confidence_threshold": LOW_CONFIDENCE, "statement": TRUST_STATEMENT}
+
+
+# ---------- design facts found under the designs folder ----------
+
+def _valid_facts_file(path: Path) -> DesignFacts | None:
+    try:
+        return DesignFacts.model_validate_json(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+
+
+@router.get("/facts")
+def list_facts():
+    """The *.json files under the designs folder that validate as DesignFacts (name is relative to it)."""
+    root = settings.designs_dir
+    if not root.is_dir():
+        return []
+    out = []
+    for p in sorted(root.rglob("*.json")):
+        if p.is_file() and (facts := _valid_facts_file(p)) is not None:
+            out.append({"name": p.relative_to(root).as_posix(), "project": facts.project})
+    return out
+
+
+@router.get("/facts/load")
+def load_facts(name: str):
+    root = settings.designs_dir.resolve()
+    if "\x00" in name or not name.lower().endswith(".json"):
+        raise HTTPException(400, "Name must be a .json file inside the designs folder")
+    path = (root / name).resolve()
+    if Path(name).is_absolute() or not path.is_relative_to(root):
+        raise HTTPException(400, "Name must be inside the designs folder")
+    if not path.is_file():
+        raise HTTPException(404, "Facts file not found")
+    if _valid_facts_file(path) is None:
+        raise HTTPException(422, "File is not valid design facts")
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+@router.get("/evidence-available")
+def evidence_available(file: str):
+    """Whether /evidence/crop could render this file. Never errors, so the UI can ask quietly first."""
+    from app.api.evidence import resolve_design_file
+    try:
+        resolve_design_file(file)
+    except HTTPException:
+        return {"available": False}
+    return {"available": True}
