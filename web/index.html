@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RuleCheck: findings</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#findings">Skip to findings</a>
+<header class="top">
+  <h1>RuleCheck</h1>
+  <p class="tag">Every finding cites the rule and the spot in the design. When evidence is missing it says so instead of guessing.</p>
+  <span id="health" class="health" role="status"></span>
+</header>
+
+<div class="layout">
+  <aside class="inputs" aria-label="Inputs">
+    <section>
+      <h2>Design facts</h2>
+      <label class="file">Open facts.json <input type="file" id="facts-file" accept=".json,application/json"></label>
+      <label for="facts-text" class="sr">Facts JSON</label>
+      <textarea id="facts-text" spellcheck="false" placeholder='{"project": "...", "elements": [ ... ]}'></textarea>
+    </section>
+    <section>
+      <h2>Rules</h2>
+      <fieldset>
+        <legend class="sr">Rules source</legend>
+        <label><input type="radio" name="rules-src" value="server" checked> Use the server's compiled rules</label>
+        <label><input type="radio" name="rules-src" value="own"> Use a rules file</label>
+      </fieldset>
+      <div id="rules-own" hidden>
+        <label class="file">Open rules.json <input type="file" id="rules-file" accept=".json,application/json"></label>
+        <label for="rules-text" class="sr">Rules JSON</label>
+        <textarea id="rules-text" spellcheck="false" placeholder='[{"id": "...", "check_type": "numeric", ...}]'></textarea>
+      </div>
+    </section>
+    <div class="actions">
+      <button id="run" class="primary">Run check</button>
+      <button id="demo">Load demo</button>
+    </div>
+    <p id="msg" class="msg" role="status" aria-live="polite"></p>
+  </aside>
+
+  <main id="findings" tabindex="-1">
+    <div id="empty" class="empty">
+      <p><strong>No results yet.</strong> Add a facts file and run the check, or load the demo to see findings on mock data.</p>
+    </div>
+    <div id="results" hidden>
+      <section class="summary" aria-label="Summary">
+        <div class="counts" id="counts"></div>
+        <div class="bar" id="bar" role="img"></div>
+      </section>
+      <section class="filters" aria-label="Filters">
+        <div id="status-filters" class="chips" role="group" aria-label="Filter by status"></div>
+        <label class="regime">Regime
+          <select id="regime"><option value="">All</option></select>
+        </label>
+      </section>
+      <p id="shown" class="shown" aria-live="polite"></p>
+      <div class="split">
+        <ul id="list" class="list" aria-label="Findings"></ul>
+        <article id="detail" class="detail" aria-live="polite"></article>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
