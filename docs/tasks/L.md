@@ -41,10 +41,11 @@ Tasks are in priority order. Each one has a GitHub issue labelled `L`.
 - `status` must be `needs_review` if `evidence_ids` is empty, and any `evidence_ids` that don't exist are rejected.
 - **Done:** tests with a fake provider.
 
-> **Provider note:** the team uses **Gemini** (`LLM_PROVIDER=gemini`, `app/providers/gemini.py`, added by D). L3 and L5 get it automatically through `get_llm()`. Free-tier keys are rate-limited, so the provider retries on 429.
+> **Provider note:** the team uses **Gemini** (`LLM_PROVIDER=gemini`, `app/providers/gemini.py`, added by D). L3 and L5 get it automatically through `get_llm()`. Free-tier limits are per model. Use `LLM_MAX_RPM=4` and `LLM_MAX_PARALLEL=2`; see the README for model choices and daily limits.
 
-## L6 Local provider on the GPU (≈1h)
-- Run `vllm serve Qwen/Qwen2.5-VL-32B-Instruct --port 8001` on the NVIDIA machine.
+## L6 Local provider on the GPU (optional / not available)
+- Meyer's GPU machine is unavailable; the team has no GPU. This task is optional and cannot currently be run.
+- Keep `LLM_PROVIDER=local` as a possible path if suitable hardware becomes available. Then run `vllm serve Qwen/Qwen2.5-VL-32B-Instruct --port 8001` on that machine.
 - Verify that `app/providers/local.py` structured output works, then run L3 with `LLM_PROVIDER=local`.
 - Write down the setup in `docs/DEPLOY.md`.
 

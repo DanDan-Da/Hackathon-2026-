@@ -12,7 +12,7 @@ The data contract shared by everything lives in `app/models.py`.
 ## Quick start
 ```bash
 uv venv -p 3.12 .venv && uv pip install -p .venv -e ".[dev]"
-cp .env.example .env            # add ANTHROPIC_API_KEY
+cp .env.example .env            # add GEMINI_API_KEY
 .venv/bin/pytest                # evaluator tests on mock data
 cp mocks/rules.json knowledge/compiled/rules.json
 .venv/bin/uvicorn app.api.main:app --reload
@@ -20,11 +20,19 @@ curl -X POST localhost:8000/check -H 'content-type: application/json' -d @mocks/
 ```
 
 ## AI providers
-`LLM_PROVIDER=gemini` (default). Set `GEMINI_API_KEY` in `.env` (from https://aistudio.google.com/apikey) and pick `GEMINI_MODEL`: `gemini-flash-latest` is the default, and `gemini-pro-latest` gives the best accuracy.
-On a free-tier key, keep `LLM_MAX_PARALLEL` at 1–2. Rate limits are retried automatically.
-On the free tier, Google may use prompts to improve its models, so use it only with public or sample drawings.
+`LLM_PROVIDER=gemini` (default). Set `GEMINI_API_KEY` in `.env` and use `GEMINI_MODEL=gemini-3.8-flash` (the default and best-tested model). The aliases `gemini-flash-latest` and `gemini-pro-latest` do **not** work for new keys.
 
-Alternatives: `LLM_PROVIDER=claude` (`claude-opus-5-5`), or `LLM_PROVIDER=local` (any OpenAI-compatible server, on-prem, for confidential designs):
+Working models:
+- `gemini-3.8-flash`: best tested.
+- `gemini-3.6-flash` and `gemini-3.5-flash`.
+- `gemini-3.5-flash-lite`: fast, but poor boxes.
+- `gemma-4-31b-it`: free, slow, and weaker boxes.
+
+Free-tier limits are per model; for example, `gemini-3.8-flash` allows 5 requests/minute and 20 requests/day. Recommended settings are `LLM_MAX_RPM=4` and `LLM_MAX_PARALLEL=2`. The tile cache at `designs/**/.cache` makes interrupted extraction runs resumable.
+
+On the free tier, Google may use prompts to improve its models: use **only public sample drawings**.
+
+Alternatives: `LLM_PROVIDER=claude` (`claude-opus-5-5`), or `LLM_PROVIDER=local` with an OpenAI-compatible server. Local GPU inference is **optional / not available** for this hackathon: Meyer's GPU machine is unavailable and the team has no GPU. If suitable hardware becomes available, the local path remains possible:
 ```bash
 vllm serve Qwen/Qwen2.5-VL-32B-Instruct --port 8001 --max-model-len 32768
 ```
