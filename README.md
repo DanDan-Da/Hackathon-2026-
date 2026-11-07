@@ -35,7 +35,19 @@ knowledge/rules/<REGIME>/*.pdf --compiler--> rules.json ─┐
 designs/<project>/ (GA PDF, IFC) --readers--> DesignFacts ┴─> evaluator (+ LLM judge) ─> findings ─> web UI + evidence crops
 ```
 
-## Quick start (no API key needed)
+## Open the project (first time, ~5 min, no API key needed)
+You need Python 3.12 and [uv](https://docs.astral.sh/uv/) (`brew install uv` or `pip install uv`).
+```bash
+git clone https://github.com/DanDan-Da/Hackathon-2026-.git && cd Hackathon-2026-
+uv venv -p 3.12 .venv && uv pip install -p .venv -e ".[dev]"   # install
+cp mocks/rules_nps_poc.json knowledge/compiled/rules.json      # put the demo rules in place
+.venv/bin/uvicorn app.api.main:app                             # start; leave this window open
+```
+Open **http://localhost:8000**. Pick `demo/demo_real_drawing.json` or `demo/demo_planted_fail.json` in the
+facts picker and press **Run check**, or click **Load demo** for mock data. Stop the server with Ctrl+C.
+Next time only the last line is needed (run it from the project folder).
+
+## Quick start (commands; run the last two in a second terminal while the server runs)
 ```bash
 uv venv -p 3.12 .venv && uv pip install -p .venv -e ".[dev]"
 .venv/bin/pytest -q
