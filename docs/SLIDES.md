@@ -7,7 +7,7 @@ Issue #16 (D8). Rule for this file: **no number without a source**. Each figure 
 |---|---|---|
 | Planted violations: 15/15 correct, 0 missed, 0 false alarms | `python -m eval.score_findings` on `eval/gold/findings/cases.json` (12 cases, 15 expectations), mock facts `mocks/facts_violation.json`, rules `mocks/rules.json` | **Re-run while writing this doc: confirmed.** Tests the checking logic, not the AI reading |
 | Dana room recall 19/20 (sampled), printed area 19/19 | `python -m eval.score_rooms <facts.json>` against `eval/gold/dana/dana_rooms.json` (20 hand-checked rooms, 4 decks; `eval/gold/dana/README.md` defines the metrics) | **The scores come from a local run on a git-ignored GA; the facts are not in the repo.** To reproduce (needs the Dana PDF from `docs/DATA.md` in `designs/dana/` and an LLM key): `python -m app.design.drawing_vision designs/dana/23007-01-101-0110-01-R2-14-General-arrangement.pdf --out designs/dana/facts.json && python -m eval.score_rooms designs/dana/facts.json`. A new run may differ (model output varies); paste its output before presenting. See `docs/DEPLOY.md` |
-| 225 tests | `pytest -q` | **Run while writing this: `225 passed, 2 skipped`** on commit c91c0c7. `origin/main` could not be fetched (git blocked), so re-run on merged `main` and use that number |
+| 329 tests | `pytest -q` | **`329 passed, 2 skipped`** on merged `main` (commit 6c527a5). Re-run before presenting if anything merges after it |
 | 19 real compiled rules | `mocks/rules_nps_poc.json`, history in `docs/L-LOG.md` | 1 page of one 2-page checklist, 7 targets hand-corrected, `reviewed=false` |
 
 Caveats that must go on the slide next to the numbers:
@@ -37,7 +37,7 @@ Mark on the slide which parts are pre-recorded or pending (real compiled rules, 
 ## Slide 6: Accuracy and honesty (numbers above, with caveats printed on the slide)
 - Planted violations: **15/15 correct, 0 missed, 0 false alarms** (12 cases; checking logic only).
 - Dana GA reading: **19/20 sampled rooms found, 19/19 printed areas right** (partial sample, no precision, local run; re-verify before showing).
-- Tests: **225 passed, 2 skipped** (`pytest -q`, commit c91c0c7; re-run on merged `main` before presenting).
+- Tests: **329 passed, 2 skipped** (`pytest -q`, merged `main` at 6c527a5). Planted-violation evals: 15/15 (mock rules), 88/90 (19 real NPS rules), 23/23 (UNOLS research-vessel rules), 0 missed violations in all three; written by us, not held out.
 - Behaviour we can show rather than count: low-confidence reads become `needs_review` (cases "blurry read of a passing/failing door"); a door at exactly 812.8 mm passes, 812.7 fails.
 - "Zero missed violations" is a property of the planted set, not a promise for all designs.
 
