@@ -1,0 +1,4 @@
+{
+  "_comment": "Provenance methods that describe the WHOLE design, so that the absence of an element is a fact. Methods that read a drawing (vision, pdf_text, vector, mesh) are not listed: a drawing read can miss or never show a kind of element.",
+  "full_model_methods": ["ifc", "manual"]
+}

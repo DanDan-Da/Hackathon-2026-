@@ -37,7 +37,7 @@ EXPECTED = {
     "SYNTH-4": {"B-1": P, "B-2": F},               # 8 m2
     "SYNTH-5": {"B-1": P, "B-2": P},               # 86 ft2 = 7.9896 m2, so 7.99 passes
     "SYNTH-6": {"-": P},                           # two stairways
-    "SYNTH-7": {"-": P},                           # not_exists, none present
+    "SYNTH-7": {"-": N},                           # not_exists, none read from a drawing: absence is not proof (see tests/test_absence_coverage.py)
     "SYNTH-8": {"D-1": F, "D-2": P, "D-3": N},     # strict ">": 2000 fails, 2001 passes, missing -> review
     "SYNTH-10": {"-": NA},                         # needs LOA >= 100, ship is 60
     "SYNTH-11": {"-": NA},                         # cargo only, ship is passenger

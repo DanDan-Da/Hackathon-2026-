@@ -5,7 +5,10 @@ handed to llm_judge. Missing evidence always yields needs_review, never a guess.
 """
 from __future__ import annotations
 
+import json
 import operator as op
+from functools import lru_cache
+from pathlib import Path
 
 from app.check.applicability import applies_to_ship, element_matches
 from app.check.llm_judge import judge
@@ -15,6 +18,17 @@ from app.providers.llm import LLMProvider
 
 _OPS = {">=": op.ge, ">": op.gt, "<=": op.le, "<": op.lt, "==": op.eq, "!=": op.ne}
 LOW_CONFIDENCE = 0.6
+
+
+@lru_cache(maxsize=1)
+def _full_model_methods() -> frozenset[str]:
+    cfg = json.loads((Path(__file__).parent / "absence_coverage.json").read_text(encoding="utf-8"))
+    return frozenset(cfg["full_model_methods"])
+
+
+def _absence_is_proof(facts: DesignFacts) -> bool:
+    """True only when every design element comes from a source that models the whole design."""
+    return bool(facts.elements) and all(e.provenance.method in _full_model_methods() for e in facts.elements)
 
 
 def _place_hint(rule: Rule, facts: DesignFacts) -> str:
@@ -115,8 +129,9 @@ def _count(rule: Rule, facts: DesignFacts) -> list[Finding]:
     evidence = [e.provenance for e in targets]
     oper = rule.operator or "exists"
     ok = _count_ok(rule, n)
-    if not ok and n == 0 and oper != "not_exists":
-        # absence in an extracted model may be an extraction gap, not a design error
+    if n == 0 and (not ok or (oper == "not_exists" and not _absence_is_proof(facts))):
+        # absence in a drawing read may be an extraction gap or something the drawing never shows:
+        # neither a fail for a missing element nor a pass for a prohibited one is proven
         return [_finding(rule, Status.needs_review,
                          f"No '{rule.target}' found; verify it is absent from the design, not just unextracted."
                          + _place_hint(rule, facts),
