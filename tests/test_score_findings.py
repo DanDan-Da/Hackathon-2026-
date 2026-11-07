@@ -84,3 +84,51 @@ def test_load_cases_reads_a_json_file(tmp_path):
 def test_shipped_planted_cases_have_no_missed_violations():
     r = run_cases(load_cases(ROOT / "eval/gold/findings/cases.json"), FACTS, RULES)
     assert r.results and r.missed_violations == 0 and r.wrong == 0
+
+
+# --- real NPS rules (cases_nps_poc.json) ---
+
+NPS_FACTS = DesignFacts.model_validate_json((ROOT / "mocks/facts_nps_base.json").read_text())
+NPS_RULES = [Rule.model_validate(r) for r in json.loads((ROOT / "mocks/rules_nps_poc.json").read_text())]
+
+
+def test_set_particular_changes_ship_particulars_and_not_the_base():
+    m = {"op": "set_particular", "property": "persons_on_board", "value": 7}
+    out = apply_mutations(NPS_FACTS, [m])
+    assert out.particulars.persons_on_board == 7 and NPS_FACTS.particulars.persons_on_board == 120
+
+
+def test_set_particular_unknown_field_is_an_error():
+    with pytest.raises(ValueError, match="nope"):
+        apply_mutations(NPS_FACTS, [{"op": "set_particular", "property": "nope", "value": 1}])
+
+
+def test_breakdown_by_rule_type():
+    r = run_cases([case("narrow door", [set_width("D-102", 700)], "fail")], FACTS, RULES)
+    bt = r.by_check_type()
+    assert bt["numeric"] == {"total": 1, "correct": 1, "missed_violations": 0}
+
+
+def test_known_disagreements_are_counted_but_still_wrong():
+    c = Case.model_validate({"name": "n", "mutations": [], "expect": [
+        {"rule_id": DOOR_RULE, "element_id": "D-102", "status": "fail", "known_disagreement": "why"}]})
+    r = run_cases([c], FACTS, RULES)
+    assert r.wrong == 1 and r.known_disagreements == 1
+
+
+def test_nps_cases_have_no_missed_violations_and_only_documented_disagreements():
+    r = run_cases(load_cases(ROOT / "eval/gold/findings/cases_nps_poc.json"), NPS_FACTS, NPS_RULES)
+    assert len(r.results) >= 80 and r.missed_violations == 0
+    assert all(x.expectation.known_disagreement for x in r.results if not x.ok)
+    assert set(r.by_check_type()) >= {"numeric", "count", "presence", "qualitative"}
+
+
+def test_exactly_60_inches_is_1524_mm_pass_and_1523_fails():
+    rid = "NPS-Accessible-Vessels-Accessible-route-minimum-width-width"
+    ok = run_cases([case("at", [set_width_p("C-1", 1524)], "pass", "C-1", rid),
+                    case("under", [set_width_p("C-1", 1523)], "fail", "C-1", rid)], NPS_FACTS, NPS_RULES)
+    assert ok.correct == 2
+
+
+def set_width_p(element, mm):
+    return {"op": "set_property", "element_id": element, "property": "width", "value": mm}
