@@ -1,4 +1,4 @@
-# Vector measurement of door widths (spike, issue #18)
+# Vector measurement of door widths (spike)
 
 Code: `app/design/vector_measure.py`, tests: `tests/test_vector_measure.py` (synthetic PDFs with a known width).
 CLI: `python -m app.design.vector_measure FACTS PDF -o OUT [--add-new]`.
@@ -28,7 +28,7 @@ CLI: `python -m app.design.vector_measure FACTS PDF -o OUT [--add-new]`.
 ## Wiring decision
 - The 4 existing door elements have no matching swing, so the default run changes nothing. With `--add-new` the 143 swings are appended as new `door` elements (`door-vec-NNN`, `method='vector'`, confidence 0.5, bbox). Existing `clear_width` values are never overwritten, ambiguous matches are skipped. `--add-new` is off by default: they have no deck or room link yet (matching to cabins by bbox is a follow-up).
 
-# Room long/short side from wall rectangles (issue #18)
+# Room long/short side from wall rectangles
 
 Code: `app/design/vector_rooms.py`, config (all tolerances): `app/design/vector_rooms.json`, tests: `tests/test_vector_rooms.py`.
 CLI: `python -m app.design.vector_measure FACTS PDF -o OUT --rooms` (same scale detection, refuses without a stated scale).

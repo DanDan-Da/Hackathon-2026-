@@ -58,3 +58,15 @@ def test_ingest_failure_is_a_non_json_500_the_ui_must_cope_with(client, monkeypa
     r = client.post("/ingest/rules", params={"regime": "R"})
     assert r.status_code == 500
     assert len(client.get("/rules").json()) > 0      # existing rules kept
+
+
+def test_regimes_are_folder_names(client, tmp_path, monkeypatch):
+    root = tmp_path / "rules_here"
+    (root / "NPS-Accessible-Vessels").mkdir(parents=True)
+    (root / "ADA-UNOLS").mkdir()
+    (root / ".hidden").mkdir()
+    (root / "notes.txt").write_text("x")
+    monkeypatch.setattr(settings, "rules_dir", root)
+    assert client.get("/ui/regimes").json() == ["ADA-UNOLS", "NPS-Accessible-Vessels"]
+    monkeypatch.setattr(settings, "rules_dir", tmp_path / "missing")
+    assert client.get("/ui/regimes").json() == []

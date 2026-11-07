@@ -70,7 +70,8 @@
       <label for="ask-q">Question</label>
       <textarea id="ask-q" class="short" placeholder="e.g. What is the minimum clear width of a door on an accessible route?"></textarea>
       <label for="ask-regime">Regime (optional)</label>
-      <input type="text" id="ask-regime" autocomplete="off" placeholder="folder name, e.g. PVAG">
+      <input type="text" id="ask-regime" list="regime-list" autocomplete="off" placeholder="blank = all regimes">
+      <datalist id="regime-list"></datalist>
       <div class="actions"><button id="ask-go" class="primary" type="button">Ask</button></div>
       <p id="ask-msg" class="msg" role="status" aria-live="polite"></p>
       <div id="ask-out"></div>
@@ -86,7 +87,7 @@
       <p id="add-msg" class="msg" role="status" aria-live="polite"></p>
       <div class="alert">Compiling uses AI quota (free keys allow few requests per day) and can take minutes. Existing rules and reviewed flags are kept if it fails.</div>
       <label for="ingest-regime">Compile only this regime (optional)</label>
-      <input type="text" id="ingest-regime" autocomplete="off" placeholder="blank = all regimes">
+      <input type="text" id="ingest-regime" list="regime-list" autocomplete="off" placeholder="blank = all regimes (asks first)">
       <div class="actions"><button id="ingest-go" class="primary" type="button">Compile rules with AI</button></div>
       <p id="ingest-msg" class="msg" role="status" aria-live="polite"></p>
     </section>

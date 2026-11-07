@@ -1,44 +1,82 @@
 # RuleCheck: compliance checking for ship designs
 
-Since AI Hackathon 2026 · Meyer Turku challenge. Checks design documents (specs, GA drawings, 3D models) against SOLAS, MARPOL, DNV, PVAG/ADA … and explains **why** something fails, citing the clause and the place in the design.
+Since AI Hackathon 2026 · Meyer Turku challenge "Automated class and regulatory compliance checking".
+
+RuleCheck checks design documents (GA drawings, specs, 3D models) against regulations and explains **why** something
+fails: every finding cites the rule (document, page, clause, verbatim quote) **and** the spot in the design (file, page,
+bounding box or IFC GlobalId). When the evidence is missing or uncertain, the answer is `needs_review`, never a guess.
+
+## Results (all reproducible, see [docs/EVAL.md](docs/EVAL.md))
+| What | Result | What it does not prove |
+|---|---|---|
+| Planted violations, mock rules | 15/15 correct, 0 missed, 0 false alarms | Written by us; tests the checking logic only |
+| Planted violations, real compiled rules | 88/90 (NPS, 19 rules), 23/23 (UNOLS, 170 rules), 0 missed | Same; rules are AI-compiled and not human-reviewed |
+| Reading a real GA (Dana, public) | 19/19 printed room areas correct on a 20-room hand-checked sample | Partial sample, no precision reported |
+| Real GA against the NPS rules | 0 fail, 9 needs_review, 10 not applicable | A GA does not show most of the required evidence, so those go to a person |
+| Tests | `pytest -q`: 345 passed (with `dev,rag,3d` extras) | |
 
 ## How it works
-1. **Rules are files, not code.** Drop regulation documents into `knowledge/rules/<REGIME>/`. The rule compiler (LLM) turns them into atomic, checkable rules in `knowledge/compiled/rules.json`, each one with its source quote, page and clause. An engineer reviews them.
-2. **Designs are files.** Put them in `designs/<project>/`. Readers turn PDFs, drawings and IFC into `DesignFacts`, and every fact records where it came from (file, page, bbox).
-3. **Checking.** Numeric, presence and count rules are evaluated **deterministically** (`app/check/evaluator.py`). Qualitative rules go to an LLM judge. If evidence is missing or extraction confidence is low, the result is `needs_review`. The checker never guesses.
+1. **Rules are files, not code.** Put regulation documents in `knowledge/rules/<REGIME>/` (the folder name is the
+   regime). The rule compiler (LLM) turns them into atomic, checkable rules in `knowledge/compiled/rules.json`, each with
+   its source quote, page and clause. A rule is dropped if its quote is not verbatim in the source. A person reviews.
+2. **Designs are files.** Put them in `designs/<project>/`. Readers turn PDFs, GA drawings and IFC into `DesignFacts`;
+   every fact records where it came from. GA values are cross-checked against the PDF text layer; unconfirmed values are
+   capped below the confidence threshold.
+3. **Python decides.** Numeric, presence and count rules are evaluated deterministically (`app/check/evaluator.py`).
+   Only qualitative rules go to an LLM judge, with structured output. Missing evidence, low confidence or unknown
+   applicability give `needs_review`.
+4. **Ask the regulations.** `/ask` answers from retrieved regulation passages only, and every citation is checked to be
+   a verbatim quote.
 
-The data contract shared by everything lives in `app/models.py`.
+The data contract shared by all parts is `app/models.py`.
 
-## Quick start
+```
+knowledge/rules/<REGIME>/*.pdf --compiler--> rules.json ─┐
+designs/<project>/ (GA PDF, IFC) --readers--> DesignFacts ┴─> evaluator (+ LLM judge) ─> findings ─> web UI + evidence crops
+```
+
+## Quick start (no API key needed)
 ```bash
 uv venv -p 3.12 .venv && uv pip install -p .venv -e ".[dev]"
-cp .env.example .env            # add GEMINI_API_KEY
-.venv/bin/pytest                # evaluator tests on mock data
-cp mocks/rules.json knowledge/compiled/rules.json
-.venv/bin/uvicorn app.api.main:app --reload
-curl -X POST localhost:8000/check -H 'content-type: application/json' -d @mocks/facts_violation.json
+.venv/bin/pytest -q
+cp mocks/rules_nps_poc.json knowledge/compiled/rules.json      # 19 real compiled NPS rules
+.venv/bin/uvicorn app.api.main:app                             # open http://localhost:8000, click "Load demo"
+.venv/bin/python -m eval.score_findings                         # planted-violation eval
+.venv/bin/python -m app.check.run mocks/facts_nps_poc.json --rules mocks/rules_nps_poc.json
 ```
+
+### Run it on a real drawing (needs an API key)
+The design and regulation PDFs are public but not stored in git (licence and size). See [docs/DATA.md](docs/DATA.md).
+1. `cp .env.example .env` and set `GEMINI_API_KEY`.
+2. Put the public Dana GA (`23007-01-101-0110-01-R2-14-General-arrangement.pdf`, linked in the challenge brief) at
+   `designs/demo/ga.pdf` and run `.venv/bin/python -m app.design.drawing_vision designs/demo/ga.pdf --out designs/demo/facts.json`.
+3. In the UI, pick `demo/facts.json` and press **Run check**.
+4. For the Ask panel: install `.[rag]`, put the regulation PDFs in `knowledge/rules/<REGIME>/` (we used the NPS
+   "Accessible Passenger Vessel Standards" checklist and the UNOLS "ADA Guidelines for UNOLS Research Vessels", 2008),
+   and run `.venv/bin/python -m app.ingest.index`.
+
+## Deployment
+Install, configuration, running, compiling rules, extracting drawings, providers and on-prem use:
+**[docs/DEPLOY.md](docs/DEPLOY.md)**. A `Dockerfile` and `docker-compose.yml` are included but untested.
 
 ## AI providers
-`LLM_PROVIDER=gemini` (default). Set `GEMINI_API_KEY` in `.env` and use `GEMINI_MODEL=gemini-3.8-flash` (the default and best-tested model). The aliases `gemini-flash-latest` and `gemini-pro-latest` do **not** work for new keys.
+All LLM calls go through one gateway, `app/providers/llm.get_llm()`. `LLM_PROVIDER=gemini` (default) with
+`GEMINI_MODEL=gemini-3.8-flash` (best tested; `gemini-3.6-flash`, `gemini-3.5-flash`, `gemini-3.5-flash-lite` and
+`gemma-4-31b-it` also work; the aliases `gemini-flash-latest` / `gemini-pro-latest` do not work for new keys).
+Free-tier limits are per model, e.g. 5 requests/minute and 20/day; recommended `LLM_MAX_RPM=4`, `LLM_MAX_PARALLEL=2`.
+The tile cache in `designs/**/.cache` makes interrupted extraction resumable.
 
-Working models:
-- `gemini-3.8-flash`: best tested.
-- `gemini-3.6-flash` and `gemini-3.5-flash`.
-- `gemini-3.5-flash-lite`: fast, but poor boxes.
-- `gemma-4-31b-it`: free, slow, and weaker boxes.
+On the free tier Google may use prompts to improve its models: use **only public drawings**.
 
-Free-tier limits are per model; for example, `gemini-3.8-flash` allows 5 requests/minute and 20 requests/day. Recommended settings are `LLM_MAX_RPM=4` and `LLM_MAX_PARALLEL=2`. The tile cache at `designs/**/.cache` makes interrupted extraction runs resumable.
+Alternatives: `LLM_PROVIDER=claude`, or `LLM_PROVIDER=local` with an OpenAI-compatible server for on-prem use of
+confidential drawings (implemented in `app/providers/local.py` but never run: no GPU was available), e.g.
+`vllm serve Qwen/Qwen2.5-VL-32B-Instruct --port 8001 --max-model-len 32768`.
 
-On the free tier, Google may use prompts to improve its models: use **only public sample drawings**.
+## Limits
+Compiled rules are not human-reviewed; no SOLAS/MARPOL/DNV text was available to us; 3D is proven on a synthetic IFC
+(the Navisworks `.nwd` cannot be read by open-source tools); no on-prem model run; Docker untested.
 
-Alternatives: `LLM_PROVIDER=claude` (`claude-opus-5-5`), or `LLM_PROVIDER=local` with an OpenAI-compatible server. Local GPU inference is **optional / not available** for this hackathon: Meyer's GPU machine is unavailable and the team has no GPU. If suitable hardware becomes available, the local path remains possible:
-```bash
-vllm serve Qwen/Qwen2.5-VL-32B-Instruct --port 8001 --max-model-len 32768
-```
-
-## 3D models
-IFC is read with `ifcopenshell`. Navisworks `.nwd` is proprietary, so export it to IFC/FBX from Navisworks first.
-
-
-Other docs: [3D models](docs/3D-MODELS.md) · [sample data](docs/DATA.md)
+## Docs
+[Demo script](docs/DEMO.md) · [Evaluation](docs/EVAL.md) · [Deployment](docs/DEPLOY.md) · [Slides and Q&A](docs/SLIDES.md) ·
+[Sample data](docs/DATA.md) · [GA reading on Dana](docs/DANA.md) · [Vector measurement](docs/VECTOR.md) ·
+[IFC reader](docs/IFC.md) · [3D models](docs/3D-MODELS.md) · [3D mesh cross-check](docs/3D.md)

@@ -21,7 +21,7 @@ Suites:
 
 ## What this is not
 - The cases are **synthetic and written by us**, from reading the rules; they are not held-out and not from a
-  real classification-society review. They test the checking logic, not design extraction (D's gold set) or rule
+  real classification-society review. They test the checking logic, not design extraction (the Dana gold set) or rule
   compilation quality.
 - The NPS rules are `reviewed=false` Gemini compilations. Expected statuses come from the regulation text, not
   from evaluator output. Where the evaluator disagrees, the expectation stays and the case carries
