@@ -23,9 +23,11 @@ def applies_to_ship(rule: Rule, ship: ShipParticulars) -> bool | None:
     if a.min_gross_tonnage is not None:
         gt = ship.gross_tonnage
         checks.append(None if gt is None else gt >= a.min_gross_tonnage)
+    pob = ship.persons_on_board
     if a.min_persons_on_board is not None:
-        pob = ship.persons_on_board
         checks.append(None if pob is None else pob >= a.min_persons_on_board)
+    if a.max_persons_on_board is not None:
+        checks.append(None if pob is None else pob <= a.max_persons_on_board)
     if any(c is False for c in checks):
         return False
     if any(c is None for c in checks):
