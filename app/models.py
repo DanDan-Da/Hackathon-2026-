@@ -68,7 +68,7 @@ class Provenance(BaseModel):
     page: int | None = None
     bbox: tuple[float, float, float, float] | None = Field(None, description="x0,y0,x1,y1 in PDF points")
     element_id: str | None = Field(None, description="IFC GlobalId / mesh node for 3D")
-    method: Literal["pdf_text", "vision", "ifc", "mesh", "manual", "spec_text"] = "manual"
+    method: Literal["pdf_text", "vision", "ifc", "mesh", "manual", "spec_text", "vector"] = "manual"
     confidence: float = Field(1.0, ge=0, le=1)
 
 
