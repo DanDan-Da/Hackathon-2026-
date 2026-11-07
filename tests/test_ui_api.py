@@ -114,3 +114,50 @@ def test_crop_still_rejects_traversal_in_the_extractor_form(design, monkeypatch,
     monkeypatch.chdir(design.parent)
     monkeypatch.setattr(settings, "designs_dir", Path("designs"))
     assert client.get("/evidence/crop", params={"file": bad, "page": 1}).status_code in (400, 404)
+
+
+# ---------- ship type stated by the user (drawings rarely print it, and we never infer it) ----------
+
+def _unknown_ship_request(**extra):
+    d = client.get("/ui/demo").json()
+    d["facts"]["particulars"]["ship_type"] = None
+    return {**d, **extra}
+
+
+def _by_status(resp):
+    """Statuses of the PVAG rules, the mock rules that only apply to passenger ships."""
+    out = {}
+    for f in resp.json():
+        if f["rule_id"].startswith("PVAG"):
+            out.setdefault(f["status"], []).append(f)
+    return out
+
+
+def test_unknown_ship_type_stays_needs_review():
+    by = _by_status(client.post("/ui/check", json=_unknown_ship_request()))
+    assert set(by) == {"needs_review"}
+
+
+def test_user_stated_ship_type_lets_matching_rules_decide():
+    by = _by_status(client.post("/ui/check", json=_unknown_ship_request(ship_type="passenger")))
+    assert {f["element_id"] for f in by["fail"]} == {"D-101"}
+    assert "pass" in by
+
+
+def test_user_stated_ship_type_that_does_not_match_makes_rules_not_applicable():
+    by = _by_status(client.post("/ui/check", json=_unknown_ship_request(ship_type="cargo")))
+    assert set(by) == {"not_applicable"}
+
+
+def test_blank_ship_type_is_ignored_not_treated_as_a_type():
+    by = _by_status(client.post("/ui/check", json=_unknown_ship_request(ship_type="   ")))
+    assert set(by) == {"needs_review"}
+
+
+def test_user_stated_ship_type_is_recorded_as_manual_provenance():
+    from app.api.ui import UICheckRequest, apply_ship_type
+    req = UICheckRequest.model_validate(_unknown_ship_request(ship_type=" Passenger "))
+    facts = apply_ship_type(req.facts, req.ship_type)
+    assert facts.particulars.ship_type == "Passenger"
+    assert facts.particulars.provenance[-1].method == "manual"
+    assert req.facts.particulars.ship_type is None          # the request's own facts are not mutated

@@ -40,7 +40,7 @@ async function run() {
   say("Checking...");
   try {
     const facts = parseJson($("facts-text").value, "Facts");
-    const body = { facts };
+    const body = { facts, ship_type: $("ship-type").value };
     const own = document.querySelector("input[name=rules-src]:checked").value === "own";
     if (own) body.rules = parseJson($("rules-text").value, "Rules");
     const res = await (await api("/ui/check", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })).json();

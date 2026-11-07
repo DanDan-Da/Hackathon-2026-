@@ -22,6 +22,9 @@
       <label class="file">Open facts.json <input type="file" id="facts-file" accept=".json,application/json"></label>
       <label for="facts-text" class="sr">Facts JSON</label>
       <textarea id="facts-text" spellcheck="false" placeholder='{"project": "...", "elements": [ ... ]}'></textarea>
+      <label for="ship-type">Ship type (optional)</label>
+      <input type="text" id="ship-type" autocomplete="off" placeholder="e.g. passenger">
+      <p class="note">Drawings rarely state it and the checker never guesses it. Leave blank to keep ship-type rules at needs review.</p>
     </section>
     <section>
       <h2>Rules</h2>
