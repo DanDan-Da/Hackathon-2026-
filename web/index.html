@@ -19,6 +19,9 @@
   <aside class="inputs" aria-label="Inputs">
     <section>
       <h2>Design facts</h2>
+      <label for="facts-pick">Facts from the designs folder</label>
+      <select id="facts-pick"><option value="">Choose...</option></select>
+      <p class="note" id="facts-pick-note"></p>
       <label class="file">Open facts.json <input type="file" id="facts-file" accept=".json,application/json"></label>
       <label for="facts-text" class="sr">Facts JSON</label>
       <textarea id="facts-text" spellcheck="false" placeholder='{"project": "...", "elements": [ ... ]}'></textarea>
@@ -47,6 +50,48 @@
   </aside>
 
   <main id="findings" tabindex="-1">
+    <nav class="tabs" aria-label="Sections">
+      <button type="button" class="tab" data-tab="check" aria-pressed="true">Findings</button>
+      <button type="button" class="tab" data-tab="rules" aria-pressed="false">Rules</button>
+      <button type="button" class="tab" data-tab="ask" aria-pressed="false">Ask</button>
+      <button type="button" class="tab" data-tab="add" aria-pressed="false">Add a regulation</button>
+    </nav>
+
+    <section id="tab-rules" class="panel" hidden aria-labelledby="rules-h">
+      <h2 id="rules-h">Rules</h2>
+      <p class="note">Compiled by AI from the regulation text. <strong>Reviewed is a human action</strong>: a rule is only marked reviewed when a person saves it here. Saving an edit marks the rule reviewed. The source quote cannot be edited.</p>
+      <p id="rules-msg" class="msg" role="status" aria-live="polite"></p>
+      <ul id="rules-list" class="rules"></ul>
+    </section>
+
+    <section id="tab-ask" class="panel" hidden aria-labelledby="ask-h">
+      <h2 id="ask-h">Ask the regulations</h2>
+      <p class="note">Answers come only from the indexed regulation text and every citation is checked to be a verbatim quote. This uses AI quota.</p>
+      <label for="ask-q">Question</label>
+      <textarea id="ask-q" class="short" placeholder="e.g. What is the minimum clear width of a door on an accessible route?"></textarea>
+      <label for="ask-regime">Regime (optional)</label>
+      <input type="text" id="ask-regime" autocomplete="off" placeholder="folder name, e.g. PVAG">
+      <div class="actions"><button id="ask-go" class="primary" type="button">Ask</button></div>
+      <p id="ask-msg" class="msg" role="status" aria-live="polite"></p>
+      <div id="ask-out"></div>
+    </section>
+
+    <section id="tab-add" class="panel" hidden aria-labelledby="add-h">
+      <h2 id="add-h">Add a regulation</h2>
+      <p class="note">1. Save a file under a regime (the folder name is the regime). 2. Compile it into rules.</p>
+      <label for="add-regime">Regime (folder name)</label>
+      <input type="text" id="add-regime" autocomplete="off" placeholder="letters, digits, _ - .">
+      <label class="file">Choose a file (pdf, txt, md, html) <input type="file" id="add-file" accept=".pdf,.txt,.md,.html"></label>
+      <div class="actions"><button id="add-save" type="button">Save file</button></div>
+      <p id="add-msg" class="msg" role="status" aria-live="polite"></p>
+      <div class="alert">Compiling uses AI quota (free keys allow few requests per day) and can take minutes. Existing rules and reviewed flags are kept if it fails.</div>
+      <label for="ingest-regime">Compile only this regime (optional)</label>
+      <input type="text" id="ingest-regime" autocomplete="off" placeholder="blank = all regimes">
+      <div class="actions"><button id="ingest-go" class="primary" type="button">Compile rules with AI</button></div>
+      <p id="ingest-msg" class="msg" role="status" aria-live="polite"></p>
+    </section>
+
+    <div id="tab-check">
     <div id="empty" class="empty">
       <p><strong>No results yet.</strong> Add a facts file and run the check, or load the demo to see findings on mock data.</p>
     </div>
@@ -71,6 +116,7 @@
         <ul id="list" class="list" aria-label="Findings"></ul>
         <article id="detail" class="detail" aria-live="polite"></article>
       </div>
+    </div>
     </div>
   </main>
 </div>

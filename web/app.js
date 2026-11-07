@@ -37,6 +37,7 @@ function parseJson(text, what) {
 }
 
 async function run() {
+  showTab("check");
   say("Checking...");
   try {
     const facts = parseJson($("facts-text").value, "Facts");
@@ -174,7 +175,13 @@ function evidenceBox(p, index = 0) {
     const load = async () => {
       btn.disabled = true;
       try {
-        const q = new URLSearchParams({ file: p.file, page: p.page, bbox: p.bbox.join(",") });
+        const av = await (await api("/ui/evidence-available?" + new URLSearchParams({ file: p.file }))).json();
+        if (!av.available) {
+          out.replaceChildren(el("p", { class: "note" }, "Drawing not available in this demo (the file is not on this server)."));
+          btn.remove();
+          return;
+        }
+        const q =new URLSearchParams({ file: p.file, page: p.page, bbox: p.bbox.join(",") });
         const blob = await (await api("/evidence/crop?" + q)).blob();
         out.replaceChildren(el("img", { src: URL.createObjectURL(blob), alt: `Drawing page ${p.page} around bbox ${p.bbox.join(", ")}; the evidence is outlined in red` }));
         btn.remove();
@@ -234,6 +241,157 @@ function readInto(input, target) {
   });
 }
 
+// ---- design facts from the designs folder ----
+async function loadFactsList() {
+  try {
+    const list = await (await api("/ui/facts")).json();
+    $("facts-pick").replaceChildren(el("option", { value: "" }, "Choose..."), ...list.map((f) => el("option", { value: f.name }, `${f.name} (${f.project})`)));
+    $("facts-pick-note").textContent = list.length ? "" : "No design facts found in the designs folder. Load the demo or open a file.";
+  } catch (e) { $("facts-pick-note").textContent = "Could not list the designs folder."; }
+}
+$("facts-pick").addEventListener("change", async (e) => {
+  if (!e.target.value) return;
+  try {
+    const f = await (await api("/ui/facts/load?" + new URLSearchParams({ name: e.target.value }))).json();
+    $("facts-text").value = JSON.stringify(f, null, 2);
+    say(`Loaded ${e.target.value}. Press Run check.`);
+  } catch (err) { say(err.message, true); }
+});
+
+// ---- panels ----
+// Plain-language message for a failed call: never a stack trace or a bare status line.
+function plain(e) {
+  const m = String(e.message || e);
+  if (/^500:/.test(m)) return "The server hit an error while doing this (see the server log). Nothing was changed.";
+  if (/Failed to fetch|NetworkError/.test(m)) return "The API is not reachable.";
+  return m;
+}
+function setMsg(id, text, err) { const m = $(id); m.textContent = text; m.className = "msg" + (err ? " err" : ""); }
+
+function showTab(name) {
+  document.querySelectorAll(".tab").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.tab === name)));
+  for (const t of ["check", "rules", "ask", "add"]) $("tab-" + t).hidden = t !== name;
+  if (name === "rules") loadRulesPanel();
+}
+document.querySelectorAll(".tab").forEach((b) => b.addEventListener("click", () => showTab(b.dataset.tab)));
+
+function ruleCard(r) {
+  const card = el("li", { class: "rule" + (r.reviewed ? " reviewed" : "") });
+  const flag = el("span", { class: "badge " + (r.reviewed ? "pass" : "needs_review") }, r.reviewed ? "Reviewed by a person" : "Not reviewed (AI-compiled)");
+  const src = r.source || {};
+  const fields = ["target", "parameter", "value", "unit"];
+  const inputs = {};
+  const form = el("form");
+  for (const f of fields) {
+    inputs[f] = el("input", { type: "text", id: `rule-${r.id}-${f}`, value: r[f] == null ? "" : String(r[f]) });
+    form.append(el("label", { for: `rule-${r.id}-${f}` }, f, inputs[f]));
+  }
+  const msg = el("span", { class: "note", role: "status" });
+  const save = async (reviewedOnly) => {
+    const body = {};
+    if (reviewedOnly) body.reviewed = true;
+    else for (const f of fields) {
+      const v = inputs[f].value.trim();
+      if (v === String(r[f] == null ? "" : r[f])) continue;
+      body[f] = v === "" ? null : (f === "value" && v !== "" && !isNaN(Number(v)) ? Number(v) : v);
+    }
+    if (!Object.keys(body).length) { msg.textContent = "No changes."; return; }
+    try {
+      const upd = await (await api("/rules/" + encodeURIComponent(r.id), { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })).json();
+      card.replaceWith(ruleCard(upd));
+    } catch (e) { msg.textContent = plain(e).replace(/^404:.*/, "This rule no longer exists; reload the list."); msg.className = "note err"; }
+  };
+  const bSave = el("button", { type: "button", class: "primary" }, "Save edit (marks reviewed)");
+  bSave.addEventListener("click", () => save(false));
+  form.append(el("div", { class: "row" }, bSave));
+  if (!r.reviewed) {
+    const bRev = el("button", { type: "button" }, "I have checked this rule: mark reviewed");
+    bRev.addEventListener("click", () => save(true));
+    form.lastChild.append(bRev);
+  }
+  form.lastChild.append(msg);
+  form.addEventListener("submit", (e) => e.preventDefault());
+  card.append(el("h3", {}, r.title || r.id), flag,
+    el("p", { class: "meta" }, `${src.regime || "?"}, ${src.document || ""}${src.page != null ? ", page " + src.page : ""}${src.clause ? ", clause " + src.clause : ""}`),
+    el("blockquote", {}, src.quote || ""), form);
+  return card;
+}
+
+async function loadRulesPanel() {
+  const list = $("rules-list");
+  setMsg("rules-msg", "Loading...");
+  try {
+    const rules = await (await api("/rules")).json();
+    list.replaceChildren(...rules.map(ruleCard));
+    const n = rules.filter((r) => r.reviewed).length;
+    setMsg("rules-msg", rules.length ? `${rules.length} rules, ${n} reviewed by a person.` : "The rules file is empty. Add a regulation and compile it.");
+  } catch (e) {
+    list.replaceChildren();
+    setMsg("rules-msg", /^404:/.test(e.message) ? "No compiled rules yet. Use Add a regulation to compile some." : plain(e), !/^404:/.test(e.message));
+  }
+}
+
+function sourceBlock(s) {
+  return el("li", {}, el("div", { class: "cite" }, `${s.regime}, ${s.document}${s.page != null ? ", page " + s.page : ""}${s.clause ? ", clause " + s.clause : ""}`), el("blockquote", {}, s.quote));
+}
+
+async function askQuestion() {
+  const q = $("ask-q").value.trim(), out = $("ask-out");
+  out.replaceChildren();
+  if (q.length < 3) { setMsg("ask-msg", "Type a question first.", true); return; }
+  setMsg("ask-msg", "Asking...");
+  $("ask-go").disabled = true;
+  try {
+    const body = { question: q }, rg = $("ask-regime").value.trim();
+    if (rg) body.regime = rg;
+    const a = await (await api("/ask", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })).json();
+    const kids = [];
+    if (a.status === "answered") {
+      setMsg("ask-msg", "Answer with verified citations.");
+      kids.push(el("p", { class: "answer" }, a.answer), el("h4", {}, "Citations (checked to be verbatim)"), el("ul", { class: "cites" }, ...a.citations.map(sourceBlock)));
+    } else {
+      const why = {
+        llm_unavailable: "The AI is not available right now (no key or quota used up), so there is no written answer. The passages found are shown instead.",
+        needs_review: "The AI gave no citation that could be verified, so its answer was withheld. A person should read the passages below.",
+        no_sources: "Nothing in the regulation index matched the question.",
+      }[a.status] || "No answer.";
+      setMsg("ask-msg", why, true);
+      if (a.note) kids.push(el("p", { class: "note" }, a.note));
+    }
+    if (a.passages && a.passages.length && a.status !== "answered")
+      kids.push(el("h4", {}, "Passages found"), el("ul", { class: "cites" }, ...a.passages.map(sourceBlock)));
+    out.replaceChildren(...kids);
+  } catch (e) {
+    const m = String(e.message);
+    setMsg("ask-msg", /^503:/.test(m) ? "The regulation index is not set up on this server (needs the 'rag' extra and a built index)."
+      : /^500:/.test(m) ? "The regulation index is missing or could not be read. Build it first (python -m app.ingest.index)." : plain(e), true);
+  } finally { $("ask-go").disabled = false; }
+}
+$("ask-go").addEventListener("click", askQuestion);
+
+$("add-save").addEventListener("click", async () => {
+  const regime = $("add-regime").value.trim(), file = $("add-file").files[0];
+  if (!regime || !file) { setMsg("add-msg", "Enter a regime and choose a file.", true); return; }
+  setMsg("add-msg", "Saving...");
+  try {
+    const r = await (await api("/ui/regulations?" + new URLSearchParams({ regime, filename: file.name }), { method: "POST", body: file })).json();
+    setMsg("add-msg", `Saved as ${r.saved} (${r.bytes} bytes). Now compile it below.`);
+    $("ingest-regime").value = regime;
+  } catch (e) { setMsg("add-msg", plain(e), true); }
+});
+
+$("ingest-go").addEventListener("click", async () => {
+  const rg = $("ingest-regime").value.trim();
+  setMsg("ingest-msg", "Compiling with AI... this can take minutes.");
+  $("ingest-go").disabled = true;
+  try {
+    const r = await (await api("/ingest/rules" + (rg ? "?" + new URLSearchParams({ regime: rg }) : ""), { method: "POST" })).json();
+    setMsg("ingest-msg", `Done: ${r.rules} rules in total, ${r.reviewed} already reviewed by a person. Open the Rules tab to review them.`);
+  } catch (e) {
+    setMsg("ingest-msg", `Compiling failed (no AI key, quota used up, or a bad file). Existing rules were kept. ${/^500:/.test(e.message) ? "See the server log for the reason." : plain(e)}`, true);
+  } finally { $("ingest-go").disabled = false; }
+});
+
 $("regime").addEventListener("change", (e) => { state.regime = e.target.value; render(); });
 document.querySelectorAll("input[name=rules-src]").forEach((r) => r.addEventListener("change", () => {
   $("rules-own").hidden = document.querySelector("input[name=rules-src]:checked").value !== "own";
@@ -242,5 +400,6 @@ readInto($("facts-file"), $("facts-text"));
 readInto($("rules-file"), $("rules-text"));
 $("run").addEventListener("click", run);
 $("demo").addEventListener("click", demo);
+loadFactsList();
 api("/health").then((r) => r.json()).then((h) => { $("health").textContent = `API ok, provider ${h.provider}`; })
   .catch(() => { $("health").textContent = "API not reachable"; });

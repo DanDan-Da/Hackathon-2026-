@@ -102,6 +102,32 @@ textarea { height: 110px; }
 .trust-line { margin: 10px 0 0; padding-top: 8px; border-top: 1px solid var(--line); font-weight: 600; }
 .remedy { font: 600 14px var(--mono); background: var(--pass-bg); border-left: 6px solid var(--pass); padding: 8px 12px; overflow-wrap: anywhere; }
 
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.tab[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+.panel { background: var(--panel); border: 1px solid var(--line); padding: 16px 18px; margin-bottom: 14px; }
+.panel[hidden], #tab-check[hidden] { display: none; }
+.panel h2 { margin: 0 0 6px; font-size: 17px; }
+.panel label { display: block; margin: 10px 0 3px; font-size: 13px; color: var(--muted); }
+.panel label.file { display: inline-block; color: var(--steel); }
+.panel .actions { margin-top: 10px; }
+.panel textarea.short { height: 70px; font: 14px/1.4 var(--sans); }
+.panel .alert { margin: 14px 0 0; }
+select { max-width: 100%; font: inherit; padding: 4px; }
+.inputs select { width: 100%; }
+.rules { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.rule { border: 1px solid var(--line); border-left: 6px solid var(--review-line); padding: 10px 12px; }
+.rule.reviewed { border-left-color: var(--pass); }
+.rule h3 { margin: 0 0 4px; font-size: 15px; overflow-wrap: anywhere; }
+.rule .meta { font-size: 13px; color: var(--muted); }
+.rule blockquote { margin: 6px 0; font-size: 14px; }
+.rule form { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 6px 10px; margin-top: 8px; }
+.rule form label { margin: 0; }
+.rule form input { width: 100%; font: 13px var(--mono); padding: 5px; border: 1px solid var(--line); }
+.rule form .row { grid-column: 1 / -1; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.cites { list-style: none; padding: 0; margin: 8px 0 0; }
+.cites li { margin-bottom: 8px; }
+.answer { font-size: 16px; margin: 10px 0 4px; max-width: 70ch; }
+
 @media (max-width: 1000px) {
   .layout { grid-template-columns: 1fr; padding: 14px; }
   .inputs, .detail { position: static; max-height: none; }

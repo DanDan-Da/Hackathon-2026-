@@ -7,7 +7,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from app.api import evidence, ui
+from app.api import evidence, regulations, ui
 from app.check import ask as ask_module
 from app.check.evaluator import evaluate_all
 from app.config import settings
@@ -81,4 +81,5 @@ def ask(req: AskRequest):
 # --- D (web UI): extra routers and the static front end. Keep these LAST so API routes win. ---
 app.include_router(ui.router)
 app.include_router(evidence.router)
+app.include_router(regulations.router)
 app.mount("/", StaticFiles(directory=Path(__file__).resolve().parents[2] / "web", html=True), name="web")
