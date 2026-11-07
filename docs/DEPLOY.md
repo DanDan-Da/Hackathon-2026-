@@ -5,7 +5,7 @@ Everything here was checked by reading the code (`pyproject.toml`, `app/config.p
 ## Prerequisites
 - Python 3.12 (`pyproject.toml` allows >= 3.11; the repo is developed on 3.12) and [uv](https://docs.astral.sh/uv/).
 - A Gemini key for the default provider (free key: https://aistudio.google.com/apikey), or an Anthropic key, or a local OpenAI-compatible server (see Providers).
-- Optional: Docker (see the last section).
+- Optional: Docker (see the Docker section).
 
 ## Install
 ```bash
@@ -62,7 +62,7 @@ Put regulation files in `knowledge/rules/<REGIME>/`. The first-level folder name
 
 Rules already marked `reviewed` are kept. A rule survives only if its quote is a verbatim substring of the source. Humans review via `PATCH /rules/{id}`. The same compile can be triggered with `POST /ingest/rules?regime=NAME` (can take minutes).
 
-Regulation index for `/ask` (needs `rag`, downloads the embedding model, **not verified here**):
+Regulation index for `/ask` (needs `rag`, downloads the embedding model on first run):
 ```bash
 .venv/bin/python -m app.ingest.index
 ```
@@ -111,13 +111,17 @@ Switch with `LLM_PROVIDER=gemini|claude|local`. All LLM calls go through `app/pr
 
 On-prem story: one process, no external service besides the LLM endpoint. Designs and rules live in local folders and the app does not upload them anywhere except to the configured LLM provider. The deterministic checker (`app.check.run` without `--llm`) needs no network. Confidential drawings are therefore safe only with `local` on suitable hardware (not demonstrated) or a paid provider under suitable terms.
 
-## Docker (untested: docker not run here)
-`Dockerfile` and `docker-compose.yml` were written by reading `pyproject.toml` only. They have **not been built or run**.
+## Docker
+Tested on 2026-11-07 with Docker 29.9 (base image, no extras): `/health`, the UI, `/ui/regimes`, `/rules`, `POST /check` on the planted Dana file (1 fail, 8 needs review, 10 N/A, same as without Docker), the trust scoreboard (15/15) and `/evidence/crop` all worked.
 ```bash
 cp .env.example .env
 docker compose up --build        # http://localhost:8000
 ```
-Design choices to check if it fails: editable install (`pip install -e`) because `app/api/main.py` finds `web/` relative to the source tree; `knowledge/` and `designs/` are bind-mounted so regulations and designs stay on the host; extras via the `EXTRAS` build arg (for example `"[rag,3d]"`; `rag` pulls in large ML packages and the embedding model downloads at first use). The `local` provider on `localhost` inside a container needs `LOCAL_BASE_URL` pointed at the host. There is no `.dockerignore`; the build copies only `pyproject.toml`, `app/`, `web/` and `mocks/`, so `.env` and `Files/` do not enter the image.
+- `knowledge/` and `designs/` are bind-mounted, so regulations, compiled rules and designs stay on the host. Put `rules.json` in `knowledge/compiled/` first (for a no-key test: `cp mocks/rules_nps_poc.json knowledge/compiled/rules.json`).
+- Extras go in through the `EXTRAS` build arg in `docker-compose.yml`, for example `"[rag,3d]"`. **Not tested with extras:** `rag` pulls in large ML packages and downloads the embedding model on first use.
+- Keep comments in `.env` on their own lines. `docker run --env-file` does not strip inline comments (`docker compose` does).
+- The `local` provider inside a container: set `LOCAL_BASE_URL=http://host.docker.internal:8001/v1`.
+- The image copies only `pyproject.toml`, `app/`, `web/`, `mocks/` and `eval/` (the UI's trust scoreboard imports `eval`). `.dockerignore` also keeps `.env`, `.venv`, `knowledge/`, `designs/` and `Files/` out of the build context.
 
 ## Not verified
-Docker files; the `--help` output of each module (read from the `argparse` code instead); `app.ingest.index` and `/ask` with real `bge-m3`; the `local` provider; any live LLM call.
+Docker with the `rag`/`3d` extras; the `--help` output of each module (read from the `argparse` code instead); the `local` provider. (`app.ingest.index` and `/ask` with `bge-m3` and Gemini did run on 2026-11-07, see `docs/DEMO.md`.)

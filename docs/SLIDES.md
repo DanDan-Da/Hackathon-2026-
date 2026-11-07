@@ -49,14 +49,14 @@ Follow `docs/DEMO.md`. Beats: real GA (Dana) -> honest result, no fail, needs_re
 - Real drawing: on the Dana GA the checker finds **no fail**; most rules come back `needs_review` because a GA does not show the required evidence. The fail in the demo is planted and labelled.
 - Retrieval: `/ask` runs on a real `bge-m3` index (86 passages from the two regulation folders) and answered a test question with a verified citation; not evaluated beyond that.
 - 3D: IFC reader proven on a synthetic model only; the 305 MB `.nwd` was not converted (`docs/3D-MODELS.md`, `docs/IFC.md`). The reader uses explicit properties and does not derive clearances from geometry.
-- Not done: Docker is untested (files and `docs/DEPLOY.md` exist, docker never run), BCF export, SOLAS/MARPOL/DNV text (not obtained), a precision metric for full-drawing extraction.
+- Not done: Docker with the `rag`/`3d` extras (the base image is tested), BCF export, SOLAS/MARPOL/DNV text (not obtained), a precision metric for full-drawing extraction.
 
 ## Slide 8: Next steps
 1. Compile and human-review the full rule libraries with a paid key; target a reviewed-rule percentage on the slide.
 2. Exhaustive gold inventory for Dana to report precision and a true held-out score.
 3. Real NWD to IFC export (Navisworks) and geometry-based clearance checks.
 4. On-prem model on suitable GPU for confidential drawings.
-5. BCF export so findings open in Navisworks/Revit (`docs/3D-MODELS.md`); Docker deploy.
+5. BCF export so findings open in Navisworks/Revit (`docs/3D-MODELS.md`).
 
 ---
 
@@ -81,7 +81,7 @@ An LLM gives fluent answers with no guaranteed arithmetic, no verbatim quote and
 Not proven. Rule compile and GA extraction are one LLM call per chunk/tile, cached and resumable, but the free tier is about 20 requests/day, so we compiled one page and extracted a few drawings. Evaluation itself is cheap and deterministic. Scaling means a paid key and a rule-review workflow; we have not measured throughput or cost.
 
 **7. What is missing?**
-Human-reviewed rules (189 compiled, none reviewed), real 3D (synthetic IFC only), on-prem model run, full-drawing precision, SOLAS/MARPOL/DNV coverage, tested Docker packaging, an evaluation of `/ask` answers.
+Human-reviewed rules (189 compiled, none reviewed), real 3D (synthetic IFC only), on-prem model run, full-drawing precision, SOLAS/MARPOL/DNV coverage, Docker with the ML extras, an evaluation of `/ask` answers.
 
 **8. What happens when the rules or the drawing are ambiguous?**
 The result is `needs_review`, never pass or fail: unknown ship type (the user can state it; it is logged as manual provenance, never inferred), low extraction confidence, missing elements, or rules not checkable from a drawing (e.g. crew training). This is a design choice: a person looking at one extra finding costs less than a missed violation.

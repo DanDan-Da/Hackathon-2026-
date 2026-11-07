@@ -1,4 +1,4 @@
-# UNTESTED: docker was not run when this file was written. See docs/DEPLOY.md.
+# Tested 2026-11-07: docker compose up --build, base image (no extras). See docs/DEPLOY.md.
 services:
   rulecheck:
     build:

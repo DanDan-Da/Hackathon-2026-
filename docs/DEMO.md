@@ -90,4 +90,4 @@ the export), and we report that instead of hiding it.
 ## Honest limits to say aloud
 Compiled rules are not human-reviewed; no SOLAS/MARPOL/DNV text was available; the real drawing yields no fail (the
 demo fail is planted); GA reading used free-tier Gemini/Gemma; no GPU, so no on-prem model; 3D is synthetic IFC only;
-Docker files exist but are untested.
+Docker (`docker compose up --build`) is tested without the `rag`/`3d` extras.
