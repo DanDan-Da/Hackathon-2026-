@@ -1,0 +1,209 @@
+{
+  "project": "synthetic",
+  "source_files": [
+    "synthetic_ga.pdf"
+  ],
+  "particulars": {
+    "name": "Synthetic Ship",
+    "ship_type": "passenger",
+    "length_overall_m": 60.0,
+    "persons_on_board": 40,
+    "provenance": [
+      {
+        "file": "spec.pdf",
+        "page": 1,
+        "method": "spec_text"
+      }
+    ]
+  },
+  "elements": [
+    {
+      "id": "D-1",
+      "type": "door",
+      "name": "D-1",
+      "space_type": "escape",
+      "properties": {
+        "clear_width": 800,
+        "height": 2000,
+        "fire_rating": "A-60"
+      },
+      "provenance": {
+        "file": "synthetic_ga.pdf",
+        "page": 1,
+        "bbox": [
+          0,
+          0,
+          10,
+          10
+        ],
+        "method": "vision",
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "D-2",
+      "type": "door",
+      "name": "D-2",
+      "space_type": "escape",
+      "properties": {
+        "clear_width": 799,
+        "height": 2001
+      },
+      "provenance": {
+        "file": "synthetic_ga.pdf",
+        "page": 1,
+        "bbox": [
+          0,
+          0,
+          10,
+          10
+        ],
+        "method": "vision",
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "D-3",
+      "type": "door",
+      "name": "D-3",
+      "space_type": "escape",
+      "properties": {
+        "clear_width": 1000
+      },
+      "provenance": {
+        "file": "synthetic_ga.pdf",
+        "page": 1,
+        "bbox": [
+          0,
+          0,
+          10,
+          10
+        ],
+        "method": "vision",
+        "confidence": 0.5
+      }
+    },
+    {
+      "id": "K-1",
+      "type": "corridor",
+      "name": "K-1",
+      "space_type": null,
+      "properties": {
+        "width": 1524
+      },
+      "provenance": {
+        "file": "synthetic_ga.pdf",
+        "page": 1,
+        "bbox": [
+          0,
+          0,
+          10,
+          10
+        ],
+        "method": "vision",
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "K-2",
+      "type": "corridor",
+      "name": "K-2",
+      "space_type": null,
+      "properties": {
+        "width": 1523
+      },
+      "provenance": {
+        "file": "synthetic_ga.pdf",
+        "page": 1,
+        "bbox": [
+          0,
+          0,
+          10,
+          10
+        ],
+        "method": "vision",
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "B-1",
+      "type": "cabin",
+      "name": "B-1",
+      "space_type": null,
+      "properties": {
+        "area": 8.0
+      },
+      "provenance": {
+        "file": "synthetic_ga.pdf",
+        "page": 1,
+        "bbox": [
+          0,
+          0,
+          10,
+          10
+        ],
+        "method": "vision",
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "B-2",
+      "type": "cabin",
+      "name": "B-2",
+      "space_type": null,
+      "properties": {
+        "area": 7.99
+      },
+      "provenance": {
+        "file": "synthetic_ga.pdf",
+        "page": 1,
+        "bbox": [
+          0,
+          0,
+          10,
+          10
+        ],
+        "method": "vision",
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "ST-1",
+      "type": "stairway",
+      "name": "ST-1",
+      "space_type": null,
+      "properties": {},
+      "provenance": {
+        "file": "synthetic_ga.pdf",
+        "page": 1,
+        "bbox": [
+          0,
+          0,
+          10,
+          10
+        ],
+        "method": "vision",
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "ST-2",
+      "type": "stairway",
+      "name": "ST-2",
+      "space_type": null,
+      "properties": {},
+      "provenance": {
+        "file": "synthetic_ga.pdf",
+        "page": 1,
+        "bbox": [
+          0,
+          0,
+          10,
+          10
+        ],
+        "method": "vision",
+        "confidence": 0.9
+      }
+    }
+  ]
+}

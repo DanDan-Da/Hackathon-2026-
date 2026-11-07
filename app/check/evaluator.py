@@ -17,6 +17,17 @@ _OPS = {">=": op.ge, ">": op.gt, "<=": op.le, "<": op.lt, "==": op.eq, "!=": op.
 LOW_CONFIDENCE = 0.6
 
 
+def _place_hint(rule: Rule, facts: DesignFacts) -> str:
+    """If the rule's target is the name of a place that design elements sit in, say so: the rule
+    (not the design) is probably wrong, since a target must be a physical element type."""
+    wanted = rule.target.strip().lower()
+    inside = [e for e in facts.elements if (e.space_type or "").strip().lower() == wanted]
+    if not inside:
+        return ""
+    return (f" Note: {len(inside)} element(s) are located in a '{rule.target}' space, but the rule targets "
+            f"'{rule.target}' as an element type, so it can never match; the rule's target needs review.")
+
+
 def _required_text(rule: Rule) -> str:
     return f"{rule.parameter or rule.target} {rule.operator} {rule.value} {rule.unit or ''}".strip()
 
@@ -57,15 +68,18 @@ def _numeric(rule: Rule, facts: DesignFacts) -> list[Finding]:
     targets = [e for e in facts.elements if element_matches(rule, e)]
     if not targets:
         return [_finding(rule, Status.needs_review,
-                         f"No '{rule.target}' elements found in the design to check.")]
+                         f"No '{rule.target}' elements found in the design to check."
+                         + _place_hint(rule, facts))]
     req, req_unit = to_base(float(rule.value), rule.unit)  # type: ignore[arg-type]
     cmp = _OPS[rule.operator]  # type: ignore[index]
     out: list[Finding] = []
     for el in targets:
         raw = el.properties.get(rule.parameter or "")
         if raw is None or isinstance(raw, (bool, str)):
+            why = ("not found in design" if raw is None
+                   else f"present but not a number ({raw!r}), cannot compare numerically")
             out.append(_finding(rule, Status.needs_review,
-                                f"{el.type} '{el.name or el.id}': '{rule.parameter}' not found in design.",
+                                f"{el.type} '{el.name or el.id}': '{rule.parameter}' {why}.",
                                 element_id=el.id, evidence=[el.provenance]))
             continue
         # design properties are stored in base units already (mm, m2)
@@ -73,7 +87,7 @@ def _numeric(rule: Rule, facts: DesignFacts) -> list[Finding]:
         label = f"{el.type} '{el.name or el.id}'"
         if el.provenance.confidence < LOW_CONFIDENCE:
             status, msg = Status.needs_review, (
-                f"{label}: {rule.parameter}={raw} {req_unit or ''} (low extraction confidence "
+                f"{label}: {rule.parameter}={float(raw):g} {req_unit or ''} (low extraction confidence "
                 f"{el.provenance.confidence:.0%}); required {rule.operator} {req:g} {req_unit or ''}.")
         elif ok:
             status, msg = Status.passed, f"{label}: {rule.parameter}={raw:g} {req_unit or ''} OK."
@@ -99,7 +113,8 @@ def _count(rule: Rule, facts: DesignFacts) -> list[Finding]:
     if not ok and n == 0 and oper != "not_exists":
         # absence in an extracted model may be an extraction gap, not a design error
         return [_finding(rule, Status.needs_review,
-                         f"No '{rule.target}' found; verify it is absent from the design, not just unextracted.",
+                         f"No '{rule.target}' found; verify it is absent from the design, not just unextracted."
+                         + _place_hint(rule, facts),
                          measured=0)]
     status = Status.passed if ok else Status.failed
     msg = (f"Found {n} '{rule.target}' — "

@@ -1,5 +1,7 @@
 # L: Rules, checking and AI infrastructure
 
+> **Read [`docs/L-LOG.md`](../L-LOG.md) first:** what is actually done, unpushed branches, API/quota decisions, known rule-quality problems and open work.
+
 **You own:** `app/ingest/`, `app/check/`, `app/providers/`, `app/config.py`, the `/ingest/rules`, `/rules`, `/check` and `/ask` routes in `app/api/main.py`, plus `docker-compose.yml` and `Dockerfile`.
 **Read-only for you:** `app/design/`, `web/` and `eval/`, which belong to D. Change `app/models.py` only by agreement with D.
 **Work against:** `mocks/facts_violation.json`, which stands in for D's output until real `DesignFacts` exist.

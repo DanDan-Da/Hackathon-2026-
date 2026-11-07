@@ -7,7 +7,7 @@ Two people work on this repo. **L** owns the rules, checking and AI. **D** owns 
 ## 1. Identify the user (do this first, every session)
 1. Read `.claude/whoami`. It contains `L` or `D` and git ignores it.
 2. If the file is missing or empty, ask once: "Are you L (rules, checking, AI) or D (design, UI, eval)?" Then write the answer to `.claude/whoami`.
-3. Read `docs/tasks/<L|D>.md`, the person's task list and file ownership.
+3. Read `docs/tasks/<L|D>.md`, the person's task list and file ownership. If `docs/<L|D>-LOG.md` exists, read it too: it records what is actually done, unpushed work and decisions (e.g. `docs/L-LOG.md`).
 4. Run `gh issue list -l <L|D> --state open` to see which tasks are still open.
 5. Work only on that person's tasks and files unless they explicitly ask otherwise. `/my-tasks` repeats steps 1–4 and proposes the next task.
 
