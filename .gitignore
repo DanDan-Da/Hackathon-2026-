@@ -20,3 +20,10 @@ knowledge/rules/*
 
 # Mesh extent cache (app/design/mesh_reader.py)
 .cache/
+
+# local tooling and scratch
+.idea/
+.playwright-mcp/
+.claude/worktrees/
+*.png.tmp
+evidence-*.png
