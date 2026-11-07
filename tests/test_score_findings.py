@@ -8,8 +8,8 @@ from eval.score_findings import Case, apply_mutations, load_cases, run_cases
 from app.models import DesignFacts, Rule
 
 ROOT = Path(__file__).resolve().parent.parent
-FACTS = DesignFacts.model_validate_json((ROOT / "mocks/facts_violation.json").read_text())
-RULES = [Rule.model_validate(r) for r in json.loads((ROOT / "mocks/rules.json").read_text())]
+FACTS = DesignFacts.model_validate_json((ROOT / "mocks/facts_violation.json").read_text(encoding="utf-8"))
+RULES = [Rule.model_validate(r) for r in json.loads((ROOT / "mocks/rules.json").read_text(encoding="utf-8"))]
 DOOR_RULE = "PVAG-door-clear-width"   # >= 32 in = 812.8 mm
 
 
@@ -88,8 +88,8 @@ def test_shipped_planted_cases_have_no_missed_violations():
 
 # --- real NPS rules (cases_nps_poc.json) ---
 
-NPS_FACTS = DesignFacts.model_validate_json((ROOT / "mocks/facts_nps_base.json").read_text())
-NPS_RULES = [Rule.model_validate(r) for r in json.loads((ROOT / "mocks/rules_nps_poc.json").read_text())]
+NPS_FACTS = DesignFacts.model_validate_json((ROOT / "mocks/facts_nps_base.json").read_text(encoding="utf-8"))
+NPS_RULES = [Rule.model_validate(r) for r in json.loads((ROOT / "mocks/rules_nps_poc.json").read_text(encoding="utf-8"))]
 
 
 def test_set_particular_changes_ship_particulars_and_not_the_base():
@@ -135,8 +135,8 @@ def set_width_p(element, mm):
 
 
 def test_unols_cases_on_the_research_vessel_rules_have_no_missed_violations():
-    facts = DesignFacts.model_validate_json((ROOT / "mocks/facts_unols_base.json").read_text())
-    rules = [Rule.model_validate(x) for x in json.loads((ROOT / "mocks/rules_unols_g38.json").read_text())]
+    facts = DesignFacts.model_validate_json((ROOT / "mocks/facts_unols_base.json").read_text(encoding="utf-8"))
+    rules = [Rule.model_validate(x) for x in json.loads((ROOT / "mocks/rules_unols_g38.json").read_text(encoding="utf-8"))]
     r = run_cases(load_cases(ROOT / "eval/gold/findings/cases_unols.json"), facts, rules)
     assert len(r.results) >= 20 and r.missed_violations == 0 and r.false_alarms == 0
     assert all(x.ok for x in r.results)

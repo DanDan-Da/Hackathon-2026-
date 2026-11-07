@@ -96,7 +96,7 @@ class Report(BaseModel):
 
 
 def load_cases(path: str | Path) -> list[Case]:
-    return [Case.model_validate(c) for c in json.loads(Path(path).read_text())]
+    return [Case.model_validate(c) for c in json.loads(Path(path).read_text(encoding="utf-8"))]
 
 
 def apply_mutations(facts: DesignFacts, mutations: list[Mutation | dict]) -> DesignFacts:
@@ -144,8 +144,8 @@ def main() -> None:
     ap.add_argument("--cases", default=str(DEFAULT_CASES))
     a = ap.parse_args()
     logging.getLogger("app.check.llm_judge").setLevel(logging.CRITICAL)   # offline refusals are expected here
-    facts = DesignFacts.model_validate_json(Path(a.facts).read_text())
-    rules = [Rule.model_validate(r) for r in json.loads(Path(a.rules).read_text())]
+    facts = DesignFacts.model_validate_json(Path(a.facts).read_text(encoding="utf-8"))
+    rules = [Rule.model_validate(r) for r in json.loads(Path(a.rules).read_text(encoding="utf-8"))]
     report = run_cases(load_cases(a.cases), facts, rules)
     for r in report.results:
         mark = "ok   " if r.ok else "WRONG"
