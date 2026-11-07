@@ -161,3 +161,40 @@ def test_user_stated_ship_type_is_recorded_as_manual_provenance():
     assert facts.particulars.ship_type == "Passenger"
     assert facts.particulars.provenance[-1].method == "manual"
     assert req.facts.particulars.ship_type is None          # the request's own facts are not mutated
+
+
+# ---------- remedy on findings, trust scoreboard ----------
+
+def test_ui_check_adds_remedy_for_failed_numeric_findings_only():
+    res = client.post("/ui/check", json=client.get("/ui/demo").json()).json()
+    by = {(f["rule_id"], f["element_id"]): f for f in res}
+    bad = by[("PVAG-door-clear-width", "D-101")]
+    assert bad["remedy"]["text"].startswith("clear_width ") and "needs >=" in bad["remedy"]["text"]
+    assert bad["remedy"]["delta"] > 0
+    assert by[("PVAG-door-clear-width", "D-102")]["remedy"] is None
+    assert {"rule_id", "status", "message", "rule_source", "evidence"} <= set(bad)   # existing shape intact
+
+
+def test_trust_reports_live_planted_eval():
+    t = client.get("/ui/trust").json()
+    e = t["eval"]
+    assert e["total"] > 0 and e["correct"] + e["wrong"] == e["total"]
+    assert e["missed_violations"] == 0
+    assert 0 < t["low_confidence_threshold"] < 1
+    assert t["statement"] == "Anything not provable is marked needs review, never guessed."
+
+
+def test_trust_eval_is_computed_not_hardcoded(tmp_path, monkeypatch):
+    from app.api import ui
+    cases = json.loads(Path(ui.EVAL_CASES).read_text())[:1]
+    p = tmp_path / "cases.json"
+    p.write_text(json.dumps(cases))
+    monkeypatch.setattr(ui, "EVAL_CASES", p)
+    assert client.get("/ui/trust").json()["eval"]["total"] == len(cases[0]["expect"])
+
+
+def test_trust_eval_unavailable_is_null_not_an_error(tmp_path, monkeypatch):
+    from app.api import ui
+    monkeypatch.setattr(ui, "EVAL_CASES", tmp_path / "missing.json")
+    t = client.get("/ui/trust")
+    assert t.status_code == 200 and t.json()["eval"] is None
