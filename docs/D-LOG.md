@@ -28,3 +28,9 @@ Last updated: 2026-11-07. Task definitions are in `docs/tasks/D.md`; L's own rec
 
 ## Rules compiled by D with free Gemma (in progress)
 `knowledge/compiled/rules_gemma.json` is being written by `python -m app.ingest.rule_compiler --regime ADA-UNOLS` using `gemma-4-31b-it`. It is slow (many HTTP 500s). The result will be reviewed and committed as `mocks/rules_unols_gemma.json`.
+
+## UNOLS rules (merged, PR #55) and what to check
+`mocks/rules_unols_g38.json`: 170 rules compiled from the 37-page UNOLS ADA guide with gemini-3.8-flash (paid tier, 37 chunks in ~3 minutes, 1 rule dropped by the quote check). 9 targets were hand-corrected (passageway -> corridor, toilet_compartment -> toilet, stateroom -> cabin), all rules are `reviewed=false`.
+- **Two numeric rules target `space` with no `space_types`** (`ADA-UNOLS-RV703-4-2-clear-width` and `-clear-depth`, 18 in clear deck space at tactile characters). They match every space element (133 on the Dana drawing) and are meaningless for a GA. Please narrow or drop them when reviewing.
+- Most of the 170 rules are about fixtures a general arrangement cannot show (grab bars, signage, reach). On the Dana GA they all end as `needs_review`; that is intended.
+- PR #56 changes `app/check/evaluator.py` so a prohibition (`not_exists`) is only passed by absence when every element comes from a source listed in `app/check/absence_coverage.json` (ifc, manual). It also flips one expectation in your `tests/test_synthetic_pipeline.py` (SYNTH-7: vision facts, so needs_review). Please review.
