@@ -42,7 +42,7 @@ Rules for extraction:
   count        = a required number of elements (e.g. at least two exits)
   presence     = something must (or must not) exist; use operator "exists" / "not_exists"
   qualitative  = a real requirement that cannot be measured (e.g. "shall be readily accessible"). No operator/value.
-- `target` = the kind of design element the rule is about (door, corridor, stairway, ramp, space, ship ...), lower case singular.
+- `target` = the kind of PHYSICAL design element the rule is about (door, corridor, stairway, ramp, handrail, space, ship ...), lower case singular. Never use a place or context (accessible route, entry deck, walking surface) as the target: name the element the number applies to, and put the place in `applies_to.space_types`. Do not repeat the target inside `space_types`.
 - `parameter` = short snake_case measured property (clear_width, height, area, slope, count ...), consistent across rules.
 - `value_number` = the number exactly as written; `unit` = the unit exactly as written in the text (e.g. "in", "mm", "m", "m2", "count"). Do NOT convert units. For "at least"/"minimum" use ">=", for "at most"/"maximum" use "<=".
 - Put conditions of applicability (ship type, size, space type) in `applies_to`; copy any condition wording into `condition_text`. Leave unknown fields empty rather than guessing.
@@ -112,6 +112,11 @@ def extract_chunk(chunk: Chunk, llm: LLMProvider) -> list[Rule]:
         if reason := _structurally_valid(r):
             log.warning("DROPPED (%s) %s p%s: %r", reason, chunk.document, chunk.page, r.title)
             continue
+        target = r.target.strip().lower()
+        if {s.strip().lower() for s in r.applies_to.space_types} == {target}:
+            # a place used as the target never matches a design element (type=door, space_type=...)
+            log.warning("SUSPICIOUS target == space_type %r in %s p%s: %r (needs human review)",
+                        target, chunk.document, chunk.page, r.title)
         out.append(Rule(
             id="",  # assigned after dedup
             title=r.title.strip(),
