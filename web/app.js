@@ -8,7 +8,7 @@ const STATUS = {
   not_applicable: { label: "Not applicable", icon: "–", order: 3 },
 };
 const $ = (id) => document.getElementById(id);
-const state = { findings: [], rules: {}, active: new Set(Object.keys(STATUS)), regime: "", selected: null };
+const state = { findings: [], rules: {}, active: new Set(Object.keys(STATUS)), regime: "", selected: null, factsLoading: null };
 
 function el(tag, props = {}, ...kids) {
   const n = document.createElement(tag);
@@ -40,6 +40,7 @@ async function run() {
   showTab("check");
   say("Checking...");
   try {
+    await state.factsLoading;   // a file picked a moment ago may still be loading
     const facts = parseJson($("facts-text").value, "Facts");
     const body = { facts, ship_type: $("ship-type").value };
     const own = document.querySelector("input[name=rules-src]:checked").value === "own";
@@ -60,6 +61,7 @@ async function demo() {
   say("Loading demo...");
   try {
     const d = await (await api("/ui/demo")).json();
+    $("facts-pick").value = "";   // the picker must not name a file that is no longer loaded
     $("facts-text").value = JSON.stringify(d.facts, null, 2);
     $("rules-text").value = JSON.stringify(d.rules, null, 2);
     document.querySelector("input[name=rules-src][value=own]").checked = true;
@@ -169,7 +171,8 @@ const AUTO_CROPS = 2;   // show this many drawing crops straight away; the rest 
 function evidenceBox(p, index = 0) {
   const box = el("div", { class: "ev" }, el("div", {}, provLine(p)));
   if (p.page != null && p.bbox) {
-    box.append(el("div", {}, `Page ${p.page}, bbox (PDF points) `, el("code", {}, p.bbox.join(", "))));
+    const shown = p.bbox.map((v) => Math.round(v)).join(", ");   // display only; the crop uses exact values
+    box.append(el("div", {}, `Page ${p.page}, bbox (PDF points) `, el("code", {}, shown)));
     const out = el("div");
     const btn = el("button", { type: "button" }, "Show drawing crop");
     const load = async () => {
@@ -183,7 +186,7 @@ function evidenceBox(p, index = 0) {
         }
         const q =new URLSearchParams({ file: p.file, page: p.page, bbox: p.bbox.join(",") });
         const blob = await (await api("/evidence/crop?" + q)).blob();
-        out.replaceChildren(el("img", { src: URL.createObjectURL(blob), alt: `Drawing page ${p.page} around bbox ${p.bbox.join(", ")}; the evidence is outlined in red` }));
+        out.replaceChildren(el("img", { src: URL.createObjectURL(blob), alt: `Drawing page ${p.page} around bbox ${shown}; the evidence is outlined in red` }));
         btn.remove();
       } catch (e) {
         out.replaceChildren(el("p", { class: "note" }, `Crop not available: ${e.message}. The file must be a PDF inside the designs folder.`));
@@ -249,13 +252,21 @@ async function loadFactsList() {
     $("facts-pick-note").textContent = list.length ? "" : "No design facts found in the designs folder. Load the demo or open a file.";
   } catch (e) { $("facts-pick-note").textContent = "Could not list the designs folder."; }
 }
-$("facts-pick").addEventListener("change", async (e) => {
+$("facts-pick").addEventListener("change", (e) => {
   if (!e.target.value) return;
-  try {
-    const f = await (await api("/ui/facts/load?" + new URLSearchParams({ name: e.target.value }))).json();
-    $("facts-text").value = JSON.stringify(f, null, 2);
-    say(`Loaded ${e.target.value}. Press Run check.`);
-  } catch (err) { say(err.message, true); }
+  const name = e.target.value;
+  // A design from the designs folder is checked against the server's compiled rules, not
+  // against rules left in the box by "Load demo".
+  document.querySelector("input[name=rules-src][value=server]").checked = true;
+  $("rules-own").hidden = true;
+  say(`Loading ${name}...`);
+  state.factsLoading = (async () => {
+    try {
+      const f = await (await api("/ui/facts/load?" + new URLSearchParams({ name }))).json();
+      $("facts-text").value = JSON.stringify(f, null, 2);
+      say(`Loaded ${name}. Press Run check.`);
+    } catch (err) { say(err.message, true); }
+  })();
 });
 
 // ---- panels ----
@@ -382,6 +393,7 @@ $("add-save").addEventListener("click", async () => {
 
 $("ingest-go").addEventListener("click", async () => {
   const rg = $("ingest-regime").value.trim();
+  if (!rg && !window.confirm("Compile ALL regimes? This uses a lot of AI quota and takes minutes.")) return;
   setMsg("ingest-msg", "Compiling with AI... this can take minutes.");
   $("ingest-go").disabled = true;
   try {
@@ -401,5 +413,8 @@ readInto($("rules-file"), $("rules-text"));
 $("run").addEventListener("click", run);
 $("demo").addEventListener("click", demo);
 loadFactsList();
+api("/ui/regimes").then((r) => r.json()).then((list) => {
+  $("regime-list").replaceChildren(...list.map((r) => el("option", { value: r })));
+}).catch(() => { /* suggestions are optional */ });
 api("/health").then((r) => r.json()).then((h) => { $("health").textContent = `API ok, provider ${h.provider}`; })
   .catch(() => { $("health").textContent = "API not reachable"; });

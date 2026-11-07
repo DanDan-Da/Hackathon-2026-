@@ -31,6 +31,15 @@ def valid_filename(name: str) -> str:
     return name
 
 
+@router.get("/regimes")
+def list_regimes() -> list[str]:
+    """Regime names = folder names under the rules dir (nothing hardcoded)."""
+    root = settings.rules_dir
+    if not root.is_dir():
+        return []
+    return sorted(p.name for p in root.iterdir() if p.is_dir() and REGIME_RE.fullmatch(p.name))
+
+
 @router.post("/regulations")
 async def upload_regulation(request: Request, regime: str, filename: str):
     valid_regime(regime)

@@ -26,3 +26,12 @@ knowledge/rules/*
 .claude/worktrees/
 *.png.tmp
 evidence-*.png
+
+# AI-assistant instructions and internal team notes: kept locally, not part of the product repo
+CLAUDE.md
+**/CLAUDE.md
+AGENTS.md
+.claude/
+docs/tasks/
+docs/ASSIGNMENTS.md
+docs/*-LOG.md
